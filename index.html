@@ -187,7 +187,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/">notes</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning-notes/">learning notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/">notes</a></li></ul>
                     </div>
                 </section>
                 
@@ -265,6 +265,102 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-notes2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/25/notes2/" class="article-date">
+      <time datetime="2017-02-25T15:44:00.000Z" itemprop="datePublished">2017-02-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/25/notes2/">notes2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>1、event、semaphore、mutex是内核对象，能跨进程使用，critical section不能跨进程，只能实现进程内互斥</p>
+<p>2、</p>
+<p>大多数 JVM 将内存区域划分为 Method Area（Non-Heap）（方法区） ,Heap（堆） , Program Counter Register（程序计数器） ,   VM Stack（虚拟机栈，也有翻译成JAVA 方法栈的）,Native Method Stack  （ 本地方法栈 ），其中Method Area 和 Heap 是线程共享的  ，VM Stack，Native Method Stack  和Program Counter Register  是非线程共享的。为什么分为 线程共享和非线程共享的呢?请继续往下看。</p>
+<p>首先我们熟悉一下一个一般性的 Java 程序的工作过程。一个 Java 源程序文件，会被编译为字节码文件（以 class 为扩展名），每个java程序都需要运行在自己的JVM上，然后告知 JVM 程序的运行入口，再被 JVM 通过字节码解释器加载运行。那么程序开始运行后，都是如何涉及到各内存区域的呢？</p>
+<p>概括地说来，JVM初始运行的时候都会分配好 Method Area（方法区） 和Heap（堆） ，而JVM 每遇到一个线程，就为其分配一个 Program Counter Register（程序计数器） ,   VM Stack（虚拟机栈）和Native Method Stack  （本地方法栈）， 当线程终止时，三者（虚拟机栈，本地方法栈和程序计数器）所占用的内存空间也会被释放掉。这也是为什么我把内存区域分为线程共享和非线程共享的原因，非线程共享的那三个区域的生命周期与所属线程相同，而线程共享的区域与JAVA程序运行的生命周期相同，所以这也是系统垃圾回收的场所只发生在线程共享的区域（实际上对大部分虚拟机来说知发生在Heap上）的原因。</p>
+<p><img src="http://p1.bqimg.com/567571/5c23e5e2213255ae.png" alt=""></p>
+<p>3、jdbc statement：</p>
+<p>a.Statement:  </p>
+<p>普通的不带参的查询SQL；支持批量更新,批量删除;  </p>
+<p>b.PreparedStatement:  </p>
+<p>可变参数的SQL,编译一次,执行多次,效率高;  </p>
+<p>安全性好，有效防止Sql注入等问题;  </p>
+<p>支持批量更新,批量删除;  </p>
+<p>c.CallableStatement:  </p>
+<p>继承自PreparedStatement,支持带参数的SQL操作;  </p>
+<p>支持调用存储过程,提供了对输出和输入/输出参数(INOUT)的支持; </p>
+<p>4、有关Spring的事务传播特性：</p>
+<p>PROPAGATION_REQUIRED–支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。 </p>
+<p>PROPAGATION_SUPPORTS–支持当前事务，如果当前没有事务，就以非事务方式执行。 </p>
+<p>PROPAGATION_MANDATORY–支持当前事务，如果当前没有事务，就抛出异常。 </p>
+<p>PROPAGATION_REQUIRES_NEW–新建事务，如果当前存在事务，把当前事务挂起。 </p>
+<p>PROPAGATION_NOT_SUPPORTED–以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。 </p>
+<p>PROPAGATION_NEVER–以非事务方式执行，如果当前存在事务，则抛出异常。</p>
+<p>5、servlet service：</p>
+<p>a、不管是post还是get方法提交过来的连接，都会在service中处理</p>
+<p>b、service()是在javax.servlet.Servlet接口中定义的</p>
+<p>c、service判断请求类型，决定是调用doGet还是doPost方法</p>
+<p>d、doGet/doPost 则是在 javax.servlet.http.HttpServlet 中实现的</p>
+<p>6、servlet的生命周期：创建servlet的实例是由servlet容器来完成的，创建servlet实例是在初始化方法init()之前</p>
+<p>7、JVM中一个字节以下的整型数据会在JVM启动的时候加载进内存，除非用new Integer()显式的创建对象，否则都是同一个对象</p>
+<p>8、</p>
+<p><img src="http://i1.piimg.com/567571/065688b6c92e3d5e.png" alt=""></p>
+<p>运行时异常： 都是RuntimeException类及其子类异常，如NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界异常)等，这些异常是不检查异常，程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。运行时异常的特点是Java编译器不会检查它，也就是说，当程序中可能出现这类异常，即使没有用try-catch语句捕获它，也没有用throws子句声明抛出它，也会编译通过。 </p>
+<p>非运行时异常 （编译异常）： 是RuntimeException以外的异常，类型上都属于Exception类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。如IOException、SQLException等以及用户自定义的Exception异常，一般情况下不自定义检查异常。</p>
+<p>9、有关jsp中静态include和动态include的区别</p>
+<p>动态 INCLUDE 用 jsp:include 动作实现 <jsp:include page="included.jsp" flush="true"> 它总是会检查所含文件中的变化 , 适合用于包含动态页面 , 并且可以带参数。各个文件分别先编译，然后组合成一个文件。</jsp:include></p>
+<p>静态 INCLUDE 用 include 伪码实现 , 定不会检查所含文件的变化 , 适用于包含静态页面 &lt;%@ include file=”included.htm” %&gt; 。先将文件的代码被原封不动地加入到了主页面从而合成一个文件，然后再进行翻译，此时不允许有相同的变量。 </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning-notes/">learning notes</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-learning-notes" class="article article-type-post" itemscope itemprop="blogPost">
   
