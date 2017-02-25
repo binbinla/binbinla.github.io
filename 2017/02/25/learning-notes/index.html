@@ -14,19 +14,27 @@
 <meta name="author" content="陈锡滨" />
 
 
-    
-    
 
-
-<meta name="description" content="High on Algo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello_bin">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="2017/02/24  
+1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得
+2、  我们在写程序时，通过getSystemService获">
+<meta property="og:type" content="article">
+<meta property="og:title" content="learning notes">
+<meta property="og:url" content="http://yoursite.com/2017/02/25/learning-notes/index.html">
 <meta property="og:site_name" content="Hello_bin">
-<meta property="og:description" content="High on Algo">
+<meta property="og:description" content="2017/02/24  
+1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得
+2、  我们在写程序时，通过getSystemService获">
+<meta property="og:image" content="http://yoursite.com/C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\aa8b650db1474ecbb927121134a67573\326b986a2981495c94d961c19b17557d.jpg">
+<meta property="og:image" content="http://yoursite.com/C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\9fb3a9cd72d5487f901f6c76fa02e3dc\1d7c9be4e7d04c54b378497cc34dfb24.jpg">
+<meta property="og:image" content="http://yoursite.com/C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\d1356cfa5f52490fb41f33996e518c5f\ukuz2ghd1]]0.png">
+<meta property="og:updated_time" content="2017-02-25T04:31:15.756Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello_bin">
-<meta name="twitter:description" content="High on Algo">
+<meta name="twitter:title" content="learning notes">
+<meta name="twitter:description" content="2017/02/24  
+1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得
+2、  我们在写程序时，通过getSystemService获">
+<meta name="twitter:image" content="http://yoursite.com/C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\aa8b650db1474ecbb927121134a67573\326b986a2981495c94d961c19b17557d.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,13 +62,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hello_bin</title>
+<title>learning notes | Hello_bin</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -69,8 +75,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -264,9 +270,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-learning-notes" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-learning-notes" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/02/25/learning-notes/" class="article-date">
@@ -284,12 +288,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/25/learning-notes/">learning notes</a>
+    <h1 class="article-title" itemprop="name">
+      learning notes
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/">notes</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -729,173 +744,85 @@ case 6:
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/">notes</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-分簇-触摸屏精确定位Algo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/12/15/分簇-触摸屏精确定位Algo/" class="article-date">
-      <time datetime="2016-12-15T14:38:22.000Z" itemprop="datePublished">2016-12-15</time>
-</a>
-
-
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/25/learning-notes/">learning notes</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
+        <p><span>发布时间:</span>2017-02-25, 11:32:19</p>
+        <p><span>最后更新:</span>2017-02-25, 12:31:15</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/25/learning-notes/" title="learning notes">http://yoursite.com/2017/02/25/learning-notes/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/02/25/learning-notes/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+
+
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/15/分簇-触摸屏精确定位Algo/">分簇+触摸屏精确定位Algo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>现代生活，触摸屏手机已是非常普及，可以说人手一只。我们只要用手指轻轻在屏幕上触碰，手机就能感应到我们的操作，并且执行相应的功能。那么，手机是怎样定位到触摸点的呢？这个就是我们今天要讨论算法所重点要模拟解决的问题。</p>
-<p>解决的思路是：把我们手机屏幕看成一个二维坐标系，横竖分别分为X轴和Y轴，这样我们就可以通过坐标值来定位某个点。知道如何表示触摸点还不足够，我们怎样确定定位点呢？这就涉及到硬件了，每个屏幕TP上面都会有电容感应器，当你用手触摸某个地方时，那里对应的电容值便会升高。多点触摸，就会有多个地方电容值升高。</p>
-<p>但问题又来了，我们触摸的地方往往是一个区域，因为我们手指有一定的宽度。所以，我们需要按电容值的高低对屏幕坐标先进行分簇，即局部最大值聚类。对np_values搜索局部极大值。如果只找到一个局部最大值，则有一个单点触摸。如果找到多个局部极大值，则有多个接触。</p>
-<p>分簇完成，接下来就好办了，可以通过计算电容加权平均值得出每个分簇的精确定位。</p>
-<h2 id="分簇实现"><a href="#分簇实现" class="headerlink" title="分簇实现"></a><strong>分簇实现</strong></h2><p>下面是一个屏幕电容值的模拟数据表：</p>
-<p><img src="http://i1.piimg.com/567571/18158d7f763f9542.png" alt="img"></p>
-<p>可以看到，表中所给电容值横轴方向、纵轴方向都有所变化，当触摸屏某个位置有触摸动作发生时，该处电容值会升高，由此可判断出，上图中有两处按压。</p>
-<p> 可得到两个序列：</p>
-<p>x轴序列是{0，6，137，84，9，4}，Y轴序列是{1，4，45，25，2，2，13，52，58，15，4}。</p>
-<p>分簇要找的就是所给序列的突峰区间，如果用索引（坐标索引从0开始计）来表示的话，上述x轴序列有一个分簇区间[0，5]，y轴序列有两个分簇区间[0，4]和[5，10]。图示如下：</p>
-<p><img src="file:///C:\Users\陈锡滨\AppData\Local\Temp\ksohtml\wpsDA08.tmp.png" alt="img"><img src="http://i1.piimg.com/567571/bebad735c60be660.png" alt="img"></p>
-<p><img src="file:///C:\Users\陈锡滨\AppData\Local\Temp\ksohtml\wpsDA09.tmp.png" alt="img"> <img src="http://i1.piimg.com/567571/9b1c207732261265.png" alt="img"></p>
-<p>最后，我们需要输出分簇结果：x轴分簇[0，5]，y轴分簇[0，4]、[5，10]。</p>
-<p>分簇算法实现的难点在哪儿呢？我觉得应该是如何判断一个分簇的开始与结束。为了实现判断，我在遍历索引的时候，加上了标志变量（如果当前电容值比它的前者大的话，标志变量置1，否则置2）。然后在输出分簇的时候，我们就可以通过判断标志变量，准确输出区间。主要实现代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">printf(&quot;x方向上的增减标志位如下:\n&quot;);</div><div class="line">   for (i = 0; i &lt; x-1; i++)</div><div class="line">   &#123;</div><div class="line">       if(xx[i] &lt;= xx[i+1])</div><div class="line">       &#123;</div><div class="line">           xTag[i] = 1;</div><div class="line">       &#125;</div><div class="line">       if(xx[i] &gt;= xx[i+1])</div><div class="line">       &#123;</div><div class="line">           xTag[i] = 2;</div><div class="line">           bianjieX++;</div><div class="line">       &#125;</div><div class="line">       printf(&quot;%d&quot;, xTag[i]);</div><div class="line">   &#125;</div><div class="line">       printf(&quot;y方向上的增减标志位如下:\n&quot;);</div><div class="line">   for (j = 0; j &lt; y-1; j++)</div><div class="line">   &#123;</div><div class="line">       if(yy[j] &lt;= yy[j+1])</div><div class="line">       &#123;</div><div class="line">           yTag[j] = 1;</div><div class="line">       &#125;</div><div class="line">       //根据区间来看，前后相等的情况应该赋值为2，所以上面小于情况的=号可下可不下</div><div class="line">       if(yy[j] &gt;= yy[j+1])</div><div class="line">       &#123;</div><div class="line">           yTag[j] = 2;</div><div class="line">           bianjieY++;</div><div class="line">       &#125;</div><div class="line">       printf(&quot;%d&quot;, yTag[j]);</div><div class="line">   &#125;</div><div class="line">   //定义二维数组用于存储区间的索引</div><div class="line">   for (i = 0; i &lt; x-1; i++) &#123;</div><div class="line">    if(xTag[i] == 2 &amp;&amp; xTag[i+1] == 1) &#123;</div><div class="line">        xsection[count++][1] = i;</div><div class="line">        xsection[count][0] = i+1;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">if(xsection[count][1] == 0) &#123;</div><div class="line">    xsection[count][1] = x-1;</div><div class="line">&#125;</div><div class="line">while(i &lt; x-1) &#123;</div><div class="line">    printf(&quot;\nX方向上的分簇[%d, %d]&quot;, xsection[i][0], xsection[i][1]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="精确定位实现"><a href="#精确定位实现" class="headerlink" title="精确定位实现"></a><strong>精确定位实现</strong></h2><p>有了分簇结果，我们就可以借用分簇结果来计算每个分簇对应的精确坐标值了。计算的过程：首先需要找到分簇区间中每个索引对应的电容值，把电容值累加到变量CapacitanceALL，然后将每个索引值*对应电容值累加到变量AddAll，最后就可通过AddAll / CapacitanceALL来计算出每个分簇的精确值location。</p>
-<p>主要实现代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">while(i &lt; x-1) &#123;</div><div class="line">	    printf(&quot;\nX方向上的分簇[%d, %d]&quot;, xsection[i][0], xsection[i][1]);</div><div class="line">	    AddAll = 0.0,CapacitanceALL = 0.0;</div><div class="line">	    location = 0.0;</div><div class="line">	    //输出此段分簇区间的精确定位</div><div class="line">	    for(m = xsection[i][0];m &lt;= xsection[i][1];m++)</div><div class="line">	    &#123;</div><div class="line">	        AddAll = AddAll + xx[m] * m;</div><div class="line">	        CapacitanceALL = CapacitanceALL + xx[m];</div><div class="line">	    &#125;</div><div class="line">	    location = AddAll / CapacitanceALL;</div><div class="line">        printf(&quot;  此段分簇区间的加权精确x值是：%.3f&quot;,location);</div><div class="line">	    i++;</div><div class="line">	    if(xsection[i][0] == 0) &#123;</div><div class="line">	        break;</div><div class="line">	    &#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h2 id="算法测试"><a href="#算法测试" class="headerlink" title="算法测试"></a><strong>算法测试</strong></h2><p>测试数据用的是上面提供电容模拟表中的数值，分别输入X、Y方向上的电容值，测试结果如下：</p>
-<p><img src="http://i1.piimg.com/567571/0526429b2cead56b.png" alt="img"></p>
-<h2 id="后言"><a href="#后言" class="headerlink" title="后言"></a><strong>后言</strong></h2><p>关于这个算法就介绍这么多了，有什么不对的地方还望多多指教，也欢迎大家关注我（<a href="http://www.jianshu.com/users/083ac3156200/latest_articles" target="_blank" rel="external">简书</a>/<a href="https://github.com/binbinla" target="_blank" rel="external">GitHub</a>）</p>
-<p>谢谢观看此文。</p>
-<p><strong>源代码地址​</strong><a href="http://pan.baidu.com/s/1slAOoTf" target="_blank" rel="external">http://pan.baidu.com/s/1slAOoTf</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/12/07/hello-world/" class="article-date">
-      <time datetime="2016-12-07T04:49:16.756Z" itemprop="datePublished">2016-12-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/07/hello-world/">Hello World</a>
-    </h1>
-  
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/12/15/分簇-触摸屏精确定位Algo/">
+                    分簇+触摸屏精确定位Algo
+                </a>
+            </div>
+        
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"learning notes　| Hello_bin　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -903,9 +830,33 @@ case 6:
 
 
 
+    
 
-  
-  
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/12/15/分簇-触摸屏精确定位Algo/" title="下一篇: 分簇+触摸屏精确定位Algo">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/learning-notes/">learning notes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/15/分簇-触摸屏精确定位Algo/">分簇+触摸屏精确定位Algo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/07/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
