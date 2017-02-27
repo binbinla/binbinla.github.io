@@ -414,7 +414,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>1、event、semaphore、mutex是内核对象，能跨进程使用，critical section不能跨进程，只能实现进程内互斥</p>
+        <p>1、event、semaphore、mutex是内核对象，能跨进程使用，critical section不能跨进程，只能实现进程内互斥。</p>
 <p>2、</p>
 <p>大多数 JVM 将内存区域划分为 Method Area（Non-Heap）（方法区） ,Heap（堆） , Program Counter Register（程序计数器） ,   VM Stack（虚拟机栈，也有翻译成JAVA 方法栈的）,Native Method Stack  （ 本地方法栈 ），其中Method Area 和 Heap 是线程共享的  ，VM Stack，Native Method Stack  和Program Counter Register  是非线程共享的。为什么分为 线程共享和非线程共享的呢?请继续往下看。</p>
 <p>首先我们熟悉一下一个一般性的 Java 程序的工作过程。一个 Java 源程序文件，会被编译为字节码文件（以 class 为扩展名），每个java程序都需要运行在自己的JVM上，然后告知 JVM 程序的运行入口，再被 JVM 通过字节码解释器加载运行。那么程序开始运行后，都是如何涉及到各内存区域的呢？</p>
@@ -443,7 +443,7 @@
 <p>c、service判断请求类型，决定是调用doGet还是doPost方法</p>
 <p>d、doGet/doPost 则是在 javax.servlet.http.HttpServlet 中实现的</p>
 <p>6、servlet的生命周期：创建servlet的实例是由servlet容器来完成的，创建servlet实例是在初始化方法init()之前</p>
-<p>7、JVM中一个字节以下的整型数据会在JVM启动的时候加载进内存，除非用new Integer()显式的创建对象，否则都是同一个对象</p>
+<p>7、JVM中一个字节以下的整型数据会在JVM启动的时候加载进内存，除非用new Integer()显式的创建对象，否则都是同一个对象。</p>
 <p>8、</p>
 <p><img src="http://i1.piimg.com/567571/065688b6c92e3d5e.png" alt=""></p>
 <p>运行时异常： 都是RuntimeException类及其子类异常，如NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界异常)等，这些异常是不检查异常，程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。运行时异常的特点是Java编译器不会检查它，也就是说，当程序中可能出现这类异常，即使没有用try-catch语句捕获它，也没有用throws子句声明抛出它，也会编译通过。 </p>
