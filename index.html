@@ -142,13 +142,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -262,7 +262,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
   
@@ -308,6 +308,53 @@
 <p>②public <a href="file:///D:/Java/api/java/lang/String.html" target="_blank" rel="external">String</a> substring(int beginIndex,int endIndex)</p>
 <p>返回一个新字符串，它是此字符串的一个子字符串。该子字符串从指定的 beginIndex 处开始，一直到索引 endIndex - 1 处的字符。因此，该子字符串的长度为 endIndex-beginIndex。</p>
 <p>③：String.charAt(i)，定位字符串第i个位置的字符</p>
+<p>3、贪心算法的应用：奖学金问题</p>
+<p>小v今年有n门课，每门都有考试，为了拿到奖学金，小v必须让自己的平均成绩至少为avg。每门课由平时成绩和考试成绩组成，满分为r。现在他知道每门课的平时成绩为ai ,若想让这门课的考试成绩多拿一分的话，小v要花bi 的时间复习，不复习的话当然就是0分。同时我们显然可以发现复习得再多也不会拿到超过满分的分数。为了拿到奖学金，小v至少要花多少时间复习。</p>
+<p>解题思路：</p>
+<p>动态规划，此题用贪心算法的思维解决：先用用时较少的课程（所以需要一个排序算法，将输入的课程按照用时bi的大小进行排序，程序中使用的是冒泡排序），如果还未达到总分，继续添加下一门课程的计算。</p>
+<p>判断是否已达到获取奖学金的分数：</p>
+<p> while(score &lt; need &amp;&amp; j &lt; n){</p>
+<p>​            if(arr[j][0] &lt; r){</p>
+<p>​                time += arr[j][1];</p>
+<p>​                arr[j][0]++;</p>
+<p>​                score++;</p>
+<p>​            }else{</p>
+<p>​                j++;</p>
+<p>​            }            </p>
+<p>​        }</p>
+<p>按多加1分所需时间bi排序算法如下：</p>
+<p> public static void sort(long a[][]){</p>
+<p>​        int length = a.length;</p>
+<p>​        for(int i = 0;i &lt; length-1;i++){</p>
+<p>//            boolean flag = true;</p>
+<p>​            for(int j = 0;j &lt; length-1-i;j++){</p>
+<p>​                if(a[j][1] &gt; a[j+1][1]){</p>
+<p>​                    long tempA = a[j][0];</p>
+<p>​                    long tempB = a[j][1];</p>
+<p>​                    a[j][0] = a[j+1][0];</p>
+<p>​                    a[j][1] = a[j+1][1];</p>
+<p>​                    a[j+1][0] = tempA;</p>
+<p>​                    a[j+1][1] = tempB;</p>
+<p>//                    flag = false;</p>
+<p>​                }</p>
+<p>​            }</p>
+<p>//             if(flag) return;</p>
+<p>​        }     </p>
+<p>​    }</p>
+<p><strong>算法：</strong></p>
+<p>4、KMP算法和Floyd算法都不是贪心算法，Floyd算法使用的是动态规划，KMP算法则是对串的前缀进行去处理得到所有可能出现匹配的位置从而减少不必要的位移。</p>
+<p>5、</p>
+<p><img src="http://i1.piimg.com/567571/d358f184b7740b11.png" alt=""></p>
+<p>6、二分查找 index = （rear + front ） / 2；</p>
+<p>7、有个长度为12的无重复有序表，按折半查找法进行查找，在表内各元素等概率情况下，查找成功所需的平均比较（三元比较）的次数为 ，按照一颗完全二叉树来考虑，12个结点是4层，所以为（1<em>1+2</em>2+4<em>3+5</em>4）/12。</p>
+<p>8、快速排序的worst case就是基本逆序或者基本有序的情况。</p>
+<p>9、基本排序算法的稳定性：</p>
+<p>首先，稳定性是指如果待排序数据中有多个相同的元素，如果在排序完后相同元素的顺序不发生改变，则为稳定的排序，否则为非稳定的排序。</p>
+<p>A.快速排序就是利用切分算法依次确定n个元素的最终位置。所以，我们直接来分析切分算法。举例来说， 有待切分子数组: 5 8 3 7 3 9 7，切分元素为5，从后遍历得到第一个小于切分元素5的数据为3(index = 5)，从前遍历得到第一个大于5的元素为8，交换3和8，这样，元素3的稳定性就被破坏了。</p>
+<p>B.冒泡排序为依次从前往后与相邻值比较交换从而将未排序的最大值移至最后。如 9 8 6 9 0 ，当第一个9移至 8 6 9 9 0时，只要我们保证只有当前一个元素大于(而不是大于等于)下一个元素时才交换，就可保证排序的稳定性。</p>
+<p>C.选择排序为每一次从第i个元素后面选择一个最小元素放入第i个位置.(i从0 到 n -1)。</p>
+<p>举例 4 5 4 3，在第一轮交换中，我们找到最小元素3(index = 3),需要将其与第一个元素 4(indx = 1)。我们发现，当第i个元素和它后面的最小元素中间还存在 元素i 时将破坏元素i的稳定性。  </p>
+<p>D.归并排序同样是分治并合并两个有序子数组的过程。因此，和快速排序一样，我们只需要考察合并有序子数组的算法即可。 当合并有序子数组时，我们会利用辅助数组，每一次都将两个子数组中较小的元素放入即可辅助数组，直至全部放入。只要我们保证当遍历到当前两个子数组值相同时，先将第一个元素放入即可保证排序后的稳定性。所以，归并排序是稳定性。</p>
 
       
     </div>
@@ -1083,14 +1130,14 @@ case 6:
                 2016-2017 陈锡滨
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -1099,7 +1146,7 @@ case 6:
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -1132,9 +1179,9 @@ case 6:
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
