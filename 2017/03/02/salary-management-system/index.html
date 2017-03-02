@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="陈锡滨" />
+
+
+
+<meta name="description" content="1  范围与前景1.1. 课程设计选题《工资管理系统》
+1.1.1. 课程设计的目的  通过数据库系统课程设计，熟悉了SQL SERVER数据库管理系统的结构与组成；掌握了SQL SERVER数据库管理系统的应用技术和的使用；应用JSP+SQL Server开发工具实践了《工资管理系统》的数据库应用系统的设计方法、开发过程和SQL SERVER数据库的管理与维护。最终达到掌握数据库管理系统的使用和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="salary management system">
+<meta property="og:url" content="http://yoursite.com/2017/03/02/salary-management-system/index.html">
+<meta property="og:site_name" content="Hello_bin">
+<meta property="og:description" content="1  范围与前景1.1. 课程设计选题《工资管理系统》
+1.1.1. 课程设计的目的  通过数据库系统课程设计，熟悉了SQL SERVER数据库管理系统的结构与组成；掌握了SQL SERVER数据库管理系统的应用技术和的使用；应用JSP+SQL Server开发工具实践了《工资管理系统》的数据库应用系统的设计方法、开发过程和SQL SERVER数据库的管理与维护。最终达到掌握数据库管理系统的使用和">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/28350592-file_1488367646525_13bca.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/22113229-file_1488367986852_6716.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/48751085-file_1488368079347_7a76.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/50746744-file_1488368213876_3be.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/54795263-file_1488368248841_5c29.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/37582727-file_1488368303322_b97d.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/53409789-file_1488368347146_c558.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/73222487-file_1488368370015_166b5.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/83713027-file_1488368396121_6afe.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/61276712-file_1488368418086_eefe.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/1566739-file_1488368446636_75ac.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/17460400-file_1488368462606_50e.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/37865836-file_1488368478643_15210.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/35151560-file_1488368508530_2791.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/38321222-file_1488368525078_f329.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/57710988-file_1488368550541_11775.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/11502572-file_1488368566492_f0e5.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/77482706-file_1488368585430_ee04.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/74065032-file_1488380563542_3d5b.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/49345894-file_1488380547839_17ec0.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/55877634-file_1488380630510_5fc4.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/65675626-file_1488380658387_91cf.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/52761013-file_1488380692228_3073.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/26693379-file_1488380721298_8a15.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/31509962-file_1488380739700_e9b6.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/64187089-file_1488380765313_12a81.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/94160771-file_1488380781008_e2da.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/60673289-file_1488380800303_b441.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/58146683-file_1488380825793_96a7.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/1723142-file_1488380851636_3176.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/60476298-file_1488380871839_77f3.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/61517956-file_1488380889071_1205.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/98657709-file_1488380904624_13911.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/27761704-file_1488380925945_1312d.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/79869678-file_1488380941090_15856.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/24476940-file_1488380956995_171e3.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/39002863-file_1488380970862_10c1e.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/28301072-file_1488380984511_15369.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/76075224-file_1488381002670_1326.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/7871255-file_1488381016710_2199.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/59168972-file_1488381031875_11bba.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/85300966-file_1488381054906_cfbe.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/30864774-file_1488381071799_142c7.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/41499007-file_1488381086769_547.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/83737627-file_1488381100546_1251b.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/68735376-file_1488381113050_683d.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/80705843-file_1488381126629_1e0f.png">
+<meta property="og:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/16040314-file_1488381140899_129ad.png">
+<meta property="og:updated_time" content="2017-03-02T07:52:30.876Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="salary management system">
+<meta name="twitter:description" content="1  范围与前景1.1. 课程设计选题《工资管理系统》
+1.1.1. 课程设计的目的  通过数据库系统课程设计，熟悉了SQL SERVER数据库管理系统的结构与组成；掌握了SQL SERVER数据库管理系统的应用技术和的使用；应用JSP+SQL Server开发工具实践了《工资管理系统》的数据库应用系统的设计方法、开发过程和SQL SERVER数据库的管理与维护。最终达到掌握数据库管理系统的使用和">
+<meta name="twitter:image" content="http://om4vugm59.bkt.clouddn.com/17-3-1/28350592-file_1488367646525_13bca.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Hello_bin" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>salary management system | Hello_bin</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="http://a3.qpic.cn/psb?/V12kfUms1jUtSk/cCoFA61adBk6d4v6jeHkIANgE0MpSdVNA*Mff6vdZoA!/m/dAoBAAAAAAAAnull&amp;bo=gAJVAwAAAAAFB*A!&amp;rf=photolist&amp;t=5" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">陈锡滨</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">High on Algo</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning-notes/">learning notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/">notes</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">广东工业大学就读本科生，软件工程专业，爱篮球，爱生活，android方向开发爱好者，对技术充满好奇。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">陈锡滨</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="http://a3.qpic.cn/psb?/V12kfUms1jUtSk/cCoFA61adBk6d4v6jeHkIANgE0MpSdVNA*Mff6vdZoA!/m/dAoBAAAAAAAAnull&amp;bo=gAJVAwAAAAAFB*A!&amp;rf=photolist&amp;t=5" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">陈锡滨</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">High on Algo</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-salary-management-system" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/02/salary-management-system/" class="article-date">
+      <time datetime="2017-03-02T07:49:03.000Z" itemprop="datePublished">2017-03-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      salary management system
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-范围与前景"><a href="#1-范围与前景" class="headerlink" title="1  范围与前景"></a>1  <strong>范围与前景</strong></h1><h2 id="1-1-课程设计选题"><a href="#1-1-课程设计选题" class="headerlink" title="1.1. 课程设计选题"></a>1.1. <strong>课程设计选题</strong></h2><p>《工资管理系统》</p>
+<h3 id="1-1-1-课程设计的目的"><a href="#1-1-1-课程设计的目的" class="headerlink" title="1.1.1. 课程设计的目的"></a>1.1.1. 课程设计的目的</h3><p>  通过数据库系统课程设计，熟悉了SQL SERVER数据库管理系统的结构与组成；掌握了SQL SERVER数据库管理系统的应用技术和的使用；应用JSP+SQL Server开发工具实践了《工资管理系统》的数据库应用系统的设计方法、开发过程和SQL SERVER数据库的管理与维护。最终达到掌握数据库管理系统的使用和开发，提高分析问题、解决问题和实践应用能力。</p>
+<h2 id="1-2-应用背景"><a href="#1-2-应用背景" class="headerlink" title="1.2. 应用背景"></a>1.2. <strong>应用背景</strong></h2><p>  众所周知当今时代的世界经济正从工业经济向知识经济转变，而知识经济的两个重要特征就是信息化和全球化。要实现信息化和全球化就必须依靠完善的网络和数据库机制。处于现在这样一个飞速发展的信息时代，在各行各业中都离不开信息处理，这正是计算机被广泛应用于管理信息系统的环境，使用计算机进行信息控制提高了工作效率。</p>
+<p>  在计算机诞生前，对工资的管理一直都是纸质化记录、人工统计和计算。这样的管理不但费时费力，也很容易计算上的错误与疏漏。这种管理方式效率低、保密性差、不利于添加、删除、查询、更改员工的工资信息，久而久之还会产生大量的文件，给维护带来了不少困难。当今社会，资金是企业生存的主要元素，资金的流通影响到整个企业的运作，企业员工工资是企业资金管理的一个重要组成部分，因为每个月企业都要涉及到发放员工工资的问题。而传统的纸质材料的数据信息管理方式对于工资的管理与发放又存在很大麻烦，所以如果能够实现工资管理自动化，无疑给企业管理部门带来很大方便。随着计算机的诞生，实现工资管理的系统化、规范化、自动化，将成为现代企业管理工资的首选。</p>
+<h2 id="1-3-业务机遇"><a href="#1-3-业务机遇" class="headerlink" title="1.3. 业务机遇"></a>1.3. <strong>业务机遇</strong></h2><p>  企业的工资管理部门通过工资管理系统对员工工资信息进行录入、更新、删除、更改、添加、统计、排序、查询、打印，可以提高工作效率，减少工资信息的疏漏。减少人力的投入，节约开支，快速准确的管理员工的工资信息，准确按时的发放工资。通过详细的奖惩机制，系统准确计算每个员工工资的奖惩情况，起到监督作用，同时提高员工的工作热情。员工可以通过在工资管理系统中查询或者打印自己的工资详细记录，对自己的工资情况一目了然，减少有关工资发放方面的纷争，提高员工对企业的信赖度。</p>
+<p>  工资管理系统，是企业正规化管理的必然需求，不仅能提高企业管理质量，还能方便员工查询自己的工资信息，于老板于员工，都有好处。</p>
+<h2 id="1-4-业务风险"><a href="#1-4-业务风险" class="headerlink" title="1.4. 业务风险"></a>1.4. <strong>业务风险</strong></h2><p>（1）存贮数据的数据库被破坏导致数据的缺失或丢失；</p>
+<p>​      可能性0.3，影响9</p>
+<p>（2）企业电脑被入侵导致员工工资信息的泄露；</p>
+<p>​      可能性0.1，影响9</p>
+<p>（3）自身系统技术设计存在漏洞，导致工资操作出现bug；</p>
+<p>​      可能性0.2，影响8</p>
+<p>（4）企业不满意系统的开发情况</p>
+<p>​      可能性0.3，影响7 </p>
+<h2 id="1-5-前景概述"><a href="#1-5-前景概述" class="headerlink" title="1.5. 前景概述"></a>1.5. <strong>前景概述</strong></h2><p>  工资管理系统是一个基于互联网的应用程序，有两个登录模式：普通用户（员工）、管理员用户。在普通用户模式中，员工可以用自己的工号以及登录密码访问系统，然后查询自己的个人资料、工资信息，没有操作其他普通用户的权限；在管理员模式中，管理员用工号以及登录密码访问系统，管理员权限相对较多，可以增加员工个人档案，删除、修改已存在的员工信息，还可以统计员工的工资信息，当管理员离职时，系统应该回收其登录权限。</p>
+<p>  产品名称：工资管理系统</p>
+<p>  产品面向对象：企业工资管理员、企业员工</p>
+<p>  产品优势：区别于传统的纸质版信息管理，运用此系统管理工资，高效准确，操作便捷。</p>
+<h2 id="1-6-主要特征"><a href="#1-6-主要特征" class="headerlink" title="1.6. 主要特征"></a>1.6. <strong>主要特征</strong></h2><p>  FE-1：普通用户（员工）登录模式下，员工只能操作查询自己的信息，包括个人档案以及工资信息；</p>
+<p>  FE-2：普通用户（员工）登录模式下，员工可以在查询工资信息功能模块下，打印自己的工资查询结果；</p>
+<p>  FE-3：普通用户（员工）登录模式下，员工可以修改自己的登录密码；</p>
+<p>  FE-4：普通用户（员工）需要提交个人档案进行实名注册；</p>
+<p>  FE-5：管理员登录模式下，管理员可以添加审核通过的员工个人档案，添加普通用户；</p>
+<p>  FE-6：管理员登录模式下，可以添加、修改、删除用户；</p>
+<p>  FE-7：管理员登录模式下，可以添加、修改、删除员工个人档案；</p>
+<p>  FE-8：管理员登录模式下，可以添加、修改员工基本工资；</p>
+<p>  FE-9：管理员登录模式下，可以管理、查询发放工资；</p>
+<p>  FE-10：普通用户（员工）/ 管理员登录系统之前，应该选择相应的登录模式，才可准确登录。普通用户（员工）/ 管理员在操作结束后，可以退出系统。</p>
+<h2 id="1-7-假设与依赖"><a href="#1-7-假设与依赖" class="headerlink" title="1.7. 假设与依赖"></a>1.7. <strong>假设与依赖</strong></h2><p>AS-1：普通用户（员工）在领取工资后打印证条，工资管理系统存底，过后如有工资纠纷，可查询有关记录作为凭据；</p>
+<p>AS-2：企业工资按时发放；</p>
+<p>AS-3：管理员需要每半年对员工个人档案进行更新存档，以确保信息有效。</p>
+<h2 id="1-8-限制与排除"><a href="#1-8-限制与排除" class="headerlink" title="1.8. 限制与排除"></a>1.8. <strong>限制与排除</strong></h2><p>LI-1：管理员能查询员工个人隐私信息，应当让管理员签订保密协议，确保员工个人隐私不被泄露；</p>
+<p>LI-2：员工初始使用本系统可能不适应，不过系统在设计以及实现过程中，尽量简化使得操作方便；</p>
+<p>LI-3：员工或者管理员离职后，个人信息应该存档半年，以备不时之需。</p>
+<h2 id="1-9-项目运行环境"><a href="#1-9-项目运行环境" class="headerlink" title="1.9. 项目运行环境"></a>1.9. <strong>项目运行环境</strong></h2><p> 本系统采用JSP+SQL Server开发，使用的IDE是Myeclipse，使用的服务器是Tomcat。</p>
+<p>  ①操作系统：Windows</p>
+<p>  ②数据库：SQL server</p>
+<p>  ③运行服务器：Tomcat</p>
+<p>  ④系统操作平台：Myeclipse集成操作环境 /  IE、360、等常用浏览器</p>
+<p>  ⑤PC电脑一台。</p>
+<h1 id="2-需求分析"><a href="#2-需求分析" class="headerlink" title="2  需求分析"></a>2  <strong>需求分析</strong></h1><h2 id="2-1-功能需求"><a href="#2-1-功能需求" class="headerlink" title="2.1. 功能需求"></a>2.1. <strong>功能需求</strong></h2><p>  本系统设计内容是一个基于web的工资管理系统，通过分析调查，再结合案例，我认为系统开发出来的功能应该包括：</p>
+<p>（1）系统用户分为两种：普通用户（员工）和管理员。管理员顾名思义，能管理操作普通用户；普通用户能修改登录密码、查询个人档案和工资信息、打印工资内容。</p>
+<p>（2）能实现管理员对员工个人档案的录入、修改、删除。</p>
+<p>（3）管理员能设定员工的基本工资。</p>
+<p>（4）按照不同工种的基本工资情况、员工的考勤情况、员工的奖惩情况产生月工资单表。</p>
+<p>（5）系统应提供强大的查询、计算功能。</p>
+<p>（6）可以导出工资报表。</p>
+<p>通过对系统功能需求的初步分析，得出系统的功能模块图如下：</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/28350592-file_1488367646525_13bca.png" alt=""></p>
+<p>​                                                                                         系统功能模块图</p>
+<h2 id="2-2-系统数据流图"><a href="#2-2-系统数据流图" class="headerlink" title="2.2. 系统数据流图"></a>2.2. <strong>系统数据流图</strong></h2><p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/22113229-file_1488367986852_6716.png" alt=""></p>
+<p>​                                                                             图1  0层数据流图</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/48751085-file_1488368079347_7a76.png" alt=""></p>
+<p>​                                                                   图2  工种基本工资设定数据流图</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/50746744-file_1488368213876_3be.png" alt=""></p>
+<p>​                                                                   图3  工资核算数据流图</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/54795263-file_1488368248841_5c29.png" alt=""></p>
+<p>​                                                                     图4  员工信息查询数据流图</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/37582727-file_1488368303322_b97d.png" alt=""></p>
+<p>​                                                                  图5  管理员更新工资管理系统数据流图</p>
+<h2 id="2-3-概念模型分析"><a href="#2-3-概念模型分析" class="headerlink" title="2.3. 概念模型分析"></a>2.3. <strong>概念模型分析</strong></h2><h3 id="2-3-1-实体属性图"><a href="#2-3-1-实体属性图" class="headerlink" title="2.3.1. 实体属性图"></a>2.3.1. 实体属性图</h3><p>①用户实体包括用户名、用户密码、用户权限等：</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/53409789-file_1488368347146_c558.png" alt=""></p>
+<p>②员工实体包括员工编号、姓名、性别、生日、部门、职务等：</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/73222487-file_1488368370015_166b5.png" alt=""></p>
+<p>③员工基本工资实体包括员工编号、基本工资、岗位工资、工龄工资、生活补贴、住房补贴、交通补贴等：</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/83713027-file_1488368396121_6afe.png" alt=""></p>
+<p>④员工工资信息包括员工编号、工资月份、加班工资、缺勤扣款、本月奖金等：</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/61276712-file_1488368418086_eefe.png" alt=""></p>
+<h3 id="2-3-2-实体属性联系图（E-R图）"><a href="#2-3-2-实体属性联系图（E-R图）" class="headerlink" title="2.3.2. 实体属性联系图（E-R图）"></a>2.3.2. 实体属性联系图（E-R图）</h3><p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/1566739-file_1488368446636_75ac.png" alt=""> </p>
+<h1 id="3-数据库设计"><a href="#3-数据库设计" class="headerlink" title="3  数据库设计"></a>3  <strong>数据库设计</strong></h1><h2 id="3-1-数据库逻辑结构"><a href="#3-1-数据库逻辑结构" class="headerlink" title="3.1. 数据库逻辑结构"></a>3.1. <strong>数据库逻辑结构</strong></h2><p>  本次课程设计中数据库设计采用的逻辑模型是关系模型，关系模型包括关系数据库结构、关系数据操作集、关系的完整性约束。</p>
+<p>  逻辑结构设计的任务就是把概念模型设计阶段设计好的基本E-R图转换为与选用的具体机器上的DBMS产品所支持的数据模型相符合的逻辑结构，现选用关系模型，E-R图向关系模式的转换结果如下所示：</p>
+<p>用户表（用户名、用户密码、用户权限），主码是用户ID；</p>
+<p>员工个人档案表（员工ID、员工名称、性别、所属部门、出生日期、籍贯、婚姻情况、身份证号、政治身份、所属名族、教育水平、专业、毕业日期、毕业大学、公积金账号、行政级别、职位、职称、外语、外语水平、计算机水平、联系电话、手机号码、住址、在职情况、用工形式、个人简历），主码是员工ID；</p>
+<p>员工基本工资表（员工ID、基本工资、岗位工资、工龄工资、生活补贴、住房补贴、交通补贴、公积金、经手人），主码是员工ID，员工ID也是外码，参照员工个人档案表的员工ID；</p>
+<p>员工工资信息表（员工ID、工资月份、加班工资、本月奖金、病假扣除、事假扣除、缺勤扣除、其他扣除、个人所得税），主码是组合主码（员工ID、工资月份），员工ID是外码，参照员工个人档案表的员工ID。</p>
+<h2 id="3-2-物理模型设计"><a href="#3-2-物理模型设计" class="headerlink" title="3.2. 物理模型设计"></a>3.2. <strong>物理模型设计</strong></h2><p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/17460400-file_1488368462606_50e.png" alt=""> </p>
+<p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/37865836-file_1488368478643_15210.png" alt=""></p>
+<h2 id="3-3-数据库完整性设计"><a href="#3-3-数据库完整性设计" class="headerlink" title="3.3. 数据库完整性设计"></a>3.3. <strong>数据库完整性设计</strong></h2><p>主要是对数据库表的三种完整性进行设计：</p>
+<p>实体完整性：通过设置主键都已实现；</p>
+<p>参照完整性：员工基本工资表和员工工资信息表中的员工编号均是外码，参照的是员工个人档案信息中的员工编号，这么设计的原因是：在系统中存在工资信息的记录，就应该有相应的档案存在才对，也就是说，发工资的对象一定是公司存在的员工对象。</p>
+<p>用户自定义完整性：在该系统中，设置了员工个人档案表中性别一栏的值必须是‘男’或者‘女’。</p>
+<h2 id="3-4-数据库安全性设计"><a href="#3-4-数据库安全性设计" class="headerlink" title="3.4. 数据库安全性设计"></a>3.4. <strong>数据库安全性设计</strong></h2><h3 id="3-4-1-用户权限设置"><a href="#3-4-1-用户权限设置" class="headerlink" title="3.4.1. 用户权限设置"></a>3.4.1. 用户权限设置</h3><p>  该系统的用户只有两种，一种是管理员，另一种是普通员工用户，管理员具有对数据库操作的所有权限，普通员工用户只有对自己的工资信息以及个人档案查询的权限，对数据库中其他对象的操作权限将受限。</p>
+<h3 id="3-4-2-数据库备份"><a href="#3-4-2-数据库备份" class="headerlink" title="3.4.2. 数据库备份"></a>3.4.2. 数据库备份</h3><p>  数据库系统可能发生各种各样的故障，大致可分为以下几类：事务内部故障、系统故障、介质故障、计算机故障，总结各类故障，对数据库的影响有两种可能性：一是数据库本身被破坏，二是数据库没有被破坏，但数据可能不正确，这是由于事务的运行被非正常终止造成的。然而，数据库遭到破坏后，我们就得想办法看能不能恢复数据库，恢复机制涉及两个关键问题是：第一，如何建立冗余数据；第二，如何利用这些冗余数据实施数据库恢复。</p>
+<p>  存储在计算机当中的数据库可能会因为某一些不确定的因素而导致破坏，这样子的话，系统信息就会遗失，对于正规大型的信息管理系统来说，这无疑是巨大的隐患。考虑到系统信息能安全保存，DBMS（SQL Server）中建立的存在于本地的数据库信息，包括mdf（数据转储）文件和ldf（登录日志）文件，我将其定期拷贝到其他备份计算机上和U盘上，以确保在本机数据库存在错误的情况下，能由建立的冗余数据恢复数据库，维护系统信息的安全与完整。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/35151560-file_1488368508530_2791.png" alt=""> </p>
+<p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/38321222-file_1488368525078_f329.png" alt=""></p>
+<h2 id="3-5-触发器设计"><a href="#3-5-触发器设计" class="headerlink" title="3.5. 触发器设计"></a>3.5. <strong>触发器设计</strong></h2><p>（1）为实现添加员工信息后自动添加用户，删除员工信息后自动删除用户，我定义了如下触发器：</p>
+<p>create trigger AddUser on [dbo].[employee] for insert</p>
+<p>as begin</p>
+<p>declare @EmployeeID char (20)</p>
+<p>select @EmployeeID = inserted.EmployeeID </p>
+<p>​         from inserted</p>
+<p>​         insert into users values(@EmployeeID,@EmployeeID,’普通用户’)</p>
+<p>End</p>
+<p>create trigger delete1 on [dbo].[employee]</p>
+<p>for delete</p>
+<p>as</p>
+<p>   begin</p>
+<p>​        delete dbo.users</p>
+<p>​        from users,deleted</p>
+<p>​        where users.ID=deleted.EmployeeID</p>
+<p>end</p>
+<p>测试：</p>
+<p>users表一开始我只是在其中插入了一条元组，新建了一个管理员用户binbin：</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/57710988-file_1488368550541_11775.png" alt=""> </p>
+<p>接着，我在employee表中插入一条元组，新建了一个员工档案，员工编号为000001：</p>
+<p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/11502572-file_1488368566492_f0e5.png" alt=""></p>
+<p>再回来刷新users表的时候，就自动加上了一个新的普通登录用户，id为000001：</p>
+<p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/77482706-file_1488368585430_ee04.png" alt=""></p>
+<p>可见，触发器设置成功了。同理，删除触发器也是这个效果。</p>
+<p>（2）实现个人所得税的自动计算，而不在程序中修改，我使用了一个计算个人所得税的触发器，代码如下：</p>
+<p>Create trigger tax on [dbo].[pay]</p>
+<p>for insert</p>
+<p>As</p>
+<p>// 工资低于1600的不收税，高于1600的按层次收税，工资越高，税收越高。</p>
+<p>update pay</p>
+<p>set tax=0</p>
+<p>where EmployeeID=pay.EmployeeID and PaySum-SickLeave-PersonalLeave-Absence-Others between 0 and 1600</p>
+<p>update pay</p>
+<p>set tax=(PaySum-SickLeave-PersonalLeave-Absence-Others-1600)*0.05</p>
+<p>where EmployeeID=pay.EmployeeID and (PaySum-SickLeave-PersonalLeave-Absence-Others-1600) between 0 and 500</p>
+<p>update pay</p>
+<p>set tax=(PaySum-SickLeave-PersonalLeave-Absence-Others-1600)*0.1-25</p>
+<p>where EmployeeID=pay.EmployeeID and (PaySum-SickLeave-PersonalLeave-Absence-Others-1600) between 500 and 2000</p>
+<p>update pay</p>
+<p>set tax=(PaySum-SickLeave-PersonalLeave-Absence-Others-1600)*0.15-125</p>
+<p>where EmployeeID=pay.EmployeeID and (PaySum-SickLeave-PersonalLeave-Absence-Others-1600) between 2000 and 5000</p>
+<p>update pay</p>
+<p>set tax=(PaySum-SickLeave-PersonalLeave-Absence-Others-1600)*0.20-375</p>
+<p>where EmployeeID=pay.EmployeeID and (PaySum-SickLeave-PersonalLeave-Absence-Others-1600) between 5000 and 20000</p>
+<p>update pay</p>
+<p>set tax=(PaySum-SickLeave-PersonalLeave-Absence-Others-1600)*0.25-1375</p>
+<p>where EmployeeID=pay.EmployeeID and (PaySum-SickLeave-PersonalLeave-Absence-Others-1600) between 20000 and 40000</p>
+<h1 id="4-详细设计与实现"><a href="#4-详细设计与实现" class="headerlink" title="4  详细设计与实现"></a>4  <strong>详细设计与实现</strong></h1><h2 id="4-1-数据库连接"><a href="#4-1-数据库连接" class="headerlink" title="4.1. 数据库连接"></a>4.1. <strong>数据库连接</strong></h2><p>数据库连接使用的方式是连接池，连接池主要设计思路是：</p>
+<p>1.连接池配置属性DBbean：里面存放可以配置的一些属性</p>
+<p>2.连接池接口IConnectionPool：里面定义一些基本的获取连接的一些方法</p>
+<p>3.接口实现ConnectionPool：对上面操作进行实现，并加入一些其他方法</p>
+<p>4.连接池管理ConnectionPoolManager：管理所有的不同的连接池，所有的连接都能通过这里进行从而获得连接。</p>
+<p>使用连接池的好处：</p>
+<p>1． 资源重用</p>
+<p>2． 更快的系统响应速度</p>
+<p>3． 统一的连接管理，避免数据库连接泄漏。</p>
+<h2 id="4-2-系统登录功能"><a href="#4-2-系统登录功能" class="headerlink" title="4.2. 系统登录功能"></a>4.2. <strong>系统登录功能</strong></h2><p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/74065032-file_1488380563542_3d5b.png" alt=""></p>
+<p>本页面是用户登录系统的页面，当用户提交登录信息，对用户进行身份及权限判断，再转入不同的页面。当用户名或密码、权限输入错误，会提示用户重新输入。为提高系统的安全性，没有登录是不能打开其它页面的，同样，权限为普通用户的用户也不能打开管理员的页面，而管理员则具有所有权限。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/49345894-file_1488380547839_17ec0.png" alt=""> </p>
+<p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/55877634-file_1488380630510_5fc4.png" alt=""></p>
+<h2 id="4-3-系统管理功能"><a href="#4-3-系统管理功能" class="headerlink" title="4.3. 系统管理功能"></a>4.3. <strong>系统管理功能</strong></h2><p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/65675626-file_1488380658387_91cf.png" alt=""> </p>
+<p>该功能可以实现修改密码、帮助功能。在修改密码时，有相应限制，如旧密码应与数据库的密码相同，新密码应输入两次，以确保不会输错。</p>
+<p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/52761013-file_1488380692228_3073.png" alt=""> </p>
+<h2 id="4-4-用户管理功能"><a href="#4-4-用户管理功能" class="headerlink" title="4.4. 用户管理功能"></a>4.4. <strong>用户管理功能</strong></h2><p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/26693379-file_1488380721298_8a15.png" alt=""> </p>
+<p>该功能可以添加系统用户，当用户已存在时会提示不能添加：</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/31509962-file_1488380739700_e9b6.png" alt=""> </p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/64187089-file_1488380765313_12a81.png" alt=""> </p>
+<p>该功能可以修改系统用户信息，如修改用户名、用户密码、用户权限，删除用户。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/94160771-file_1488380781008_e2da.png" alt=""> </p>
+<h2 id="4-5-员工信息管理功能"><a href="#4-5-员工信息管理功能" class="headerlink" title="4.5. 员工信息管理功能"></a>4.5. <strong>员工信息管理功能</strong></h2><p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/60673289-file_1488380800303_b441.png" alt=""> </p>
+<p>该功能可以添加员工信息功能，文本框后面加了*号的则为必填项目，如不填则不能添加该员工信息，因前面在设计数据库时添加了触发器，所以在此添加员工信息，则会自动添加以该员工号为用户名和密码的系统用户。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/58146683-file_1488380825793_96a7.png" alt=""> </p>
+<p>如需管理员工信息，可以点击修改，点击后会弹出该员工的信息，可以在相应文本框内修改。</p>
+<p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/1723142-file_1488380851636_3176.png" alt=""></p>
+<p>员工查询，在这里，可实现丰富的查询功能，查询条件可叠加，选择查询条件后点击查询，会弹出查询结果，在该页面点击员工号可查看该员工的详细信息。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/60476298-file_1488380871839_77f3.png" alt=""> </p>
+<h2 id="4-6-基本工资管理"><a href="#4-6-基本工资管理" class="headerlink" title="4.6. 基本工资管理"></a>4.6. <strong>基本工资管理</strong></h2><p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/61517956-file_1488380889071_1205.png" alt=""> </p>
+<p>基本工资管理功能可添加未有基本工资信息员工的基本工资，通过点击操作，将待添加基本工资的员工移动到右边，同时在下面的文本框内输入工资信息。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/98657709-file_1488380904624_13911.png" alt=""> </p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/27761704-file_1488380925945_1312d.png" alt=""> </p>
+<p>该功能同时也可修改基本工资信息，只需点击修改，则会弹出该行员工的基本工资信息，可以相应的文本框内进行修改。</p>
+<h2 id="4-7-工资发放"><a href="#4-7-工资发放" class="headerlink" title="4.7. 工资发放"></a>4.7. <strong>工资发放</strong></h2><p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/79869678-file_1488380941090_15856.png" alt=""> </p>
+<p>该功能与基本工资类似，在该页面可以选择已添加基本工资的员工，没有基本工资信息的员工是不能发放工资，同样通过点击操作，可把想要发放工资的员工移动到右边，然后在下面的文本框内输入工资信息，若该员工该月的工资信息已存在，则会提示不能添加。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/24476940-file_1488380956995_171e3.png" alt=""> </p>
+<p>管理功能则与基本工资管理类似，这里不再介绍：</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/39002863-file_1488380970862_10c1e.png" alt=""> </p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/28301072-file_1488380984511_15369.png" alt=""> </p>
+<p>​    </p>
+<h2 id="4-8-工资查询功能"><a href="#4-8-工资查询功能" class="headerlink" title="4.8. 工资查询功能"></a>4.8. <strong>工资查询功能</strong></h2><p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/76075224-file_1488381002670_1326.png" alt=""> </p>
+<p>工资查询功能可实现丰富的查询功能，跟员工信息查询功能一样，查询条件也可叠加，选择查询条件后点击查询弹出查询结果。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/7871255-file_1488381016710_2199.png" alt=""> </p>
+<p>在该页面可对查询结果进行打印。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/59168972-file_1488381031875_11bba.png" alt=""> </p>
+<p>点击查询结果的员工编号，会弹出该员工的详细工资信息，同样可以要求进行打印操作：</p>
+<p> <img src="http://om4vugm59.bkt.clouddn.com/17-3-1/85300966-file_1488381054906_cfbe.png" alt=""></p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/30864774-file_1488381071799_142c7.png" alt=""> </p>
+<h2 id="4-9-普通用户登录"><a href="#4-9-普通用户登录" class="headerlink" title="4.9. 普通用户登录"></a>4.9. <strong>普通用户登录</strong></h2><p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/41499007-file_1488381086769_547.png" alt=""> </p>
+<p>普通用户登录后能执行的功能比较少，只能修改密码、查看个人信息、查看工资信息。</p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/83737627-file_1488381100546_1251b.png" alt=""> </p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/68735376-file_1488381113050_683d.png" alt=""> </p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/80705843-file_1488381126629_1e0f.png" alt=""> </p>
+<p><img src="http://om4vugm59.bkt.clouddn.com/17-3-1/16040314-file_1488381140899_129ad.png" alt=""> </p>
+<p> 操作与管理员的操作类似，这里不再详细介绍了。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/02/salary-management-system/">salary management system</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
+        <p><span>发布时间:</span>2017-03-02, 15:49:03</p>
+        <p><span>最后更新:</span>2017-03-02, 15:52:30</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/02/salary-management-system/" title="salary management system">http://yoursite.com/2017/03/02/salary-management-system/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/02/salary-management-system/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/28/notes4/">
+                    notes4
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-范围与前景"><span class="toc-number">1.</span> <span class="toc-text">1  范围与前景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-课程设计选题"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. 课程设计选题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-课程设计的目的"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1. 课程设计的目的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-应用背景"><span class="toc-number">1.2.</span> <span class="toc-text">1.2. 应用背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-业务机遇"><span class="toc-number">1.3.</span> <span class="toc-text">1.3. 业务机遇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-业务风险"><span class="toc-number">1.4.</span> <span class="toc-text">1.4. 业务风险</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-前景概述"><span class="toc-number">1.5.</span> <span class="toc-text">1.5. 前景概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-主要特征"><span class="toc-number">1.6.</span> <span class="toc-text">1.6. 主要特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-假设与依赖"><span class="toc-number">1.7.</span> <span class="toc-text">1.7. 假设与依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-限制与排除"><span class="toc-number">1.8.</span> <span class="toc-text">1.8. 限制与排除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-项目运行环境"><span class="toc-number">1.9.</span> <span class="toc-text">1.9. 项目运行环境</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-需求分析"><span class="toc-number">2.</span> <span class="toc-text">2  需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-功能需求"><span class="toc-number">2.1.</span> <span class="toc-text">2.1. 功能需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-系统数据流图"><span class="toc-number">2.2.</span> <span class="toc-text">2.2. 系统数据流图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-概念模型分析"><span class="toc-number">2.3.</span> <span class="toc-text">2.3. 概念模型分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-实体属性图"><span class="toc-number">2.3.1.</span> <span class="toc-text">2.3.1. 实体属性图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-实体属性联系图（E-R图）"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.3.2. 实体属性联系图（E-R图）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-数据库设计"><span class="toc-number">3.</span> <span class="toc-text">3  数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-数据库逻辑结构"><span class="toc-number">3.1.</span> <span class="toc-text">3.1. 数据库逻辑结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-物理模型设计"><span class="toc-number">3.2.</span> <span class="toc-text">3.2. 物理模型设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-数据库完整性设计"><span class="toc-number">3.3.</span> <span class="toc-text">3.3. 数据库完整性设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-数据库安全性设计"><span class="toc-number">3.4.</span> <span class="toc-text">3.4. 数据库安全性设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-用户权限设置"><span class="toc-number">3.4.1.</span> <span class="toc-text">3.4.1. 用户权限设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2-数据库备份"><span class="toc-number">3.4.2.</span> <span class="toc-text">3.4.2. 数据库备份</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-触发器设计"><span class="toc-number">3.5.</span> <span class="toc-text">3.5. 触发器设计</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-详细设计与实现"><span class="toc-number">4.</span> <span class="toc-text">4  详细设计与实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-数据库连接"><span class="toc-number">4.1.</span> <span class="toc-text">4.1. 数据库连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-系统登录功能"><span class="toc-number">4.2.</span> <span class="toc-text">4.2. 系统登录功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-系统管理功能"><span class="toc-number">4.3.</span> <span class="toc-text">4.3. 系统管理功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-用户管理功能"><span class="toc-number">4.4.</span> <span class="toc-text">4.4. 用户管理功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-员工信息管理功能"><span class="toc-number">4.5.</span> <span class="toc-text">4.5. 员工信息管理功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-基本工资管理"><span class="toc-number">4.6.</span> <span class="toc-text">4.6. 基本工资管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-工资发放"><span class="toc-number">4.7.</span> <span class="toc-text">4.7. 工资发放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-工资查询功能"><span class="toc-number">4.8.</span> <span class="toc-text">4.8. 工资查询功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-9-普通用户登录"><span class="toc-number">4.9.</span> <span class="toc-text">4.9. 普通用户登录</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"salary management system　| Hello_bin　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/28/notes4/" title="下一篇: notes4">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/salary-management-system/">salary management system</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/notes4/">notes4</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/27/notes3/">notes3</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/notes2/">notes2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/learning-notes/">learning notes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/15/分簇-触摸屏精确定位Algo/">分簇+触摸屏精确定位Algo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/07/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 陈锡滨
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
