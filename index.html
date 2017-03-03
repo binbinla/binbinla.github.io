@@ -298,6 +298,16 @@
         <p>1、静态链接库与动态链接库的优点：</p>
 <p>静态链接库：代码装载速度快，执行速度略比动态链接库快；</p>
 <p>动态链接库：共享、开发模式好、减少界面交换</p>
+<p>2、由权值分别为1、12、13、4、8的叶子节点生成一颗哈夫曼树，它的带权路径长度为 ：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20160602/428302_1464865710267_072774B6B658B3603E1AA7198722775C" alt="img"></p>
+<p>3、在读取磁盘上多个顺序数据块时的效率最高：通道方式。</p>
+<p>I/O中断方式是以字节为单位，DMA控制方式是以一个连续的数据块为单位，I/O通道控制方式是DMA控制方式的发展，是以一组数据块为单位的，即可以连续读取多个数据块。</p>
+<p>4、进程间的通信方式：管道、共享内存、消息队列、socket、信号量。</p>
+<p>5、TCP/IP建立连接的三次握手：第一次握手：客户端向服务器端发送SYN包（syn＝j），进入SYN_SEND状态，等待服务器确认。第二次握手：服务器收到SYN包，确认SYN，此时syn＝j+1，同时发送一个SYN包（syn＝k）即SYN＋ACK包，此时服务器进入SYN_RECV状态；第三次握手：客户端收到SYN＋ACK包，向服务器发送ACK确认包，此时客户端和服务器端均进入ESTABLISHED状态。</p>
+<p>其中有一个半连接状态：服务器维护一个半连接队列，该队列卫每个客户端SYN包开设一个条目，标明服务器已经接到SYN包，并向客户端发出确认，这些条目表示的连接处于SYN_RECV状态，得到客户端的确认后进入ESTABLISHED状态。</p>
+<p>6、同一进程中的线程不共享的部分是：栈空间，栈是线程独有的，保存其运行状态和局部自动变量的。栈在线程开始的时候初始化，每个线程的栈相互独立，是线程安全的。</p>
+<p>7、虚拟局域网（VLAN）是一组逻辑上的设备和用户，这些设备和用户并不受物理位置的限制，可以根据功能、部门及应用等因素将它们组织起来，相互之间的通信就好像它们在<a href="http://baike.baidu.com/view/4200848.htm" target="_blank" rel="external">同一个网段</a>中一样，由此得名虚拟局域网。VLAN是一种比较新的技术，工作在<a href="http://baike.baidu.com/view/38361.htm" target="_blank" rel="external">OSI参考模型</a>的第2层和第3层，一个VLAN就是一个<a href="http://baike.baidu.com/view/291982.htm" target="_blank" rel="external">广播域</a>，VLAN之间的通信是通过第3层的<a href="http://baike.baidu.com/view/1360.htm" target="_blank" rel="external">路由器</a>来完成的。与传统的<a href="http://baike.baidu.com/view/1598669.htm" target="_blank" rel="external">局域网技术</a>相比较，VLAN技术更加灵活，它具有以下优点： 网络设备的移动、添加和修改的管理开销减少；可以控制<a href="http://baike.baidu.com/view/35385.htm" target="_blank" rel="external">广播</a>活动；可提高<a href="http://baike.baidu.com/view/3487.htm" target="_blank" rel="external">网络</a>的安全性。</p>
+<p>在计算机网络中，一个二层网络可以被划分为多个不同的广播域，一个广播域对应了一个特定的用户组，默认情况下这些不同的广播域是相互隔离的。不<u>同的广播域之间想要通信，需要通过一个或多个路由器。</u>这样的一个广播域就称为VLAN。</p>
 
       
     </div>
