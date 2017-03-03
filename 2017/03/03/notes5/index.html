@@ -15,25 +15,22 @@
 
 
 
-<meta name="description" content="1、折半查找、顺序查找、分块查找，平均查找长度的比较：
-折半查找 最小；
-分快查找，是将顺序表分为若干块，块内元素顺序任意，块间有序，即前一块中的最大值小于后一块中的最小值。并且有一张索引表，每一项存放每一块的最大值和指向该块第一个元素的指针。索引表有序，块内无序。所以，块间查找用二分查找，块内用顺序查找，效率介于顺序和二分之间。
-2、链式存储的有序数据不能使用折半查找，因为无法直接访问折半时一半">
+<meta name="description" content="1、静态链接库与动态链接库的优点：
+静态链接库：代码装载速度快，执行速度略比动态链接库快；
+动态链接库：共享、开发模式好、减少界面交换">
 <meta property="og:type" content="article">
-<meta property="og:title" content="notes4">
-<meta property="og:url" content="http://yoursite.com/2017/02/28/notes4/index.html">
+<meta property="og:title" content="notes5">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/notes5/index.html">
 <meta property="og:site_name" content="Hello_bin">
-<meta property="og:description" content="1、折半查找、顺序查找、分块查找，平均查找长度的比较：
-折半查找 最小；
-分快查找，是将顺序表分为若干块，块内元素顺序任意，块间有序，即前一块中的最大值小于后一块中的最小值。并且有一张索引表，每一项存放每一块的最大值和指向该块第一个元素的指针。索引表有序，块内无序。所以，块间查找用二分查找，块内用顺序查找，效率介于顺序和二分之间。
-2、链式存储的有序数据不能使用折半查找，因为无法直接访问折半时一半">
-<meta property="og:updated_time" content="2017-02-28T16:25:13.185Z">
+<meta property="og:description" content="1、静态链接库与动态链接库的优点：
+静态链接库：代码装载速度快，执行速度略比动态链接库快；
+动态链接库：共享、开发模式好、减少界面交换">
+<meta property="og:updated_time" content="2017-03-03T15:30:13.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="notes4">
-<meta name="twitter:description" content="1、折半查找、顺序查找、分块查找，平均查找长度的比较：
-折半查找 最小；
-分快查找，是将顺序表分为若干块，块内元素顺序任意，块间有序，即前一块中的最大值小于后一块中的最小值。并且有一张索引表，每一项存放每一块的最大值和指向该块第一个元素的指针。索引表有序，块内无序。所以，块间查找用二分查找，块内用顺序查找，效率介于顺序和二分之间。
-2、链式存储的有序数据不能使用折半查找，因为无法直接访问折半时一半">
+<meta name="twitter:title" content="notes5">
+<meta name="twitter:description" content="1、静态链接库与动态链接库的优点：
+静态链接库：代码装载速度快，执行速度略比动态链接库快；
+动态链接库：共享、开发模式好、减少界面交换">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -65,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>notes4 | Hello_bin</title>
+<title>notes5 | Hello_bin</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -269,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-notes4" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-notes5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/28/notes4/" class="article-date">
-      <time datetime="2017-02-28T15:37:45.000Z" itemprop="datePublished">2017-02-28</time>
+      <a href="/2017/03/03/notes5/" class="article-date">
+      <time datetime="2017-03-03T14:37:20.000Z" itemprop="datePublished">2017-03-03</time>
 </a>
 
 
@@ -288,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      notes4
+      notes5
     </h1>
   
 
@@ -309,16 +306,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>1、折半查找、顺序查找、分块查找，平均查找长度的比较：</p>
-<p>折半查找 最小；</p>
-<p>分快查找，是将顺序表分为若干块，块内元素顺序任意，块间有序，即前一块中的最大值小于后一块中的最小值。并且有一张索引表，每一项存放每一块的最大值和指向该块第一个元素的指针。索引表有序，块内无序。所以，块间查找用二分查找，块内用顺序查找，效率介于顺序和二分之间。</p>
-<p>2、链式存储的有序数据不能使用折半查找，因为无法直接访问折半时一半的位置处的元素。</p>
-<p>3、一趟快速排序意思是：寻找一个支点，将该序列位置整个调整一边，</p>
-<p>注意：支点不一定是左边第一个数，可以任意选的。</p>
-<p>4、KMP算法下，长为n的字符串中匹配长度为m的子串的复杂度为</p>
-<p>最好情况：每趟匹配不成功都是在第一个字符，即每趟都只需匹配一次就知道该趟是否匹配。O(m+n)</p>
-<p>最坏情况：每趟匹配不成功都是在最后一个字符。时间复杂度O(m*n)。</p>
-<p>5、hadoop 有单机版，伪分布一个节点，分布式。</p>
+        <p>1、静态链接库与动态链接库的优点：</p>
+<p>静态链接库：代码装载速度快，执行速度略比动态链接库快；</p>
+<p>动态链接库：共享、开发模式好、减少界面交换</p>
 
       
     </div>
@@ -327,13 +317,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/28/notes4/">notes4</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/03/notes5/">notes5</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
-        <p><span>发布时间:</span>2017-02-28, 23:37:45</p>
-        <p><span>最后更新:</span>2017-03-01, 00:25:13</p>
+        <p><span>发布时间:</span>2017-03-03, 22:37:20</p>
+        <p><span>最后更新:</span>2017-03-03, 23:30:13</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/28/notes4/" title="notes4">http://yoursite.com/2017/02/28/notes4/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/02/28/notes4/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/03/notes5/" title="notes5">http://yoursite.com/2017/03/03/notes5/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/03/notes5/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -345,16 +335,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/02/salary-management-system/">
-                    salary management system
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/27/notes3/">
-                    notes3
+                <a href="/2017/03/02/salary-management-system/">
+                    salary management system
                 </a>
             </div>
         
@@ -402,7 +386,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"notes4　| Hello_bin　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"notes5　| Hello_bin　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -422,15 +406,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/02/salary-management-system/" title="上一篇: salary management system">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/27/notes3/" title="下一篇: notes3">
+            <a href="/2017/03/02/salary-management-system/" title="下一篇: salary management system">
                 <i class="fa fa-angle-right"></i>
             </a>
         
