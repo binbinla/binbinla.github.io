@@ -16,24 +16,24 @@
 
 
 <meta name="description" content="2017/02/24  
-1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得
-2、  我们在写程序时，通过getSystemService获">
+1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得。
+2、  我们在写程序时，通过getSystemService">
 <meta property="og:type" content="article">
 <meta property="og:title" content="learning notes">
 <meta property="og:url" content="http://yoursite.com/2017/02/25/learning-notes/index.html">
 <meta property="og:site_name" content="Hello_bin">
 <meta property="og:description" content="2017/02/24  
-1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得
-2、  我们在写程序时，通过getSystemService获">
+1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得。
+2、  我们在写程序时，通过getSystemService">
 <meta property="og:image" content="http://yoursite.com/C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\aa8b650db1474ecbb927121134a67573\326b986a2981495c94d961c19b17557d.jpg">
 <meta property="og:image" content="http://yoursite.com/C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\9fb3a9cd72d5487f901f6c76fa02e3dc\1d7c9be4e7d04c54b378497cc34dfb24.jpg">
 <meta property="og:image" content="http://yoursite.com/C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\d1356cfa5f52490fb41f33996e518c5f\ukuz2ghd1]]0.png">
-<meta property="og:updated_time" content="2017-02-25T04:31:15.756Z">
+<meta property="og:updated_time" content="2017-03-11T15:32:54.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="learning notes">
 <meta name="twitter:description" content="2017/02/24  
-1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得
-2、  我们在写程序时，通过getSystemService获">
+1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得。
+2、  我们在写程序时，通过getSystemService">
 <meta name="twitter:image" content="http://yoursite.com/C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\aa8b650db1474ecbb927121134a67573\326b986a2981495c94d961c19b17557d.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -311,7 +311,7 @@
       
           
         <p> <strong>2017/02/24</strong>  </p>
-<p>1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得</p>
+<p>1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得。</p>
 <p>2、  我们在写程序时，通过getSystemService获得XXXManager,在XXXManager中保存了一个IXXX变量，这个变量可能是Proxy类型，也可能是Stub类型，这个过程被asInterface函数屏蔽了。</p>
 <p>3、Context是一个抽象类，ContextWrapper是对Context的封装，它包含一个Context类型的变量,ContextWrapper的功能函数内部其实都是调用里面的Context类型变量完成的。Application,Service,Activity等都是直接或者间接继承自ContextWrapper,但是并没有真正的实现其中的功能，Application，Service，Activity中关于Context的功能都是通过其内部的Context类型变量完成的，而这个变量的真实对象必定是ContextImpl，所以每创建一个Application,Activity,Servcice便会创建一个ContextImpl,并且这些ContextImpl中的mPackages和mResources变量都是一样的，所以不管使用Acitivty还是Service调用getResources得到相同的结果。</p>
 <p>4、在一个apk中，Context的数量等于Activity个数+Service个数+1。</p>
@@ -751,7 +751,7 @@ case 6:
         <p><span>本文标题:</span><a href="/2017/02/25/learning-notes/">learning notes</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
         <p><span>发布时间:</span>2017-02-25, 11:32:19</p>
-        <p><span>最后更新:</span>2017-02-25, 12:31:15</p>
+        <p><span>最后更新:</span>2017-03-11, 23:32:54</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/25/learning-notes/" title="learning notes">http://yoursite.com/2017/02/25/learning-notes/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/02/25/learning-notes/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
