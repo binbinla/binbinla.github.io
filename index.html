@@ -297,7 +297,7 @@
           
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成答题思路不清晰，会影响后面的回答。</p>
 <p>   下面我就此次面试题目以及答案做个总结，欢迎大家共同探讨。</p>
-<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><h2 id="1、Listview如何优化？"><a href="#1、Listview如何优化？" class="headerlink" title="1、Listview如何优化？"></a>1、Listview如何优化？</h2><p>  对于Android开发者来说，listview是一个熟客了。它以列表的形式展示具体内容，并且能够根据数据的长度自适应显示。列表数据的显示需要4个元素，分别为：</p>
+<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><h2 id="Listview如何优化？"><a href="#Listview如何优化？" class="headerlink" title="-Listview如何优化？"></a>-Listview如何优化？</h2><p>  对于Android开发者来说，listview是一个熟客了。它以列表的形式展示具体内容，并且能够根据数据的长度自适应显示。列表数据的显示需要4个元素，分别为：</p>
 <p>(1)用来展示列表的Listview；</p>
 <p>(2)用来把数据映射到Listview上的Adapter；</p>
 <p>(3)需要展示的数据集；</p>
@@ -312,7 +312,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> View <span class="title">getView</span><span class="params">(<span class="keyword">int</span> position,View covertView,ViewGroup parent)</span></span>&#123;</div><div class="line">  View view = <span class="keyword">null</span>;</div><div class="line">  <span class="comment">// 有视图缓存，则复用视图</span></div><div class="line">  <span class="keyword">if</span>(covertView != <span class="keyword">null</span>)&#123;</div><div class="line">    view = covertView;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="comment">// 重新加载视图</span></div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 进行数据绑定</span></div><div class="line">  <span class="comment">// 返回Item View</span></div><div class="line">  <span class="keyword">return</span> View;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>  总的来说，listview就是通过adapter模式、观察者模式、Item View复用机制实现了高效的列表显示。</p>
 <p>  顺便提一下GridView，它与listview非常相似，同样继承自AbsListView，不同的是布局方式，GridView通过网格布局形式展示。本是同根生的listview和GridView有很好的的兼容性，同一个adapter可以设置给listview或者GridView，不需要半点修改。当然也可以同时设置给这两个视图，这样一来，两个视图都作为该adapter的观察者。</p>
-<h2 id="2、XML格式数据、JSON格式数据如何解析？"><a href="#2、XML格式数据、JSON格式数据如何解析？" class="headerlink" title="2、XML格式数据、JSON格式数据如何解析？"></a>2、XML格式数据、JSON格式数据如何解析？</h2><p>  数据要以什么样的格式在网络上传输呢？随便传递一段文本肯定是不行的，因为另一方不知道这段文本的用途是什么。因此，一般我们会在网络上传输一些格式化后的数据，这种数据会有一定的结构规格和语义，当另一方收到数据消息之后就可以按照相同的结构规格进行解析，从而取出他想要的那部分内容。在网络上传输数据最常用的格式有两种：XML和JSON。</p>
+<h2 id="XML格式数据、JSON格式数据如何解析？"><a href="#XML格式数据、JSON格式数据如何解析？" class="headerlink" title="-XML格式数据、JSON格式数据如何解析？"></a>-XML格式数据、JSON格式数据如何解析？</h2><p>  数据要以什么样的格式在网络上传输呢？随便传递一段文本肯定是不行的，因为另一方不知道这段文本的用途是什么。因此，一般我们会在网络上传输一些格式化后的数据，这种数据会有一定的结构规格和语义，当另一方收到数据消息之后就可以按照相同的结构规格进行解析，从而取出他想要的那部分内容。在网络上传输数据最常用的格式有两种：XML和JSON。</p>
 <p>  XML格式数据解析较常用的有两种：pull解析和sax解析。</p>
 <p>  pull解析(结合eg来讲)：</p>
 <p>  通过URL参数结合http协议访问服务器，得到服务器返回的数据。接下来，要获取到一个XmlPullParserFactory的实例，并借助这个实例得到XmlPullParser对象，然后调用XmlPullParser的setInput()方法将服务器返回的XML数据设置进去就可以开始解析了。解析的过程也非常简单，通过getEventType()可以得到当前的解析事件，然后在一个while循环中不断地进行解析，如果当前的解析事件不等于XMLPullParser.END_DOCUMENT，说明解析工作还没完成，调用next()方法后可以获取下一个解析事件。</p>
@@ -337,7 +337,7 @@
 <p> Person person = gson.fromJson(jsonData, Person.class);</p>
 <p> 如果需要解析的是一段 JSON数组会稍微麻烦一点，我们需要借助 TypeToken将期望解 析成的数据类型传入到 fromJson()方法中，如下所示：</p>
 <p> List<person> people = gson.fromJson(jsonData, new TypeToken<list<person>&gt;() {}.getType()); </list<person></person></p>
-<h2 id="3、Android网络通信技术"><a href="#3、Android网络通信技术" class="headerlink" title="3、Android网络通信技术"></a>3、Android网络通信技术</h2><p>  Android手机肯定也是可以上网的，所以作为开发者的我们就需要考虑 如何利用网络来编写出更加出色的应用程序，像 QQ、微博、新闻等常见的应用都会大量地 使用到网络技术。本章主要会讲述如何在手机端使用 HTTP协议和服务器端进行网络交互， 并对服务器返回的数据进行解析，这也是 Android中最常使用到的网络技术了。</p>
+<h2 id="Android网络通信技术"><a href="#Android网络通信技术" class="headerlink" title="-Android网络通信技术"></a>-Android网络通信技术</h2><p>  Android手机肯定也是可以上网的，所以作为开发者的我们就需要考虑 如何利用网络来编写出更加出色的应用程序，像 QQ、微博、新闻等常见的应用都会大量地 使用到网络技术。本章主要会讲述如何在手机端使用 HTTP协议和服务器端进行网络交互， 并对服务器返回的数据进行解析，这也是 Android中最常使用到的网络技术了。</p>
 <p>  在 Android上发送 HTTP请求的方式一般有两种，HttpURLConnection和 HttpClient。</p>
 <p>  <strong>HttpURLConnection：</strong></p>
 <p>首先我们要获取到HttpURLConnection实例，一般只需new出一个URL对象，并传入目标的网络地址，然后调用一下 openConnection()方法即可，如下所示： </p>
@@ -375,6 +375,8 @@
 <p>String response = EntityUtils.toString(entity); </p>
 <p>注意如果服务器返回的数据是带有中文的，直接调用 EntityUtils.toString()方法进行转换 会有乱码的情况出现，这个时候只需要在转换的时候将字符集指定成 utf-8就可以了，如下 所示： </p>
 <p>String response = EntityUtils.toString(entity, “utf-8”);</p>
+<p>  由于要联网，所以要在AndroidManifest.xml里面加入连接网络的权限：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span> /&gt;</div></pre></td></tr></table></figure>
 <p>  未完待续。</p>
 
       
