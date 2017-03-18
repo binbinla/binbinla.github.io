@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="陈锡滨" />
+
+
+
+<meta name="description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="interview experience one">
+<meta property="og:url" content="http://yoursite.com/2017/03/18/interview-experience-one/index.html">
+<meta property="og:site_name" content="Hello_bin">
+<meta property="og:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
+<meta property="og:updated_time" content="2017-03-18T06:45:09.404Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="interview experience one">
+<meta name="twitter:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Hello_bin" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>interview experience one | Hello_bin</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="http://a3.qpic.cn/psb?/V12kfUms1jUtSk/cCoFA61adBk6d4v6jeHkIANgE0MpSdVNA*Mff6vdZoA!/m/dAoBAAAAAAAAnull&amp;bo=gAJVAwAAAAAFB*A!&amp;rf=photolist&amp;t=5" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">陈锡滨</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">High on Algo</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP-SQL/">JSP+SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/">interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning-notes/">learning notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/">notes</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">广东工业大学就读本科生，软件工程专业，爱篮球，爱生活，android方向开发爱好者，对技术充满好奇。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">陈锡滨</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="http://a3.qpic.cn/psb?/V12kfUms1jUtSk/cCoFA61adBk6d4v6jeHkIANgE0MpSdVNA*Mff6vdZoA!/m/dAoBAAAAAAAAnull&amp;bo=gAJVAwAAAAAFB*A!&amp;rf=photolist&amp;t=5" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">陈锡滨</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">High on Algo</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-interview-experience-one" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/18/interview-experience-one/" class="article-date">
+      <time datetime="2017-03-18T06:44:06.000Z" itemprop="datePublished">2017-03-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      interview experience one
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interview/">interview</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成答题思路不清晰，会影响后面的回答。</p>
+<p>   下面我就此次面试题目以及答案做个总结，欢迎大家共同探讨。</p>
+<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><h2 id="1、Listview如何优化？"><a href="#1、Listview如何优化？" class="headerlink" title="1、Listview如何优化？"></a>1、Listview如何优化？</h2><p>  对于Android开发者来说，listview是一个熟客了。它以列表的形式展示具体内容，并且能够根据数据的长度自适应显示。列表数据的显示需要4个元素，分别为：</p>
+<p>(1)用来展示列表的Listview；</p>
+<p>(2)用来把数据映射到Listview上的Adapter；</p>
+<p>(3)需要展示的数据集；</p>
+<p>(4)数据展示的View模板。</p>
+<p>  Listview控件只负责加载、管理视图(每项数据称为Item View)。至于有多少数据项、每一项数据是如何显示的它并不关心，这一切交由adapter类去实现，通过adapter模式，用户只需要重写几个函数就可以将listview的每项数据构建出来。需要重写的函数有：</p>
+<p>(1)getCount()函数：获取数据的个数；</p>
+<p>(2)getItem(int )函数：获取position位置的数据；</p>
+<p>(3)getItemId(int )函数：获取position位置的数据Id，一般直接返回position即可；</p>
+<p>(4)getView(int View,ViewGroup)函数：获取position位置上的Item View视图。</p>
+<p>  每个Item View是通过getView()函数实现，在这个函数中用户必须构建Item View，然后将该position位置上的数据绑定到Item View上。这样一来，数据和视图就绑定在一起了。</p>
+<p>  但是，重点来了。并不是有多少数据项就会生成多少Item View，Android采用了视图复用的形式来避免创建过多的Item View，这样能够非常有效地提升性能和降低内存占用率。在处理数据量较大时，listview会构建铺满屏幕所需的Item View个数，当屏幕向下滚动时，第一项数据就会滚出屏幕的可见范围之内，并且进入listview的一个recycler中，recycler会将该视图缓存。此时要加载新插入的视图，listview会先从recycler中获取视图，如果视图存在，那么用户可以直接使用该缓存视图，否则才重新创建视图。<strong>也就是会有视图复用判断逻辑：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> View <span class="title">getView</span><span class="params">(<span class="keyword">int</span> position,View covertView,ViewGroup parent)</span></span>&#123;</div><div class="line">  View view = <span class="keyword">null</span>;</div><div class="line">  <span class="comment">// 有视图缓存，则复用视图</span></div><div class="line">  <span class="keyword">if</span>(covertView != <span class="keyword">null</span>)&#123;</div><div class="line">    view = covertView;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="comment">// 重新加载视图</span></div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 进行数据绑定</span></div><div class="line">  <span class="comment">// 返回Item View</span></div><div class="line">  <span class="keyword">return</span> View;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  总的来说，listview就是通过adapter模式、观察者模式、Item View复用机制实现了高效的列表显示。</p>
+<p>  顺便提一下GridView，它与listview非常相似，同样继承自AbsListView，不同的是布局方式，GridView通过网格布局形式展示。本是同根生的listview和GridView有很好的的兼容性，同一个adapter可以设置给listview或者GridView，不需要半点修改。当然也可以同时设置给这两个视图，这样一来，两个视图都作为该adapter的观察者。</p>
+<h2 id="2、XML格式数据、JSON格式数据如何解析？"><a href="#2、XML格式数据、JSON格式数据如何解析？" class="headerlink" title="2、XML格式数据、JSON格式数据如何解析？"></a>2、XML格式数据、JSON格式数据如何解析？</h2><p>  数据要以什么样的格式在网络上传输呢？随便传递一段文本肯定是不行的，因为另一方不知道这段文本的用途是什么。因此，一般我们会在网络上传输一些格式化后的数据，这种数据会有一定的结构规格和语义，当另一方收到数据消息之后就可以按照相同的结构规格进行解析，从而取出他想要的那部分内容。在网络上传输数据最常用的格式有两种：XML和JSON。</p>
+<p>  XML格式数据解析较常用的有两种：pull解析和sax解析。</p>
+<p>  pull解析(结合eg来讲)：</p>
+<p>  通过URL参数结合http协议访问服务器，得到服务器返回的数据。接下来，要获取到一个XmlPullParserFactory的实例，并借助这个实例得到XmlPullParser对象，然后调用XmlPullParser的setInput()方法将服务器返回的XML数据设置进去就可以开始解析了。解析的过程也非常简单，通过getEventType()可以得到当前的解析事件，然后在一个while循环中不断地进行解析，如果当前的解析事件不等于XMLPullParser.END_DOCUMENT，说明解析工作还没完成，调用next()方法后可以获取下一个解析事件。</p>
+<p>  在while循环中，我们通过getName()方法得到当前结点的名字，如果发现结点名等于id、name或version，就调用nextText()方法来获取结点内具体的内容，每当解析完一个app结点后就将获取到的内容打印出来：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends Activity implements OnClickListener &#123; </div><div class="line">  …… </div><div class="line">  private void sendRequestWithHttpClient() &#123; </div><div class="line">    new Thread(new Runnable() &#123; </div><div class="line">      @Override </div><div class="line">      public void run() &#123;</div><div class="line">        try &#123; </div><div class="line">          HttpClient httpClient = new DefaultHttpClient(); </div><div class="line">          // 指定访问的服务器地址是电脑本机 </div><div class="line">          HttpGet httpGet = new HttpGet("http://10.0.2.2/</div><div class="line">get_data.json");</div><div class="line">          HttpResponse httpResponse = httpClient.execute(httpGet); 			                                       if(httpResponse.getStatusLine().getStatusCode()==200)&#123; </div><div class="line">            // 请求和响应都成功了</div><div class="line">            HttpEntity entity = httpResponse.getEntity(); </div><div class="line">            String response = EntityUtils.toString(entity,</div><div class="line">"utf-8");</div><div class="line">            parseJSONWithJSONObject(response);</div><div class="line">            &#125;catch (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">&#125;</div><div class="line">  &#125;).start();</div><div class="line">  &#125;</div><div class="line">        private void parseXMLWithPull(String xmlData) &#123; </div><div class="line">          try &#123; </div><div class="line">            XmlPullParserFactory factory = XmlPullParserFactory.newInstance(); </div><div class="line">            XmlPullParser xmlPullParser = factory.newPullParser(); </div><div class="line">            xmlPullParser.setInput(new StringReader(xmlData));</div><div class="line">            int eventType = xmlPullParser.getEventType(); </div><div class="line">            String id = ""; </div><div class="line">            String name = "";</div><div class="line">            String version = ""; </div><div class="line">            while (eventType != XmlPullParser.END_DOCUMENT) &#123; </div><div class="line">              String nodeName = xmlPullParser.getName(); </div><div class="line">              switch (eventType) &#123;</div><div class="line">                  // 开始解析某个结点 </div><div class="line">                case XmlPullParser.START_TAG: &#123; </div><div class="line">                  if ("id".equals(nodeName)) &#123; </div><div class="line">                    id = xmlPullParser.nextText();</div><div class="line">                  &#125; else if ("name".equals(nodeName)) &#123;</div><div class="line">                    name = xmlPullParser.nextText();</div><div class="line">                  &#125; else if ("version".equals(nodeName)) &#123; </div><div class="line">                    version = xmlPullParser.nextText(); </div><div class="line">                  &#125; break; </div><div class="line">                &#125;</div><div class="line"></div><div class="line">// 完成解析某个结点 </div><div class="line">                case XmlPullParser.END_TAG: &#123; </div><div class="line">                  if ("app".equals(nodeName)) &#123; </div><div class="line">                    Log.d("MainActivity", "id is " + id);</div><div class="line">                    Log.d("MainActivity", "name is " + name); </div><div class="line">                    Log.d("MainActivity", "version is " + version);</div><div class="line">                  &#125;</div><div class="line">                  break; </div><div class="line">                &#125; </div><div class="line">                default: break; </div><div class="line">              &#125; </div><div class="line">              eventType = xmlPullParser.next();</div><div class="line">&#125;</div><div class="line">          &#125; catch (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">          &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  sax解析：也是一种常用的解析方式，虽然它的用法比pull解析更复杂一些，但在语义方面会跟更加的清楚。</p>
+<p>  通常情况下我们会新建一个类继承自Defaulthandler，并重写父类的5个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyHandler</span> <span class="keyword">extends</span> <span class="title">DefaultHandler</span> </span>&#123; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startDocument</span><span class="params">()</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startElement</span><span class="params">(String uri, String localName, String qName, Attributes attributes)</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">characters</span><span class="params">(<span class="keyword">char</span>[] ch, <span class="keyword">int</span> start, <span class="keyword">int</span> length)</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endElement</span><span class="params">(Stringuri,StringlocalName,StringqName)</span><span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endDocument</span><span class="params">()</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  startDocument()方法会在开始XML解析的时候调用，startElement()方法会在开始解析某个结点的时候调用，characters()方法会在获取结点中内容的时候调用，endElement()方法会在完成解析某个结点的时候调用，endDocument()方法会在完成整个XML解析的时候调用。其中，startElement()、characters()、endElement()这三个方法是有参数的，从XML解析出的数据就会以参数的形式传入到这些方法中。需要注意的是，在获取结点中的内容时，characters()方法可能会被调用多次。</p>
+<p>  在得到了服务器返回的数据后，我们这次去调用 parseXMLWithSAX()方法(自定义的)来解析 XML 数据。parseXMLWithSAX()方法中先是创建了一个 SAXParserFactory的对象，然后再获取到 XMLReader对象，接着将我们编写的 ContentHandler的实例设置到 XMLReader中，最后调 用 parse()方法开始执行解析就好了。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseXMLWithSAX</span><span class="params">(String xmlData)</span> </span>&#123; </div><div class="line">  <span class="keyword">try</span> &#123; </div><div class="line">    SAXParserFactory factory = SAXParserFactory.newInstance(); </div><div class="line">    XMLReader xmlReader = factory.newSAXParser().getXMLReader();</div><div class="line">    ContentHandler handler = <span class="keyword">new</span> ContentHandler(); </div><div class="line">    <span class="comment">// 将ContentHandler(一个继承自Defaulthandler的类)的实例设置到XMLReader中</span></div><div class="line">    xmlReader.setContentHandler(handler); </div><div class="line">    <span class="comment">// 开始执行解析 </span></div><div class="line">    xmlReader.parse(<span class="keyword">new</span> InputSource(<span class="keyword">new</span> StringReader(xmlData))); </div><div class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">    e.printStackTrace(); </div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  JSON格式数据解析较常用的有两种：使用JSONObject、使用GSON。</p>
+<p>  比起XML，JSON的主要优势在于它的体积更小，在网络上传输的时候可以更省流量。但缺点在于，它的语义性较差，看起来不如XML直观。</p>
+<p>  JSONObject：得到服务器返回的数据后，我们可以通过getJSONObject(int position)方法来获取第i个JSON对象，然后再对应地取出字段内容。eg如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">      假设文件中的JSON格式数据如下：</div><div class="line">      [&#123;<span class="string">"id"</span>:<span class="string">"5"</span>,<span class="string">"version"</span>:<span class="string">"5.5"</span>,<span class="string">"name"</span>:<span class="string">"Angry Birds"</span>&#125;, </div><div class="line">       &#123;<span class="string">"id"</span>:<span class="string">"6"</span>,<span class="string">"version"</span>:<span class="string">"7.0"</span>,<span class="string">"name"</span>:<span class="string">"Clash of Clans"</span>&#125;, </div><div class="line">       &#123;<span class="string">"id"</span>:<span class="string">"7"</span>,<span class="string">"version"</span>:<span class="string">"3.5"</span>,<span class="string">"name"</span>:<span class="string">"Hey Day"</span>&#125;]</div><div class="line">       ……</div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseJSONWithJSONObject</span><span class="params">(String jsonData)</span> </span>&#123;</div><div class="line">          <span class="keyword">try</span> &#123; </div><div class="line">            JSONArray jsonArray = <span class="keyword">new</span> JSONArray(jsonData); </div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; jsonArray.length(); i++) &#123; </div><div class="line">              JSONObject jsonObject = jsonArray.getJSONObject(i); </div><div class="line">              String id = jsonObject.getString(<span class="string">"id"</span>); </div><div class="line">              String name = jsonObject.getString(<span class="string">"name"</span>); </div><div class="line">              String version = jsonObject.getString(<span class="string">"version"</span>); </div><div class="line">              Log.d(<span class="string">"MainActivity"</span>, <span class="string">"id is "</span> + id); </div><div class="line">              Log.d(<span class="string">"MainActivity"</span>, <span class="string">"name is "</span> + name); </div><div class="line">              Log.d(<span class="string">"MainActivity"</span>, <span class="string">"version is "</span> + version);</div><div class="line">              &#125; </div><div class="line">          &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace(); </div><div class="line">          &#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  GSON：谷歌提供的开源库可以让解析JSON数据的工作简单到让你不敢想象的地步，不过要使用此功能的话必须在项目中添加一个GSON的Jar包。。首先我们需要将GSON的资源压缩包下载下来， 下载地址是：<a href="http://code.google.com/p/google-gson/downloads/list。" target="_blank" rel="external">http://code.google.com/p/google-gson/downloads/list。</a> 其中 gson-2.2.4.jar这个文件就是我们所需要的了，现在将它拷贝到项目的 libs目录下，GSON库就会自动添加到 项目中了。</p>
+<p>那么GSON库究竟是神奇在哪里呢？其实它主要就是可以将一段JSON格式的字符串自 动映射成一个对象，从而不需要我们再手动去编写代码进行解析了。 </p>
+<p>比如说一段 JSON格式的数据如下所示：</p>
+<p> {“name”:”Tom”,”age”:20} </p>
+<p>那我们就可以定义一个 Person类，并加入 name和 age这两个字段，然后只需简单地调 用如下代码就可以将 JSON数据自动解析成一个 Person对象了： </p>
+<p>Gson gson = new Gson();</p>
+<p> Person person = gson.fromJson(jsonData, Person.class);</p>
+<p> 如果需要解析的是一段 JSON数组会稍微麻烦一点，我们需要借助 TypeToken将期望解 析成的数据类型传入到 fromJson()方法中，如下所示：</p>
+<p> List<person> people = gson.fromJson(jsonData, new TypeToken<list<person>&gt;() {}.getType()); </list<person></person></p>
+<h2 id="3、Android网络通信技术"><a href="#3、Android网络通信技术" class="headerlink" title="3、Android网络通信技术"></a>3、Android网络通信技术</h2><p>  Android手机肯定也是可以上网的，所以作为开发者的我们就需要考虑 如何利用网络来编写出更加出色的应用程序，像 QQ、微博、新闻等常见的应用都会大量地 使用到网络技术。本章主要会讲述如何在手机端使用 HTTP协议和服务器端进行网络交互， 并对服务器返回的数据进行解析，这也是 Android中最常使用到的网络技术了。</p>
+<p>  在 Android上发送 HTTP请求的方式一般有两种，HttpURLConnection和 HttpClient。</p>
+<p>  <strong>HttpURLConnection：</strong></p>
+<p>首先我们要获取到HttpURLConnection实例，一般只需new出一个URL对象，并传入目标的网络地址，然后调用一下 openConnection()方法即可，如下所示： </p>
+<p>URL url = new URL(“<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“); </p>
+<p>HttpURLConnection connection = (HttpURLConnection) url.openConnection(); </p>
+<p>得到了 HttpURLConnection的实例之后，我们可以设置一下 HTTP请求所使用的方法。 常用的方法主要有两个，GET和 POST。GET表示希望从服务器那里获取数据，而 POST则 表示希望提交数据给服务器。写法如下： connection.setRequestMethod(“GET”); </p>
+<p>接下来就可以进行一些自由的定制了，比如设置连接超时、读取超时的毫秒数，以及服 务器希望得到的一些消息头等。这部分内容根据自己的实际情况进行编写，示例写法如下：</p>
+<p> connection.setConnectTimeout(8000); </p>
+<p>connection.setReadTimeout(8000); </p>
+<p>之后再调用 getInputStream()方法就可以获取到服务器返回的输入流了，剩下的任务就是 对输入流进行读取，如下所示： InputStream in = connection.getInputStream();<br>最后可以调用 disconnect()方法将这个 HTTP连接关闭掉，如下所示：</p>
+<p> connection.disconnect(); </p>
+<p>那么如果是想要提交数据给服务器应该怎么办呢？其实也不复杂，只需要将 HTTP请求 的方法改成 POST，并在获取输入流之前把要提交的数据写出即可。注意每条数据都要以键 值对的形式存在，数据与数据之间用&amp;符号隔开，比如说我们想要向服务器提交用户名和密 码，就可以这样写：<br>connection.setRequestMethod(“POST”); </p>
+<p>DataOutputStream out = new DataOutputStream(connection.getOutputStream()); out.writeBytes(“username=admin&amp;password=123456”); </p>
+<p><strong>HttpClient：</strong></p>
+<p>首先你需要知道，HttpClient是一个接口，因此无法创建它的实例，通常情况下都会创 建一个 DefaultHttpClient的实例，如下所示：</p>
+<p> HttpClient httpClient = new DefaultHttpClient(); </p>
+<p>接下来如果想要发起一条 GET请求，就可以创建一个 HttpGet对象，并传入目标的网络 地址，然后调用 HttpClient的 execute()方法即可：</p>
+<p> HttpGet httpGet = new HttpGet(“<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“);</p>
+<p> httpClient.execute(httpGet); </p>
+<p>如果是发起一条 POST请求会比 GET稍微复杂一点，我们需要创建一个 HttpPost对象， 并传入目标的网络地址，如下所示： </p>
+<p>HttpPost httpPost = new HttpPost(“<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“); </p>
+<p>然后通过一个 NameValuePair集合来存放待提交的参数，并将这个参数集合传入到一个 UrlEncodedFormEntity中，然后调用 HttpPost的 setEntity()方法将构建好的 UrlEncodedFormEntity 传入，如下所示： </p>
+<p>List<namevaluepair> params = new ArrayList<namevaluepair>(); </namevaluepair></namevaluepair></p>
+<p>params.add(new BasicNameValuePair(“username”, “admin”));</p>
+<p> params.add(new BasicNameValuePair(“password”, “123456”));</p>
+<p> UrlEncodedFormEntity entity = new UrlEncodedFormEntity(params, “utf-8”); </p>
+<p>httpPost.setEntity(entity); </p>
+<p>接下来的操作就和 HttpGet一样了，调用 HttpClient的 execute()方法，并将 HttpPost对 象传入即可： httpClient.execute(httpPost); </p>
+<p>执行 execute()方法之后会返回一个 HttpResponse对象，服务器所返回的所有信息就会包 含在这里面。通常情况下我们都会先取出服务器返回的状态码，如果等于 200就说明请求和响应都成功了，如下所示：</p>
+<p> if (httpResponse.getStatusLine().getStatusCode() == 200) { </p>
+<p>// 请求和响应都成功了</p>
+<p> } </p>
+<p>接下来在这个 if判断的内部取出服务返回的具体内容，可以调用 getEntity()方法获取到 一个 HttpEntity实例，然后再用 EntityUtils.toString()这个静态方法将 HttpEntity转换成字符串 即可，如下所示： </p>
+<p>HttpEntity entity = httpResponse.getEntity(); </p>
+<p>String response = EntityUtils.toString(entity); </p>
+<p>注意如果服务器返回的数据是带有中文的，直接调用 EntityUtils.toString()方法进行转换 会有乱码的情况出现，这个时候只需要在转换的时候将字符集指定成 utf-8就可以了，如下 所示： </p>
+<p>String response = EntityUtils.toString(entity, “utf-8”);</p>
+<p>  未完待续。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/18/interview-experience-one/">interview experience one</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
+        <p><span>发布时间:</span>2017-03-18, 14:44:06</p>
+        <p><span>最后更新:</span>2017-03-18, 14:45:09</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/18/interview-experience-one/" title="interview experience one">http://yoursite.com/2017/03/18/interview-experience-one/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/18/interview-experience-one/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/12/notes7/">
+                    notes7
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">2.</span> <span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、Listview如何优化？"><span class="toc-number">2.1.</span> <span class="toc-text">1、Listview如何优化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、XML格式数据、JSON格式数据如何解析？"><span class="toc-number">2.2.</span> <span class="toc-text">2、XML格式数据、JSON格式数据如何解析？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、Android网络通信技术"><span class="toc-number">2.3.</span> <span class="toc-text">3、Android网络通信技术</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"interview experience one　| Hello_bin　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/12/notes7/" title="下一篇: notes7">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/18/interview-experience-one/">interview experience one</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/notes7/">notes7</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/notes6/">notes6</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/notes5/">notes5</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/salary-management-system/">salary management system</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/notes4/">notes4</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/27/notes3/">notes3</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/notes2/">notes2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/learning-notes/">learning notes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/15/分簇-触摸屏精确定位Algo/">分簇+触摸屏精确定位Algo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/07/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 陈锡滨
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
