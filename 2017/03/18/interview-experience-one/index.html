@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/18/interview-experience-one/index.html">
 <meta property="og:site_name" content="Hello_bin">
 <meta property="og:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
-<meta property="og:updated_time" content="2017-03-21T15:25:47.835Z">
+<meta property="og:updated_time" content="2017-03-21T15:31:59.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="interview experience one">
 <meta name="twitter:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
@@ -401,76 +401,56 @@
 <p><strong>Bitmap</strong></p>
 <p>  Bitmap是Android系统中的图像处理的最重要类之一。用它可以获取图像文件信息，进行图像剪切、旋转、缩放等操作，并可以指定格式保存图像文件。</p>
 <p> 重要函数</p>
-<ul>
-<li><p>public void recycle() // 回收位图占用的内存空间，把位图标记为Dead</p>
-</li>
-<li><p>public final boolean isRecycled() //判断位图内存是否已释放  </p>
-</li>
-<li><p>public final int getWidth()//获取位图的宽度 </p>
-</li>
-<li><p>public final int getHeight()//获取位图的高度</p>
-</li>
-<li><p>public final boolean isMutable()//图片是否可修改 </p>
-</li>
-<li><p>public int getScaledWidth(Canvas canvas)//获取指定密度转换后的图像的宽度 </p>
-</li>
-<li><p>public int getScaledHeight(Canvas canvas)//获取指定密度转换后的图像的高度 </p>
-</li>
-<li><p>public boolean compress(CompressFormat format, int quality, OutputStream stream)//按指定的图片格式以及画质，将图片转换为输出流。 </p>
+<p>public void recycle() // 回收位图占用的内存空间，把位图标记为Dead</p>
+<p>public final boolean isRecycled() //判断位图内存是否已释放  </p>
+<p>public final int getWidth()//获取位图的宽度 </p>
+<p>public final int getHeight()//获取位图的高度</p>
+<p>public final boolean isMutable()//图片是否可修改 </p>
+<p>public int getScaledWidth(Canvas canvas)//获取指定密度转换后的图像的宽度 </p>
+<p>public int getScaledHeight(Canvas canvas)//获取指定密度转换后的图像的高度 </p>
+<p>public boolean compress(CompressFormat format, int quality, OutputStream stream)//按指定的图片格式以及画质，将图片转换为输出流。 </p>
 <p>format：Bitmap.CompressFormat.PNG或Bitmap.CompressFormat.JPEG </p>
 <p>quality：画质，0-100.0表示最低画质压缩，100以最高画质压缩。对于PNG等无损格式的图片，会忽略此项设置。</p>
-</li>
-<li><p>public static Bitmap createBitmap(Bitmap src) //以src为原图生成不可变得新图像 </p>
-</li>
-<li><p>public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, int dstHeight, boolean filter)//以src为原图，创建新的图像，指定新图像的高宽以及是否可变。 </p>
-</li>
-<li><p>public static Bitmap createBitmap(int width, int height, Config config)——创建指定格式、大小的位图 </p>
-</li>
-<li><p>public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height)以source为原图，创建新的图片，指定起始坐标以及新图像的高宽。</p>
+<p>public static Bitmap createBitmap(Bitmap src) //以src为原图生成不可变得新图像 </p>
+<p>public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, int dstHeight, boolean filter)//以src为原图，创建新的图像，指定新图像的高宽以及是否可变。 </p>
+<p>public static Bitmap createBitmap(int width, int height, Config config)——创建指定格式、大小的位图 </p>
+<p>public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height)以source为原图，创建新的图片，指定起始坐标以及新图像的高宽。</p>
 <p><strong>BitmapFactory</strong></p>
 <p> Option 参数类：</p>
-<ul>
-<li>public boolean inJustDecodeBounds//如果设置为true，不获取图片，不分配内存，但会返回图片的高度宽度信息。</li>
-<li>public int inSampleSize//图片缩放的倍数</li>
-<li>public int outWidth//获取图片的宽度值</li>
-<li>public int outHeight//获取图片的高度值 </li>
-<li>public int inDensity//用于位图的像素压缩比 </li>
-<li>public int inTargetDensity//用于目标位图的像素压缩比（要生成的位图） </li>
-<li>public byte[] inTempStorage //创建临时文件，将图片存储</li>
-<li>public boolean inScaled//设置为true时进行图片压缩，从inDensity到inTargetDensity</li>
-<li>public boolean inDither //如果为true,解码器尝试抖动解码</li>
-<li>public Bitmap.Config inPreferredConfig //设置解码器</li>
-<li>public String outMimeType //设置解码图像</li>
-<li>public boolean inPurgeable//当存储Pixel的内存空间在系统内存不足时是否可以被回收</li>
-<li>public boolean inInputShareable //inPurgeable为true情况下才生效，是否可以共享一个InputStream</li>
-<li>public boolean inPreferQualityOverSpeed  //为true则优先保证Bitmap质量其次是解码速度``</li>
-<li>public boolean inMutable //配置Bitmap是否可以更改，比如：在Bitmap上隔几个像素加一条线段</li>
-<li>public int inScreenDensity //当前屏幕的像素密度</li>
-</ul>
-<h5 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法:"></a>工厂方法:</h5><ul>
-<li>public static Bitmap decodeFile(String pathName, Options opts) //从文件读取图片 </li>
-<li>public static Bitmap decodeFile(String pathName)</li>
-<li>public static Bitmap decodeStream(InputStream is) //从输入流读取图片</li>
-<li>public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts)</li>
-<li>public static Bitmap decodeResource(Resources res, int id) //从资源文件读取图片</li>
-<li>public static Bitmap decodeResource(Resources res, int id, Options opts) </li>
-<li>public static Bitmap decodeByteArray(byte[] data, int offset, int length) //从数组读取图片</li>
-<li>public static Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)</li>
-<li>public static Bitmap decodeFileDescriptor(FileDescriptor fd)//从文件读取文件 与decodeFile不同的是这个直接调用JNI函数进行读取 效率比较高</li>
-<li><p>public static Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)</p>
+<p>public boolean inJustDecodeBounds//如果设置为true，不获取图片，不分配内存，但会返回图片的高度宽度信息。</p>
+<p>public int inSampleSize//图片缩放的倍数</p>
+<p>public int outWidth//获取图片的宽度值</p>
+<p>public int outHeight//获取图片的高度值 </p>
+<p>public int inDensity//用于位图的像素压缩比 </p>
+<p>public int inTargetDensity//用于目标位图的像素压缩比（要生成的位图） </p>
+<p>public byte[] inTempStorage //创建临时文件，将图片存储</p>
+<p>public boolean inScaled//设置为true时进行图片压缩，从inDensity到inTargetDensity</p>
+<p>public boolean inDither //如果为true,解码器尝试抖动解码</p>
+<p>public Bitmap.Config inPreferredConfig //设置解码器</p>
+<p>public String outMimeType //设置解码图像</p>
+<p>public boolean inPurgeable//当存储Pixel的内存空间在系统内存不足时是否可以被回收</p>
+<p>public boolean inInputShareable //inPurgeable为true情况下才生效，是否可以共享一个InputStream</p>
+<p>public boolean inPreferQualityOverSpeed  //为true则优先保证Bitmap质量其次是解码速度``</p>
+<p>public boolean inMutable //配置Bitmap是否可以更改，比如：在Bitmap上隔几个像素加一条线段</p>
+<p>public int inScreenDensity //当前屏幕的像素密度</p>
+<p>工厂方法:</p>
+<p>public static Bitmap decodeFile(String pathName, Options opts) //从文件读取图片 </p>
+<p>public static Bitmap decodeFile(String pathName)</p>
+<p>public static Bitmap decodeStream(InputStream is) //从输入流读取图片</p>
+<p>public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts)</p>
+<p>public static Bitmap decodeResource(Resources res, int id) //从资源文件读取图片</p>
+<p>public static Bitmap decodeResource(Resources res, int id, Options opts) </p>
+<p>public static Bitmap decodeByteArray(byte[] data, int offset, int length) //从数组读取图片</p>
+<p>public static Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)</p>
+<p>public static Bitmap decodeFileDescriptor(FileDescriptor fd)//从文件读取文件 与decodeFile不同的是这个直接调用JNI函数进行读取 效率比较高</p>
+<p>public static Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)</p>
 <p>Bitmap.Config inPreferredConfig :</p>
-</li>
-</ul>
 <p>​     枚举变量 （位图位数越高代表其可以存储的颜色信息越多，图像越逼真，占用内存越大）</p>
-<ul>
-<li>public static final Bitmap.Config ALPHA_8 //代表8位Alpha位图        每个像素占用1byte内存</li>
-<li>public static final Bitmap.Config ARGB_4444 //代表16位ARGB位图  每个像素占用2byte内存</li>
-<li>public static final Bitmap.Config ARGB_8888 //代表32位ARGB位图  每个像素占用4byte内存</li>
-<li>public static final Bitmap.Config RGB_565 //代表8位RGB位图          每个像素占用2byte内存</li>
-</ul>
+<p>public static final Bitmap.Config ALPHA_8 //代表8位Alpha位图        每个像素占用1byte内存</p>
+<p>public static final Bitmap.Config ARGB_4444 //代表16位ARGB位图  每个像素占用2byte内存</p>
+<p>public static final Bitmap.Config ARGB_8888 //代表32位ARGB位图  每个像素占用4byte内存</p>
+<p>public static final Bitmap.Config RGB_565 //代表8位RGB位图          每个像素占用2byte内存</p>
 <p>​     Android中一张图片（BitMap）占用的内存主要和以下几个因数有关：图片长度，图片宽度，单位像素占用的字节数。一张图片（BitMap）占用的内存 = 图片长度 <em>图片宽度 </em>单位像素占用的字节数。</p>
-</li>
-</ul>
 <p>下面列举几个常用方法的详细介绍：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">     * 获取缩放后的本地图片</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> filePath 文件路径</div><div class="line">     * <span class="doctag">@param</span> width    宽</div><div class="line">     * <span class="doctag">@param</span> height   高</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bitmap <span class="title">readBitmapFromFileDescriptor</span><span class="params">(String filePath, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(filePath);</div><div class="line">            BitmapFactory.Options options = <span class="keyword">new</span> BitmapFactory.Options();</div><div class="line">            options.inJustDecodeBounds = <span class="keyword">true</span>;</div><div class="line">            BitmapFactory.decodeFileDescriptor(fis.getFD(), <span class="keyword">null</span>, options);</div><div class="line">            <span class="keyword">float</span> srcWidth = options.outWidth;</div><div class="line">            <span class="keyword">float</span> srcHeight = options.outHeight;</div><div class="line">            <span class="keyword">int</span> inSampleSize = <span class="number">1</span>;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (srcHeight &gt; height || srcWidth &gt; width) &#123;</div><div class="line">                <span class="keyword">if</span> (srcWidth &gt; srcHeight) &#123;</div><div class="line">                    inSampleSize = Math.round(srcHeight / height);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    inSampleSize = Math.round(srcWidth / width);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            options.inJustDecodeBounds = <span class="keyword">false</span>;</div><div class="line">            options.inSampleSize = inSampleSize;</div><div class="line"></div><div class="line">            <span class="keyword">return</span> BitmapFactory.decodeFileDescriptor(fis.getFD(), <span class="keyword">null</span>, options);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception ex) &#123;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">     * 将图片保存至文件</div><div class="line">     *</div><div class="line">     * @param filePath 文件路径</div><div class="line">     * @param b    bitmap图片对象</div><div class="line">     * @param quality   图片画质</div><div class="line">     */</div><div class="line">     public static void writeBitmapToFile(String filePath, Bitmap b, int quality) &#123;</div><div class="line">        try &#123;</div><div class="line">            File desFile = new File(filePath);</div><div class="line">            FileOutputStream fos = new FileOutputStream(desFile);</div><div class="line">            BufferedOutputStream bos = new BufferedOutputStream(fos);</div><div class="line">            b.compress(Bitmap.CompressFormat.JPEG, quality, bos);</div><div class="line">            bos.flush();</div><div class="line">            bos.close();</div><div class="line">        &#125; catch (IOException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
@@ -488,7 +468,7 @@
         <p><span>本文标题:</span><a href="/2017/03/18/interview-experience-one/">interview experience one</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
         <p><span>发布时间:</span>2017-03-18, 14:44:06</p>
-        <p><span>最后更新:</span>2017-03-21, 23:25:47</p>
+        <p><span>最后更新:</span>2017-03-21, 23:31:59</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/18/interview-experience-one/" title="interview experience one">http://yoursite.com/2017/03/18/interview-experience-one/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/18/interview-experience-one/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -518,7 +498,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">2.</span> <span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Listview如何优化？"><span class="toc-number">2.1.</span> <span class="toc-text">-Listview如何优化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML格式数据、JSON格式数据如何解析？"><span class="toc-number">2.2.</span> <span class="toc-text">-XML格式数据、JSON格式数据如何解析？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android网络通信技术"><span class="toc-number">2.3.</span> <span class="toc-text">-Android网络通信技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android连接数据库"><span class="toc-number">2.4.</span> <span class="toc-text">-Android连接数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android图片处理、图片缓存机制"><span class="toc-number">2.5.</span> <span class="toc-text">-Android图片处理、图片缓存机制</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#工厂方法"><span class="toc-number">2.5.0.0.1.</span> <span class="toc-text">工厂方法:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">2.</span> <span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Listview如何优化？"><span class="toc-number">2.1.</span> <span class="toc-text">-Listview如何优化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML格式数据、JSON格式数据如何解析？"><span class="toc-number">2.2.</span> <span class="toc-text">-XML格式数据、JSON格式数据如何解析？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android网络通信技术"><span class="toc-number">2.3.</span> <span class="toc-text">-Android网络通信技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android连接数据库"><span class="toc-number">2.4.</span> <span class="toc-text">-Android连接数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android图片处理、图片缓存机制"><span class="toc-number">2.5.</span> <span class="toc-text">-Android图片处理、图片缓存机制</span></a></li></ol></li></ol>
         
     </div>
     <style>
