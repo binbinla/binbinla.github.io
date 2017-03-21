@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/18/interview-experience-one/index.html">
 <meta property="og:site_name" content="Hello_bin">
 <meta property="og:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
-<meta property="og:updated_time" content="2017-03-18T15:40:52.066Z">
+<meta property="og:updated_time" content="2017-03-21T14:49:16.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="interview experience one">
 <meta name="twitter:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
@@ -138,13 +138,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -258,7 +258,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap"><article id="post-interview-experience-one" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -322,7 +322,7 @@
 <p>  pull解析(结合eg来讲)：</p>
 <p>  通过URL参数结合http协议访问服务器，得到服务器返回的数据。接下来，要获取到一个XmlPullParserFactory的实例，并借助这个实例得到XmlPullParser对象，然后调用XmlPullParser的setInput()方法将服务器返回的XML数据设置进去就可以开始解析了。解析的过程也非常简单，通过getEventType()可以得到当前的解析事件，然后在一个while循环中不断地进行解析，如果当前的解析事件不等于XMLPullParser.END_DOCUMENT，说明解析工作还没完成，调用next()方法后可以获取下一个解析事件。</p>
 <p>  在while循环中，我们通过getName()方法得到当前结点的名字，如果发现结点名等于id、name或version，就调用nextText()方法来获取结点内具体的内容，每当解析完一个app结点后就将获取到的内容打印出来：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends Activity implements OnClickListener &#123; </div><div class="line">  …… </div><div class="line">  private void sendRequestWithHttpClient() &#123; </div><div class="line">    new Thread(new Runnable() &#123; </div><div class="line">      @Override </div><div class="line">      public void run() &#123;</div><div class="line">        try &#123; </div><div class="line">          HttpClient httpClient = new DefaultHttpClient(); </div><div class="line">          // 指定访问的服务器地址是电脑本机 </div><div class="line">          HttpGet httpGet = new HttpGet("http://10.0.2.2/</div><div class="line">get_data.json");</div><div class="line">          HttpResponse httpResponse = httpClient.execute(httpGet); 			                                       if(httpResponse.getStatusLine().getStatusCode()==200)&#123; </div><div class="line">            // 请求和响应都成功了</div><div class="line">            HttpEntity entity = httpResponse.getEntity(); </div><div class="line">            String response = EntityUtils.toString(entity,</div><div class="line">"utf-8");</div><div class="line">            parseJSONWithJSONObject(response);</div><div class="line">            &#125;catch (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">&#125;</div><div class="line">  &#125;).start();</div><div class="line">  &#125;</div><div class="line">        private void parseXMLWithPull(String xmlData) &#123; </div><div class="line">          try &#123; </div><div class="line">            XmlPullParserFactory factory = XmlPullParserFactory.newInstance(); </div><div class="line">            XmlPullParser xmlPullParser = factory.newPullParser(); </div><div class="line">            xmlPullParser.setInput(new StringReader(xmlData));</div><div class="line">            int eventType = xmlPullParser.getEventType(); </div><div class="line">            String id = ""; </div><div class="line">            String name = "";</div><div class="line">            String version = ""; </div><div class="line">            while (eventType != XmlPullParser.END_DOCUMENT) &#123; </div><div class="line">              String nodeName = xmlPullParser.getName(); </div><div class="line">              switch (eventType) &#123;</div><div class="line">                  // 开始解析某个结点 </div><div class="line">                case XmlPullParser.START_TAG: &#123; </div><div class="line">                  if ("id".equals(nodeName)) &#123; </div><div class="line">                    id = xmlPullParser.nextText();</div><div class="line">                  &#125; else if ("name".equals(nodeName)) &#123;</div><div class="line">                    name = xmlPullParser.nextText();</div><div class="line">                  &#125; else if ("version".equals(nodeName)) &#123; </div><div class="line">                    version = xmlPullParser.nextText(); </div><div class="line">                  &#125; break; </div><div class="line">                &#125;</div><div class="line"></div><div class="line">// 完成解析某个结点 </div><div class="line">                case XmlPullParser.END_TAG: &#123; </div><div class="line">                  if ("app".equals(nodeName)) &#123; </div><div class="line">                    Log.d("MainActivity", "id is " + id);</div><div class="line">                    Log.d("MainActivity", "name is " + name); </div><div class="line">                    Log.d("MainActivity", "version is " + version);</div><div class="line">                  &#125;</div><div class="line">                  break; </div><div class="line">                &#125; </div><div class="line">                default: break; </div><div class="line">              &#125; </div><div class="line">              eventType = xmlPullParser.next();</div><div class="line">&#125;</div><div class="line">          &#125; catch (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">          &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends Activity implements OnClickListener &#123; </div><div class="line">  …… </div><div class="line">  private void sendRequestWithHttpClient() &#123; </div><div class="line">    new Thread(new Runnable() &#123; </div><div class="line">      @Override </div><div class="line">      public void run() &#123;</div><div class="line">        try &#123; </div><div class="line">          HttpClient httpClient = new DefaultHttpClient(); </div><div class="line">          // 指定访问的服务器地址是电脑本机 </div><div class="line">          HttpGet httpGet = new HttpGet("http://10.0.2.2/</div><div class="line">get_data.json");</div><div class="line">          HttpResponse httpResponse = httpClient.execute(httpGet); 			                                       if(httpResponse.getStatusLine().getStatusCode()==200)&#123; </div><div class="line">            // 请求和响应都成功了</div><div class="line">            HttpEntity entity = httpResponse.getEntity(); </div><div class="line">            String response = EntityUtils.toString(entity,</div><div class="line">"utf-8");</div><div class="line">            parseJSONWithJSONObject(response);</div><div class="line">            &#125;catch (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">&#125;</div><div class="line">  &#125;).start();</div><div class="line"> &#125;</div><div class="line">        private void parseXMLWithPull(String xmlData) &#123; </div><div class="line">          try &#123; </div><div class="line">            XmlPullParserFactory factory = XmlPullParserFactory.newInstance(); </div><div class="line">            XmlPullParser xmlPullParser = factory.newPullParser(); </div><div class="line">            xmlPullParser.setInput(new StringReader(xmlData));</div><div class="line">            int eventType = xmlPullParser.getEventType(); </div><div class="line">            String id = ""; </div><div class="line">            String name = "";</div><div class="line">            String version = ""; </div><div class="line">            while (eventType != XmlPullParser.END_DOCUMENT) &#123; </div><div class="line">              String nodeName = xmlPullParser.getName(); </div><div class="line">              switch (eventType) &#123;</div><div class="line">                  // 开始解析某个结点 </div><div class="line">                case XmlPullParser.START_TAG: &#123; </div><div class="line">                  if ("id".equals(nodeName)) &#123; </div><div class="line">                    id = xmlPullParser.nextText();</div><div class="line">                  &#125; else if ("name".equals(nodeName)) &#123;</div><div class="line">                    name = xmlPullParser.nextText();</div><div class="line">                  &#125; else if ("version".equals(nodeName)) &#123; </div><div class="line">                    version = xmlPullParser.nextText(); </div><div class="line">                  &#125; break; </div><div class="line">                &#125;</div><div class="line"></div><div class="line">// 完成解析某个结点 </div><div class="line">                case XmlPullParser.END_TAG: &#123; </div><div class="line">                  if ("app".equals(nodeName)) &#123; </div><div class="line">                    Log.d("MainActivity", "id is " + id);</div><div class="line">                    Log.d("MainActivity", "name is " + name); </div><div class="line">                    Log.d("MainActivity", "version is " + version);</div><div class="line">                  &#125;</div><div class="line">                  break; </div><div class="line">                &#125; </div><div class="line">                default: break; </div><div class="line">              &#125; </div><div class="line">              eventType = xmlPullParser.next();</div><div class="line">&#125;</div><div class="line">          &#125; catch (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">          &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>  sax解析：也是一种常用的解析方式，虽然它的用法比pull解析更复杂一些，但在语义方面会跟更加的清楚。</p>
 <p>  通常情况下我们会新建一个类继承自Defaulthandler，并重写父类的5个方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyHandler</span> <span class="keyword">extends</span> <span class="title">DefaultHandler</span> </span>&#123; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startDocument</span><span class="params">()</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startElement</span><span class="params">(String uri, String localName, String qName, Attributes attributes)</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">characters</span><span class="params">(<span class="keyword">char</span>[] ch, <span class="keyword">int</span> start, <span class="keyword">int</span> length)</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endElement</span><span class="params">(Stringuri,StringlocalName,StringqName)</span><span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endDocument</span><span class="params">()</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -404,17 +404,17 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/18/interview-experience-one/">interview experience one</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
-        <p><span>发布时间:</span>2017-03-18, 14:44:06</p>
-        <p><span>最后更新:</span>2017-03-18, 23:40:52</p>
+        <p><span>Title:</span><a href="/2017/03/18/interview-experience-one/">interview experience one</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">陈锡滨</a></p>
+        <p><span>Created:</span>2017-03-18, 14:44:06</p>
+        <p><span>Updated:</span>2017-03-21, 22:49:16</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/18/interview-experience-one/" title="interview experience one">http://yoursite.com/2017/03/18/interview-experience-one/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/18/interview-experience-one/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/03/18/interview-experience-one/" title="interview experience one">http://yoursite.com/2017/03/18/interview-experience-one/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/03/18/interview-experience-one/　　By 陈锡滨" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
         </p>
     </div>
 
@@ -435,7 +435,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">Contents</strong>
         
             <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">2.</span> <span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Listview如何优化？"><span class="toc-number">2.1.</span> <span class="toc-text">-Listview如何优化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML格式数据、JSON格式数据如何解析？"><span class="toc-number">2.2.</span> <span class="toc-text">-XML格式数据、JSON格式数据如何解析？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android网络通信技术"><span class="toc-number">2.3.</span> <span class="toc-text">-Android网络通信技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android连接数据库"><span class="toc-number">2.4.</span> <span class="toc-text">-Android连接数据库</span></a></li></ol></li></ol>
         
@@ -451,10 +451,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
     <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
     </script>
 
 
@@ -493,13 +493,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/12/notes7/" title="下一篇: notes7">
+            <a href="/2017/03/12/notes7/" title="Next: notes7">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -522,14 +522,14 @@
                 2016-2017 陈锡滨
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -538,7 +538,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -571,9 +571,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
