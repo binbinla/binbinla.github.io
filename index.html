@@ -142,13 +142,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -262,7 +262,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
   
@@ -390,6 +390,87 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. MySQL(http://www.mysql.com)mm.mysql-2.0.2-bin.jar  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"org.gjt.mm.mysql.Driver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:mysql://DbComputerNameOrIPAddr:3306/DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//2. PostgreSQL(http://www.de.postgresql.org)pgjdbc2.jar  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"org.postgresql.Driver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:postgresql://DbComputerNameOrIPAddr/DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//3. Oracle(http://www.oracle.com/ip/deploy/database/oracle9i/)classes12.zip  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"oracle.jdbc.driver.OracleDriver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:oracle:thin:@DbComputerNameOrIPAddr:1521:DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//4. Sybase(http://jtds.sourceforge.net)jconn2.jar  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"com.sybase.jdbc2.jdbc.SybDriver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:sybase:Tds:DbComputerNameOrIPAddr:2638/DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//(Default-Username/Password: "dba"/"sql")  </span></div><div class="line"><span class="comment">//5. Microsoft SQLServer(http://jtds.sourceforge.net)  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"net.sourceforge.jtds.jdbc.Driver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:jtds:sqlserver://DbComputerNameOrIPAddr:1433/DatabaseName"</span>, UserName, Password );   </div><div class="line"><span class="comment">//6. Microsoft SQLServer(http://www.microsoft.com)  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"com.microsoft.jdbc.sqlserver.SQLServerDriver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:microsoft:sqlserver://DbComputerNameOrIPAddr:1433;databaseName=master"</span>, UserName, Password );</div></pre></td></tr></table></figure>
 <p>  发送SQL语句(以SQL server为例)，当成功连接数据库之后，就可以发送操作数据的语句并处理结果了。在发送SQL语句之前，首先要创建一个statement对象，statement对象主要工作是把SQL语句发送到DBMS。然后发送SQL语句。对于SELECT操作，使用的是Statement对象的executeQuery(sql )方法，对于一些创建table和修改table的操作，使用的是Statement对象的executeUpdate(sql )方法。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//查询表名为“table_test”的所有内容  </div><div class="line">String sql = &quot;SELECT * FROM table_test&quot;;</div><div class="line">//创建Statement </div><div class="line">Statement stmt = con.createStatement(); </div><div class="line">ResultSet rs = stmt.executeQuery(sql);</div></pre></td></tr></table></figure>
+<p><strong>接口回调</strong></p>
+<p>  调用自己服务器接口返回的数据，需要提供服务器地址，然后通过网络通信技术解析服务器返回的数据。</p>
+<h2 id="Android图片处理、图片缓存机制"><a href="#Android图片处理、图片缓存机制" class="headerlink" title="-Android图片处理、图片缓存机制"></a>-Android图片处理、图片缓存机制</h2><p>  说到图片处理，我们得重点学习一下两个类：Bitmap、BitmapFactory。</p>
+<p><strong>Bitmap</strong></p>
+<p>  Bitmap是Android系统中的图像处理的最重要类之一。用它可以获取图像文件信息，进行图像剪切、旋转、缩放等操作，并可以指定格式保存图像文件。</p>
+<p> 重要函数</p>
+<ul>
+<li><p>public void recycle() // 回收位图占用的内存空间，把位图标记为Dead</p>
+</li>
+<li><p>public final boolean isRecycled() //判断位图内存是否已释放  </p>
+</li>
+<li><p>public final int getWidth()//获取位图的宽度 </p>
+</li>
+<li><p>public final int getHeight()//获取位图的高度</p>
+</li>
+<li><p>public final boolean isMutable()//图片是否可修改 </p>
+</li>
+<li><p>public int getScaledWidth(Canvas canvas)//获取指定密度转换后的图像的宽度 </p>
+</li>
+<li><p>public int getScaledHeight(Canvas canvas)//获取指定密度转换后的图像的高度 </p>
+</li>
+<li><p>public boolean compress(CompressFormat format, int quality, OutputStream stream)//按指定的图片格式以及画质，将图片转换为输出流。 </p>
+<p>format：Bitmap.CompressFormat.PNG或Bitmap.CompressFormat.JPEG </p>
+<p>quality：画质，0-100.0表示最低画质压缩，100以最高画质压缩。对于PNG等无损格式的图片，会忽略此项设置。</p>
+</li>
+<li><p>public static Bitmap createBitmap(Bitmap src) //以src为原图生成不可变得新图像 </p>
+</li>
+<li><p>public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, int dstHeight, boolean filter)//以src为原图，创建新的图像，指定新图像的高宽以及是否可变。 </p>
+</li>
+<li><p>public static Bitmap createBitmap(int width, int height, Config config)——创建指定格式、大小的位图 </p>
+</li>
+<li><p>public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height)以source为原图，创建新的图片，指定起始坐标以及新图像的高宽。</p>
+<p><strong>BitmapFactory</strong></p>
+<p> Option 参数类：</p>
+<ul>
+<li>public boolean inJustDecodeBounds//如果设置为true，不获取图片，不分配内存，但会返回图片的高度宽度信息。</li>
+<li>public int inSampleSize//图片缩放的倍数</li>
+<li>public int outWidth//获取图片的宽度值</li>
+<li>public int outHeight//获取图片的高度值 </li>
+<li>public int inDensity//用于位图的像素压缩比 </li>
+<li>public int inTargetDensity//用于目标位图的像素压缩比（要生成的位图） </li>
+<li>public byte[] inTempStorage //创建临时文件，将图片存储</li>
+<li>public boolean inScaled//设置为true时进行图片压缩，从inDensity到inTargetDensity</li>
+<li>public boolean inDither //如果为true,解码器尝试抖动解码</li>
+<li>public Bitmap.Config inPreferredConfig //设置解码器</li>
+<li>public String outMimeType //设置解码图像</li>
+<li>public boolean inPurgeable//当存储Pixel的内存空间在系统内存不足时是否可以被回收</li>
+<li>public boolean inInputShareable //inPurgeable为true情况下才生效，是否可以共享一个InputStream</li>
+<li>public boolean inPreferQualityOverSpeed  //为true则优先保证Bitmap质量其次是解码速度``</li>
+<li>public boolean inMutable //配置Bitmap是否可以更改，比如：在Bitmap上隔几个像素加一条线段</li>
+<li>public int inScreenDensity //当前屏幕的像素密度</li>
+</ul>
+<h5 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法:"></a>工厂方法:</h5><ul>
+<li>public static Bitmap decodeFile(String pathName, Options opts) //从文件读取图片 </li>
+<li>public static Bitmap decodeFile(String pathName)</li>
+<li>public static Bitmap decodeStream(InputStream is) //从输入流读取图片</li>
+<li>public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts)</li>
+<li>public static Bitmap decodeResource(Resources res, int id) //从资源文件读取图片</li>
+<li>public static Bitmap decodeResource(Resources res, int id, Options opts) </li>
+<li>public static Bitmap decodeByteArray(byte[] data, int offset, int length) //从数组读取图片</li>
+<li>public static Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)</li>
+<li>public static Bitmap decodeFileDescriptor(FileDescriptor fd)//从文件读取文件 与decodeFile不同的是这个直接调用JNI函数进行读取 效率比较高</li>
+<li><p>public static Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)</p>
+<p>Bitmap.Config inPreferredConfig :</p>
+</li>
+</ul>
+<p>​     枚举变量 （位图位数越高代表其可以存储的颜色信息越多，图像越逼真，占用内存越大）</p>
+<ul>
+<li>public static final Bitmap.Config ALPHA_8 //代表8位Alpha位图        每个像素占用1byte内存</li>
+<li>public static final Bitmap.Config ARGB_4444 //代表16位ARGB位图  每个像素占用2byte内存</li>
+<li>public static final Bitmap.Config ARGB_8888 //代表32位ARGB位图  每个像素占用4byte内存</li>
+<li>public static final Bitmap.Config RGB_565 //代表8位RGB位图          每个像素占用2byte内存</li>
+</ul>
+<p>​     Android中一张图片（BitMap）占用的内存主要和以下几个因数有关：图片长度，图片宽度，单位像素占用的字节数。一张图片（BitMap）占用的内存 = 图片长度 <em>图片宽度 </em>单位像素占用的字节数。</p>
+</li>
+</ul>
+<p>下面列举几个常用方法的详细介绍：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">     * 获取缩放后的本地图片</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> filePath 文件路径</div><div class="line">     * <span class="doctag">@param</span> width    宽</div><div class="line">     * <span class="doctag">@param</span> height   高</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bitmap <span class="title">readBitmapFromFileDescriptor</span><span class="params">(String filePath, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(filePath);</div><div class="line">            BitmapFactory.Options options = <span class="keyword">new</span> BitmapFactory.Options();</div><div class="line">            options.inJustDecodeBounds = <span class="keyword">true</span>;</div><div class="line">            BitmapFactory.decodeFileDescriptor(fis.getFD(), <span class="keyword">null</span>, options);</div><div class="line">            <span class="keyword">float</span> srcWidth = options.outWidth;</div><div class="line">            <span class="keyword">float</span> srcHeight = options.outHeight;</div><div class="line">            <span class="keyword">int</span> inSampleSize = <span class="number">1</span>;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (srcHeight &gt; height || srcWidth &gt; width) &#123;</div><div class="line">                <span class="keyword">if</span> (srcWidth &gt; srcHeight) &#123;</div><div class="line">                    inSampleSize = Math.round(srcHeight / height);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    inSampleSize = Math.round(srcWidth / width);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            options.inJustDecodeBounds = <span class="keyword">false</span>;</div><div class="line">            options.inSampleSize = inSampleSize;</div><div class="line"></div><div class="line">            <span class="keyword">return</span> BitmapFactory.decodeFileDescriptor(fis.getFD(), <span class="keyword">null</span>, options);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception ex) &#123;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">     * 将图片保存至文件</div><div class="line">     *</div><div class="line">     * @param filePath 文件路径</div><div class="line">     * @param b    bitmap图片对象</div><div class="line">     * @param quality   图片画质</div><div class="line">     */</div><div class="line">     public static void writeBitmapToFile(String filePath, Bitmap b, int quality) &#123;</div><div class="line">        try &#123;</div><div class="line">            File desFile = new File(filePath);</div><div class="line">            FileOutputStream fos = new FileOutputStream(desFile);</div><div class="line">            BufferedOutputStream bos = new BufferedOutputStream(fos);</div><div class="line">            b.compress(Bitmap.CompressFormat.JPEG, quality, bos);</div><div class="line">            bos.flush();</div><div class="line">            bos.close();</div><div class="line">        &#125; catch (IOException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">     * 图片压缩</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> image 压缩的图片对象</div><div class="line">     * <span class="doctag">@return</span> 返回bitmap对象</div><div class="line">     */</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Bitmap <span class="title">compressImage</span><span class="params">(Bitmap image)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (image == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        ByteArrayOutputStream baos = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            baos = <span class="keyword">new</span> ByteArrayOutputStream();</div><div class="line">            image.compress(Bitmap.CompressFormat.JPEG, <span class="number">100</span>, baos);</div><div class="line">            <span class="keyword">byte</span>[] bytes = baos.toByteArray();</div><div class="line">            ByteArrayInputStream isBm = <span class="keyword">new</span> ByteArrayInputStream(bytes);</div><div class="line">            Bitmap bitmap = BitmapFactory.decodeStream(isBm);</div><div class="line">            <span class="keyword">return</span> bitmap;</div><div class="line">        &#125; <span class="keyword">catch</span> (OutOfMemoryError e) &#123;</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">if</span> (baos != <span class="keyword">null</span>) &#123;</div><div class="line">                    baos.close();</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">     * 图片旋转角度</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> b 旋转的图片对象</div><div class="line">     * <span class="doctag">@param</span> rotateDegree 旋转角度</div><div class="line">     * <span class="doctag">@return</span> 返回bitmap对象</div><div class="line">     */</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Bitmap <span class="title">rotateBitmap</span><span class="params">(Bitmap b, <span class="keyword">float</span> rotateDegree)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (b == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">        Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line">        matrix.postRotate(rotateDegree);</div><div class="line">        Bitmap rotaBitmap = Bitmap.createBitmap(b, <span class="number">0</span>, <span class="number">0</span>, b.getWidth(), b.getHeight(), matrix, <span class="keyword">true</span>);</div><div class="line">        <span class="keyword">return</span> rotaBitmap;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <p>  未完待续。</p>
 
       
@@ -1798,14 +1879,14 @@ case 6:
                 2016-2017 陈锡滨
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -1814,7 +1895,7 @@ case 6:
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -1847,9 +1928,9 @@ case 6:
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
