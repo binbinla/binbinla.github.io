@@ -21,10 +21,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/18/interview-experience-one/index.html">
 <meta property="og:site_name" content="Hello_bin">
 <meta property="og:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
-<meta property="og:updated_time" content="2017-03-22T04:47:44.681Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20160906192211991">
+<meta property="og:updated_time" content="2017-03-22T14:29:59.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="interview experience one">
 <meta name="twitter:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160906192211991">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -472,13 +474,72 @@
 <p>这是Volley的下载地址：<a href="http://pan.baidu.com/s/1kThedX9" target="_blank" rel="external">http://pan.baidu.com/s/1kThedX9</a></p>
 <h1 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h1><h2 id="数组和链表的区别"><a href="#数组和链表的区别" class="headerlink" title="-数组和链表的区别"></a>-数组和链表的区别</h2><p>  数组结构在通过索引进行查询数据时效率比较高，而对于数组插入和删除操作，则效率会比较低，在第一个位置进行插入数据，其余数据就需要依次向后移动，而第一个数据进行删除，则需要所有数据全部向前移。</p>
 <p>  链表：为了保证数据插入和删除，不会影响其他数据的移动，保证线性开销，就引出了指针链接，链表是由一系列节点组成的，每个节点都会有一个链点，next链，next链会执行下一个node的引用，所以我们在插入或者删除的时候，需要链表next链的指向地址即可，每个节点不需要内存进行连续存储，这样会减小删除和插入的线性开销。链表结构主要分为两种链表，单向链表和双向链表 ，即单向链表只有一个next链，而双向链表会有next链和pre链。</p>
-<p>简单的区别如下：</p>
+<p>  简单的区别如下：</p>
 <p>①数组静态分配内存，链表动态分配内存；②数组在内存中连续，链表不连续；③数组元素在栈区，链表元素在堆区；④数组利用下标定位，时间复杂度为O(1)，链表定位元素时间复杂度O(n)；⑤数组插入或删除元素的时间复杂度O(n)，链表的时间复杂度O(1)。</p>
-<p>数组与链表的优缺点：<br>​    数组:</p>
+<p>数组与链表的优缺点：</p>
+<p>数组:</p>
 <p>​    优点：使用方便 ，查询效率比链表高，内存为一连续的区域 。  缺点：大小固定，不适合动态存储，不方便动态添加。</p>
-<p>​    链表：</p>
+<p>链表：</p>
 <p>​     优点：可动态添加删除，大小可变。 缺点：只能通过顺次指针访问，查询效率低。</p>
-<p>  未完待续。</p>
+<h2 id="线程和进程"><a href="#线程和进程" class="headerlink" title="-线程和进程"></a>-线程和进程</h2><p><strong>进程概念</strong></p>
+<p>  几乎所有的操作系统都支持进程的概念，所有运行中的任务通常对应一个进程(process)。当一个程序进入内存运行时，即变成一个进程。进程是处于运行过程的程序，并且具有一定的独立功能，进程是系统进行资源分配和调度的一个独立单位。</p>
+<p>  一般而言，进程包含如下三个特征：</p>
+<p>1.独立性：进程是系统中独立存在的实体，它可以拥有自己独立的资源，每一个进程都拥有自己私有的地址空间。在没有经过允许的情况下，一个用户进程不可以直接访问其他进程的地址空间。</p>
+<p>2.动态性：进程与程序的区别在于，程序只是一个静态的指令集合，而进程是一个正在系统中活动的指令集合。在进程中加入了时间的概念。进程具有自己的生命周期和各种不同的状态，这些概念在程序中是不具备的。</p>
+<p>3.并发性：多个进程可以在单个处理器上并发执行，多个进程之间不会互相影响。</p>
+<blockquote>
+<p>这里需要注意：并发性和并行性是两个概念，并行指在同一时刻，有多条指令在多个处理器上同时执行；并发指在同一时刻只能有一条指令执行，但多个进程指令被快速轮换执行，使得宏观上具有多个进程同时执行的效果。</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20160906192211991" alt="进程的五种基本状态及转换"></p>
+<p><strong>线程概念</strong></p>
+<p>  如何能使多个程序更好地并发执行，同时又尽量减少系统的开销，已成为操作系统所追求的重要目标。主要的改进方向有两点：①并不把其作为调度和分派的基本单位也要同时作为拥有资源的单位，以做到”轻装上阵”；②对于拥有资源的基本单位，应不对之施以频繁的切换。于是，线程应运而生。</p>
+<p>  线程是进程的组成成分，一个进程可以拥有多个线程，一个线程必须有一个父进程。线程可以拥有自己的堆栈、自己的程序计数器和自己的局部变量，但不拥有系统资源，它与父进程的其他线程共享该进程所拥有的全部资源。因为多个线程共享父进程的全部资源，因此编程更加方便。但也必须更加小心，因为需要确保线程不会妨碍同一进程里的其他线程。</p>
+<p>  线程的特征：①调度的基本单位；②并发性；③拥有资源；④独立性；⑤支持多处理机系统。</p>
+<p><strong>多线程编程优势：</strong></p>
+<p>①进程之间不能共享内存，但线程之间共享内存非常容易；②系统创建进程时需要为该进程重新分配系统资源，但创建线程则代价小得多，因此使用多线程来实现多任务并发比多进程的效率高；③Java语言内置了多线程功能支持，而不是单纯地作为底层操作系统的调度方式，从而简化了Java的多线程编程。</p>
+<p><strong>创建Java多线程</strong></p>
+<p>1、创建Thread的子类</p>
+<p>创建Thread子类的一个实例并重写run方法，run方法会在调用start()方法之后被执行。例子如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">     System.out.println(<span class="string">"MyThread running"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyThread myThread = <span class="keyword">new</span> MyThread();</div><div class="line">myTread.start();</div></pre></td></tr></table></figure>
+<p>也可以如下创建一个Thread的匿名子类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Thread thread = <span class="keyword">new</span> Thread()&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">     System.out.println(<span class="string">"Thread Running"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;;</div><div class="line">thread.start();</div></pre></td></tr></table></figure>
+<p>2、实现Runnable接口</p>
+<p>第二种编写线程执行代码的方式是新建一个实现了java.lang.Runnable接口的类的实例，实例中的方法可以被线程调用。下面给出例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">    System.out.println(<span class="string">"MyRunnable running"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> MyRunnable());</div><div class="line">thread.start();</div></pre></td></tr></table></figure>
+<p>同样，也可以创建一个实现了Runnable接口的匿名类，如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Runnable myRunnable = <span class="keyword">new</span> Runnable()&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">     System.out.println(<span class="string">"Runnable running"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">Thread thread = <span class="keyword">new</span> Thread(myRunnable);</div><div class="line">thread.start();</div></pre></td></tr></table></figure>
+<p><strong>线程安全</strong></p>
+<p>  在同一程序中运行多个线程本身不会导致问题，问题在于多个线程访问了相同的资源。如同一内存区（变量，数组，或对象）、系统（数据库，web services等）或文件。实际上，这些问题只有在一或多个线程向这些资源做了写操作时才有可能发生，只要资源没有发生变化，多个线程读取相同的资源就是安全的。</p>
+<p>  当两个线程竞争同一资源时，如果对资源的访问顺序敏感，就称存在竞态条件。导致竞态条件发生的代码区称作临界区。如果一个资源的创建，使用，销毁都在同一个线程内完成，且永远不会脱离该线程的控制，则该资源的使用就是线程安全的。</p>
+<p><strong>Java同步块</strong></p>
+<p>Java中的同步块用synchronized标记。同步块在Java中是同步在某个对象上。所有同步在一个对象上的同步块在同时只能被一个线程进入并执行操作。所有其他等待进入该同步块的线程将被阻塞，直到执行该同步块中的线程退出。</p>
+<p>有四种不同的同步块：</p>
+<ol>
+<li>实例方法</li>
+<li>静态方法</li>
+<li>实例方法中的同步块</li>
+<li>静态方法中的同步块</li>
+</ol>
+<p>实例方法同步：Java实例方法同步是同步在拥有该方法的对象上。这样，每个实例其方法同步都同步在不同的对象上，即该方法所属的实例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> value)</span></span>&#123;</div><div class="line"><span class="keyword">this</span>.count += value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>静态方法同步：静态方法的同步是指同步在该方法所在的类对象上。因为在Java虚拟机中一个类只能对应一个类对象，所以同时只允许一个线程执行同一个类中的静态同步方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> value)</span></span>&#123;</div><div class="line">	 count += value;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>实例方法中的同步块：注意Java同步块构造器用括号将对象括起来。下面例子中使用了“this”，即为调用add方法的实例本身。在同步构造器中用括号括起来的对象叫做监视器对象。一次只有一个线程能够在同步于同一个监视器对象的Java方法内执行。</p>
+<p>下面两个例子都同步他们所调用的实例对象上，因此他们在同步的执行效果上是等效的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">log1</span><span class="params">(String msg1, String msg2)</span></span>&#123;</div><div class="line">      log.writeln(msg1);</div><div class="line">      log.writeln(msg2);</div><div class="line">   &#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log2</span><span class="params">(String msg1, String msg2)</span></span>&#123;</div><div class="line">      <span class="keyword">synchronized</span>(<span class="keyword">this</span>)&#123;</div><div class="line">         log.writeln(msg1);</div><div class="line">         log.writeln(msg2);</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>静态方法中的同步块：下面两个方法不允许同时被线程访问。如果第二个同步块不是同步在MyClass.class这个对象上，那么这两个方法可以同时被线程访问。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">log1</span><span class="params">(String msg1, String msg2)</span></span>&#123;</div><div class="line">       log.writeln(msg1);</div><div class="line">       log.writeln(msg2);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">log2</span><span class="params">(String msg1, String msg2)</span></span>&#123;</div><div class="line">       <span class="keyword">synchronized</span>(MyClass.class)&#123;</div><div class="line">          log.writeln(msg1);</div><div class="line">          log.writeln(msg2);</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p><strong>Java线程通信</strong></p>
+<p>线程通信的目标是使线程间能够互相发送信号。另一方面，线程通信使线程能够等待其他线程的信号。</p>
+<p>Java有一个内建的等待机制来允许线程在等待信号的时候变为非运行状态。java.lang.Object 类定义了三个方法，wait()、notify()和notifyAll()来实现这个等待机制。</p>
+<p>一个线程一旦调用了任意对象的wait()方法，就会变为非运行状态，直到另一个线程调用了同一个对象的notify()方法。为了调用wait()或者notify()，线程必须先获得那个对象的锁。也就是说，线程必须在同步块里调用wait()或者notify()。</p>
+<p>以下为一个使用了wait()和notify()实现的线程间通信的共享对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyWaitNotify</span></span>&#123;</div><div class="line">  MonitorObject myMonitorObject = <span class="keyword">new</span> MonitorObject();</div><div class="line">  <span class="keyword">boolean</span> wasSignalled = <span class="keyword">false</span>;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doWait</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">synchronized</span>(myMonitorObject)&#123;</div><div class="line">      <span class="keyword">while</span>(!wasSignalled)&#123;</div><div class="line">        <span class="keyword">try</span>&#123;</div><div class="line">          myMonitorObject.wait();</div><div class="line">         &#125; <span class="keyword">catch</span>(InterruptedException e)&#123;...&#125;</div><div class="line">      &#125;</div><div class="line">      <span class="comment">//clear signal and continue running.</span></div><div class="line">      wasSignalled = <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doNotify</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">synchronized</span>(myMonitorObject)&#123;</div><div class="line">      wasSignalled = <span class="keyword">true</span>;</div><div class="line">      myMonitorObject.notify();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意以下几点：</p>
+<p>1、不管是等待线程还是唤醒线程都在同步块里调用wait()和notify()。这是强制性的！一个线程如果没有持有对象锁，将不能调用wait()，notify()或者notifyAll()。否则，会抛出IllegalMonitorStateException异常。</p>
+<p>2、一旦线程调用了wait()方法，它就释放了所持有的监视器对象上的锁。这将允许其他线程也可以调用wait()或者notify()。</p>
+<p>3、为了避免丢失信号，必须把它们保存在信号类里。如上面的wasSignalled变量。</p>
+<p>4、不要在字符串常量或全局对象中调用wait()。即上面MonitorObject不能是字符串常量或是全局对象。每一个MyWaitNotify的实例都拥有一个属于自己的监视器对象，而不是在空字符串上调用wait()/notify()。</p>
 
       
     </div>
@@ -490,7 +551,7 @@
         <p><span>本文标题:</span><a href="/2017/03/18/interview-experience-one/">interview experience one</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
         <p><span>发布时间:</span>2017-03-18, 14:44:06</p>
-        <p><span>最后更新:</span>2017-03-22, 12:47:44</p>
+        <p><span>最后更新:</span>2017-03-22, 22:29:59</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/18/interview-experience-one/" title="interview experience one">http://yoursite.com/2017/03/18/interview-experience-one/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/18/interview-experience-one/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -520,7 +581,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">2.</span> <span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Listview如何优化？"><span class="toc-number">2.1.</span> <span class="toc-text">-Listview如何优化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML格式数据、JSON格式数据如何解析？"><span class="toc-number">2.2.</span> <span class="toc-text">-XML格式数据、JSON格式数据如何解析？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android网络通信技术"><span class="toc-number">2.3.</span> <span class="toc-text">-Android网络通信技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android连接数据库"><span class="toc-number">2.4.</span> <span class="toc-text">-Android连接数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android图片处理、图片缓存机制"><span class="toc-number">2.5.</span> <span class="toc-text">-Android图片处理、图片缓存机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#计算机基础"><span class="toc-number">3.</span> <span class="toc-text">计算机基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组和链表的区别"><span class="toc-number">3.1.</span> <span class="toc-text">-数组和链表的区别</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-number">2.</span> <span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Listview如何优化？"><span class="toc-number">2.1.</span> <span class="toc-text">-Listview如何优化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML格式数据、JSON格式数据如何解析？"><span class="toc-number">2.2.</span> <span class="toc-text">-XML格式数据、JSON格式数据如何解析？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android网络通信技术"><span class="toc-number">2.3.</span> <span class="toc-text">-Android网络通信技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android连接数据库"><span class="toc-number">2.4.</span> <span class="toc-text">-Android连接数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android图片处理、图片缓存机制"><span class="toc-number">2.5.</span> <span class="toc-text">-Android图片处理、图片缓存机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#计算机基础"><span class="toc-number">3.</span> <span class="toc-text">计算机基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组和链表的区别"><span class="toc-number">3.1.</span> <span class="toc-text">-数组和链表的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程和进程"><span class="toc-number">3.2.</span> <span class="toc-text">-线程和进程</span></a></li></ol></li></ol>
         
     </div>
     <style>
