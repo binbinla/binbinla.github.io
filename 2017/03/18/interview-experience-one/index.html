@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="Hello_bin">
 <meta property="og:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
 <meta property="og:image" content="http://img.blog.csdn.net/20160906192211991">
-<meta property="og:updated_time" content="2017-03-22T14:29:59.896Z">
+<meta property="og:updated_time" content="2017-03-24T10:11:57.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="interview experience one">
 <meta name="twitter:description" content="前言  大三下学期，正值春招之际，大家伙都在尝试着找实习了。我也不例外，也在投递简历寻求面试机会，前两天去了”广州久邦数码”面试Android开发实习生。初次参加技术面试，没有什么经验，虽说先前有在网上看一些面试经验和宝典，但是面试官一问起问题来，会有种似曾相识的感觉，回答起来模模糊糊，不够彻底，仔细一想应该是自己掌握程度不够，还得好好学习。给个忠告，面试的时候态度一定要认真，不然很容易紧张，造成">
@@ -338,50 +338,43 @@
 <p>  GSON：谷歌提供的开源库可以让解析JSON数据的工作简单到让你不敢想象的地步，不过要使用此功能的话必须在项目中添加一个GSON的Jar包。。首先我们需要将GSON的资源压缩包下载下来， 下载地址是：<a href="http://code.google.com/p/google-gson/downloads/list。" target="_blank" rel="external">http://code.google.com/p/google-gson/downloads/list。</a> 其中 gson-2.2.4.jar这个文件就是我们所需要的了，现在将它拷贝到项目的 libs目录下，GSON库就会自动添加到 项目中了。</p>
 <p>那么GSON库究竟是神奇在哪里呢？其实它主要就是可以将一段JSON格式的字符串自 动映射成一个对象，从而不需要我们再手动去编写代码进行解析了。 </p>
 <p>比如说一段 JSON格式的数据如下所示：</p>
-<p> {“name”:”Tom”,”age”:20} </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;name&quot;:&quot;Tom&quot;,&quot;age&quot;:20&#125;</div></pre></td></tr></table></figure>
 <p>那我们就可以定义一个 Person类，并加入 name和 age这两个字段，然后只需简单地调 用如下代码就可以将 JSON数据自动解析成一个 Person对象了： </p>
-<p>Gson gson = new Gson();</p>
-<p> Person person = gson.fromJson(jsonData, Person.class);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Gson gson = new Gson();</div><div class="line">Person person = gson.fromJson(jsonData, Person.class);</div></pre></td></tr></table></figure>
 <p> 如果需要解析的是一段 JSON数组会稍微麻烦一点，我们需要借助 TypeToken将期望解 析成的数据类型传入到 fromJson()方法中，如下所示：</p>
-<p> List<person> people = gson.fromJson(jsonData, new TypeToken<list<person>&gt;() {}.getType()); </list<person></person></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;Person&gt; people = gson.fromJson(jsonData, new TypeToken&lt;List&lt;Person&gt;&gt;() &#123;&#125;.getType());</div></pre></td></tr></table></figure>
 <h2 id="Android网络通信技术"><a href="#Android网络通信技术" class="headerlink" title="-Android网络通信技术"></a>-Android网络通信技术</h2><p>  Android手机肯定也是可以上网的，所以作为开发者的我们就需要考虑 如何利用网络来编写出更加出色的应用程序，像 QQ、微博、新闻等常见的应用都会大量地 使用到网络技术。本章主要会讲述如何在手机端使用 HTTP协议和服务器端进行网络交互， 并对服务器返回的数据进行解析，这也是 Android中最常使用到的网络技术了。</p>
 <p>  在 Android上发送 HTTP请求的方式一般有两种，HttpURLConnection和 HttpClient。</p>
 <p>  <strong>HttpURLConnection：</strong></p>
 <p>首先我们要获取到HttpURLConnection实例，一般只需new出一个URL对象，并传入目标的网络地址，然后调用一下 openConnection()方法即可，如下所示： </p>
-<p>URL url = new URL(“<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“); </p>
-<p>HttpURLConnection connection = (HttpURLConnection) url.openConnection(); </p>
-<p>得到了 HttpURLConnection的实例之后，我们可以设置一下 HTTP请求所使用的方法。 常用的方法主要有两个，GET和 POST。GET表示希望从服务器那里获取数据，而 POST则 表示希望提交数据给服务器。写法如下： connection.setRequestMethod(“GET”); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">URL url = new URL(&quot;http://www.baidu.com&quot;); </div><div class="line">HttpURLConnection connection = (HttpURLConnection) url.openConnection();</div></pre></td></tr></table></figure>
+<p>得到了 HttpURLConnection的实例之后，我们可以设置一下 HTTP请求所使用的方法。 常用的方法主要有两个，GET和 POST。GET表示希望从服务器那里获取数据，而 POST则 表示希望提交数据给服务器。写法如下： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connection.setRequestMethod(&quot;GET&quot;);</div></pre></td></tr></table></figure>
 <p>接下来就可以进行一些自由的定制了，比如设置连接超时、读取超时的毫秒数，以及服 务器希望得到的一些消息头等。这部分内容根据自己的实际情况进行编写，示例写法如下：</p>
-<p> connection.setConnectTimeout(8000); </p>
-<p>connection.setReadTimeout(8000); </p>
-<p>之后再调用 getInputStream()方法就可以获取到服务器返回的输入流了，剩下的任务就是 对输入流进行读取，如下所示： InputStream in = connection.getInputStream();<br>最后可以调用 disconnect()方法将这个 HTTP连接关闭掉，如下所示：</p>
-<p> connection.disconnect(); </p>
-<p>那么如果是想要提交数据给服务器应该怎么办呢？其实也不复杂，只需要将 HTTP请求 的方法改成 POST，并在获取输入流之前把要提交的数据写出即可。注意每条数据都要以键 值对的形式存在，数据与数据之间用&amp;符号隔开，比如说我们想要向服务器提交用户名和密 码，就可以这样写：<br>connection.setRequestMethod(“POST”); </p>
-<p>DataOutputStream out = new DataOutputStream(connection.getOutputStream()); out.writeBytes(“username=admin&amp;password=123456”); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">connection.setConnectTimeout(8000); </div><div class="line">connection.setReadTimeout(8000);</div></pre></td></tr></table></figure>
+<p>之后再调用 getInputStream()方法就可以获取到服务器返回的输入流了，剩下的任务就是 对输入流进行读取，如下所示： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">InputStream in = connection.getInputStream();</div></pre></td></tr></table></figure>
+<p>最后可以调用 disconnect()方法将这个 HTTP连接关闭掉，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connection.disconnect();</div></pre></td></tr></table></figure>
+<p>那么如果是想要提交数据给服务器应该怎么办呢？其实也不复杂，只需要将 HTTP请求 的方法改成 POST，并在获取输入流之前把要提交的数据写出即可。注意每条数据都要以键 值对的形式存在，数据与数据之间用&amp;符号隔开，比如说我们想要向服务器提交用户名和密 码，就可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">connection.setRequestMethod(&quot;POST&quot;); </div><div class="line">DataOutputStream out = new DataOutputStream(connection.getOutputStream()); out.writeBytes(&quot;username=admin&amp;password=123456&quot;);</div></pre></td></tr></table></figure>
 <p><strong>HttpClient：</strong></p>
 <p>首先你需要知道，HttpClient是一个接口，因此无法创建它的实例，通常情况下都会创 建一个 DefaultHttpClient的实例，如下所示：</p>
-<p> HttpClient httpClient = new DefaultHttpClient(); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">HttpClient httpClient = new DefaultHttpClient();</div></pre></td></tr></table></figure>
 <p>接下来如果想要发起一条 GET请求，就可以创建一个 HttpGet对象，并传入目标的网络 地址，然后调用 HttpClient的 execute()方法即可：</p>
-<p> HttpGet httpGet = new HttpGet(“<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“);</p>
-<p> httpClient.execute(httpGet); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">HttpGet httpGet = new HttpGet(&quot;http://www.baidu.com&quot;);</div><div class="line">httpClient.execute(httpGet);</div></pre></td></tr></table></figure>
 <p>如果是发起一条 POST请求会比 GET稍微复杂一点，我们需要创建一个 HttpPost对象， 并传入目标的网络地址，如下所示： </p>
-<p>HttpPost httpPost = new HttpPost(“<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">HttpPost httpPost = new HttpPost(&quot;http://www.baidu.com&quot;);</div></pre></td></tr></table></figure>
 <p>然后通过一个 NameValuePair集合来存放待提交的参数，并将这个参数集合传入到一个 UrlEncodedFormEntity中，然后调用 HttpPost的 setEntity()方法将构建好的 UrlEncodedFormEntity 传入，如下所示： </p>
-<p>List<namevaluepair> params = new ArrayList<namevaluepair>(); </namevaluepair></namevaluepair></p>
-<p>params.add(new BasicNameValuePair(“username”, “admin”));</p>
-<p> params.add(new BasicNameValuePair(“password”, “123456”));</p>
-<p> UrlEncodedFormEntity entity = new UrlEncodedFormEntity(params, “utf-8”); </p>
-<p>httpPost.setEntity(entity); </p>
-<p>接下来的操作就和 HttpGet一样了，调用 HttpClient的 execute()方法，并将 HttpPost对 象传入即可： httpClient.execute(httpPost); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">List&lt;NameValuePair&gt; params = new ArrayList&lt;NameValuePair&gt;(); </div><div class="line">params.add(new BasicNameValuePair(&quot;username&quot;, &quot;admin&quot;));</div><div class="line">params.add(new BasicNameValuePair(&quot;password&quot;, &quot;123456&quot;));</div><div class="line">UrlEncodedFormEntity entity = new UrlEncodedFormEntity(params, &quot;utf-8&quot;); </div><div class="line">httpPost.setEntity(entity);</div></pre></td></tr></table></figure>
+<p>接下来的操作就和 HttpGet一样了，调用 HttpClient的 execute()方法，并将 HttpPost对 象传入即可： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">httpClient.execute(httpPost);</div></pre></td></tr></table></figure>
 <p>执行 execute()方法之后会返回一个 HttpResponse对象，服务器所返回的所有信息就会包 含在这里面。通常情况下我们都会先取出服务器返回的状态码，如果等于 200就说明请求和响应都成功了，如下所示：</p>
-<p> if (httpResponse.getStatusLine().getStatusCode() == 200) { </p>
-<p>// 请求和响应都成功了</p>
-<p> } </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (httpResponse.getStatusLine().getStatusCode() == 200) &#123; </div><div class="line">// 请求和响应都成功了</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 <p>接下来在这个 if判断的内部取出服务返回的具体内容，可以调用 getEntity()方法获取到 一个 HttpEntity实例，然后再用 EntityUtils.toString()这个静态方法将 HttpEntity转换成字符串 即可，如下所示： </p>
-<p>HttpEntity entity = httpResponse.getEntity(); </p>
-<p>String response = EntityUtils.toString(entity); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">HttpEntity entity = httpResponse.getEntity(); </div><div class="line">String response = EntityUtils.toString(entity);</div></pre></td></tr></table></figure>
 <p>注意如果服务器返回的数据是带有中文的，直接调用 EntityUtils.toString()方法进行转换 会有乱码的情况出现，这个时候只需要在转换的时候将字符集指定成 utf-8就可以了，如下 所示： </p>
-<p>String response = EntityUtils.toString(entity, “utf-8”);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String response = EntityUtils.toString(entity, &quot;utf-8&quot;);</div></pre></td></tr></table></figure>
 <p>  由于要联网，所以要在AndroidManifest.xml里面加入连接网络的权限：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span> /&gt;</div></pre></td></tr></table></figure>
 <h2 id="Android连接数据库"><a href="#Android连接数据库" class="headerlink" title="-Android连接数据库"></a>-Android连接数据库</h2><p>  Android平台下与服务器数据库通信的方法主要有：</p>
@@ -403,55 +396,9 @@
 <p><strong>Bitmap</strong></p>
 <p>  Bitmap是Android系统中的图像处理的最重要类之一。用它可以获取图像文件信息，进行图像剪切、旋转、缩放等操作，并可以指定格式保存图像文件。</p>
 <p> 重要函数</p>
-<p>public void recycle() // 回收位图占用的内存空间，把位图标记为Dead</p>
-<p>public final boolean isRecycled() //判断位图内存是否已释放  </p>
-<p>public final int getWidth()//获取位图的宽度 </p>
-<p>public final int getHeight()//获取位图的高度</p>
-<p>public final boolean isMutable()//图片是否可修改 </p>
-<p>public int getScaledWidth(Canvas canvas)//获取指定密度转换后的图像的宽度 </p>
-<p>public int getScaledHeight(Canvas canvas)//获取指定密度转换后的图像的高度 </p>
-<p>public boolean compress(CompressFormat format, int quality, OutputStream stream)//按指定的图片格式以及画质，将图片转换为输出流。 </p>
-<p>format：Bitmap.CompressFormat.PNG或Bitmap.CompressFormat.JPEG </p>
-<p>quality：画质，0-100.0表示最低画质压缩，100以最高画质压缩。对于PNG等无损格式的图片，会忽略此项设置。</p>
-<p>public static Bitmap createBitmap(Bitmap src) //以src为原图生成不可变得新图像 </p>
-<p>public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, int dstHeight, boolean filter)//以src为原图，创建新的图像，指定新图像的高宽以及是否可变。 </p>
-<p>public static Bitmap createBitmap(int width, int height, Config config)——创建指定格式、大小的位图 </p>
-<p>public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height)以source为原图，创建新的图片，指定起始坐标以及新图像的高宽。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">public void recycle() // 回收位图占用的内存空间，把位图标记为Dead</div><div class="line"></div><div class="line">public final boolean isRecycled() //判断位图内存是否已释放  </div><div class="line"></div><div class="line">public final int getWidth()//获取位图的宽度 </div><div class="line"></div><div class="line">public final int getHeight()//获取位图的高度</div><div class="line"></div><div class="line">public final boolean isMutable()//图片是否可修改 </div><div class="line"></div><div class="line">public int getScaledWidth(Canvas canvas)//获取指定密度转换后的图像的宽度 </div><div class="line"></div><div class="line">public int getScaledHeight(Canvas canvas)//获取指定密度转换后的图像的高度 </div><div class="line"></div><div class="line">public boolean compress(CompressFormat format, int quality, OutputStream stream)//按指定的图片格式以及画质，将图片转换为输出流。 </div><div class="line"></div><div class="line">format：Bitmap.CompressFormat.PNG或Bitmap.CompressFormat.JPEG </div><div class="line"></div><div class="line">quality：画质，0-100.0表示最低画质压缩，100以最高画质压缩。对于PNG等无损格式的图片，会忽略此项设置。</div><div class="line"></div><div class="line">public static Bitmap createBitmap(Bitmap src) //以src为原图生成不可变得新图像 </div><div class="line"></div><div class="line">public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, int dstHeight, boolean filter)//以src为原图，创建新的图像，指定新图像的高宽以及是否可变。 </div><div class="line"></div><div class="line">public static Bitmap createBitmap(int width, int height, Config config)——创建指定格式、大小的位图 </div><div class="line"></div><div class="line">public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height)以source为原图，创建新的图片，指定起始坐标以及新图像的高宽。</div></pre></td></tr></table></figure>
 <p><strong>BitmapFactory</strong></p>
-<p> Option 参数类：</p>
-<p>public boolean inJustDecodeBounds//如果设置为true，不获取图片，不分配内存，但会返回图片的高度宽度信息。</p>
-<p>public int inSampleSize//图片缩放的倍数</p>
-<p>public int outWidth//获取图片的宽度值</p>
-<p>public int outHeight//获取图片的高度值 </p>
-<p>public int inDensity//用于位图的像素压缩比 </p>
-<p>public int inTargetDensity//用于目标位图的像素压缩比（要生成的位图） </p>
-<p>public byte[] inTempStorage //创建临时文件，将图片存储</p>
-<p>public boolean inScaled//设置为true时进行图片压缩，从inDensity到inTargetDensity</p>
-<p>public boolean inDither //如果为true,解码器尝试抖动解码</p>
-<p>public Bitmap.Config inPreferredConfig //设置解码器</p>
-<p>public String outMimeType //设置解码图像</p>
-<p>public boolean inPurgeable//当存储Pixel的内存空间在系统内存不足时是否可以被回收</p>
-<p>public boolean inInputShareable //inPurgeable为true情况下才生效，是否可以共享一个InputStream</p>
-<p>public boolean inPreferQualityOverSpeed  //为true则优先保证Bitmap质量其次是解码速度``</p>
-<p>public boolean inMutable //配置Bitmap是否可以更改，比如：在Bitmap上隔几个像素加一条线段</p>
-<p>public int inScreenDensity //当前屏幕的像素密度</p>
-<p>工厂方法:</p>
-<p>public static Bitmap decodeFile(String pathName, Options opts) //从文件读取图片 </p>
-<p>public static Bitmap decodeFile(String pathName)</p>
-<p>public static Bitmap decodeStream(InputStream is) //从输入流读取图片</p>
-<p>public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts)</p>
-<p>public static Bitmap decodeResource(Resources res, int id) //从资源文件读取图片</p>
-<p>public static Bitmap decodeResource(Resources res, int id, Options opts) </p>
-<p>public static Bitmap decodeByteArray(byte[] data, int offset, int length) //从数组读取图片</p>
-<p>public static Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)</p>
-<p>public static Bitmap decodeFileDescriptor(FileDescriptor fd)//从文件读取文件 与decodeFile不同的是这个直接调用JNI函数进行读取 效率比较高</p>
-<p>public static Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)</p>
-<p>Bitmap.Config inPreferredConfig :</p>
-<p>​     枚举变量 （位图位数越高代表其可以存储的颜色信息越多，图像越逼真，占用内存越大）</p>
-<p>public static final Bitmap.Config ALPHA_8 //代表8位Alpha位图        每个像素占用1byte内存</p>
-<p>public static final Bitmap.Config ARGB_4444 //代表16位ARGB位图  每个像素占用2byte内存</p>
-<p>public static final Bitmap.Config ARGB_8888 //代表32位ARGB位图  每个像素占用4byte内存</p>
-<p>public static final Bitmap.Config RGB_565 //代表8位RGB位图          每个像素占用2byte内存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">Option 参数类：</div><div class="line"></div><div class="line">public boolean inJustDecodeBounds//如果设置为true，不获取图片，不分配内存，但会返回图片的高度宽度信息。</div><div class="line"></div><div class="line">public int inSampleSize//图片缩放的倍数</div><div class="line"></div><div class="line">public int outWidth//获取图片的宽度值</div><div class="line"></div><div class="line">public int outHeight//获取图片的高度值 </div><div class="line"></div><div class="line">public int inDensity//用于位图的像素压缩比 </div><div class="line"></div><div class="line">public int inTargetDensity//用于目标位图的像素压缩比（要生成的位图） </div><div class="line"></div><div class="line">public byte[] inTempStorage //创建临时文件，将图片存储</div><div class="line"></div><div class="line">public boolean inScaled//设置为true时进行图片压缩，从inDensity到inTargetDensity</div><div class="line"></div><div class="line">public boolean inDither //如果为true,解码器尝试抖动解码</div><div class="line"></div><div class="line">public Bitmap.Config inPreferredConfig //设置解码器</div><div class="line"></div><div class="line">public String outMimeType //设置解码图像</div><div class="line"></div><div class="line">public boolean inPurgeable//当存储Pixel的内存空间在系统内存不足时是否可以被回收</div><div class="line"></div><div class="line">public boolean inInputShareable //inPurgeable为true情况下才生效，是否可以共享一个InputStream</div><div class="line"></div><div class="line">public boolean inPreferQualityOverSpeed  //为true则优先保证Bitmap质量其次是解码速度``</div><div class="line"></div><div class="line">public boolean inMutable //配置Bitmap是否可以更改，比如：在Bitmap上隔几个像素加一条线段</div><div class="line"></div><div class="line">public int inScreenDensity //当前屏幕的像素密度</div><div class="line"></div><div class="line">工厂方法:</div><div class="line"></div><div class="line">public static Bitmap decodeFile(String pathName, Options opts) //从文件读取图片 </div><div class="line"></div><div class="line">public static Bitmap decodeFile(String pathName)</div><div class="line"></div><div class="line">public static Bitmap decodeStream(InputStream is) //从输入流读取图片</div><div class="line"></div><div class="line">public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts)</div><div class="line"></div><div class="line">public static Bitmap decodeResource(Resources res, int id) //从资源文件读取图片</div><div class="line"></div><div class="line">public static Bitmap decodeResource(Resources res, int id, Options opts) </div><div class="line"></div><div class="line">public static Bitmap decodeByteArray(byte[] data, int offset, int length) //从数组读取图片</div><div class="line"></div><div class="line">public static Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)</div><div class="line"></div><div class="line">public static Bitmap decodeFileDescriptor(FileDescriptor fd)//从文件读取文件 与decodeFile不同的是这个直接调用JNI函数进行读取 效率比较高</div><div class="line"></div><div class="line">public static Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)</div><div class="line"></div><div class="line">Bitmap.Config inPreferredConfig :</div><div class="line"></div><div class="line">     枚举变量 （位图位数越高代表其可以存储的颜色信息越多，图像越逼真，占用内存越大）</div><div class="line"></div><div class="line">public static final Bitmap.Config ALPHA_8 //代表8位Alpha位图        每个像素占用1byte内存</div><div class="line"></div><div class="line">public static final Bitmap.Config ARGB_4444 //代表16位ARGB位图  每个像素占用2byte内存</div><div class="line"></div><div class="line">public static final Bitmap.Config ARGB_8888 //代表32位ARGB位图  每个像素占用4byte内存</div><div class="line"></div><div class="line">public static final Bitmap.Config RGB_565 //代表8位RGB位图          每个像素占用2byte内存</div></pre></td></tr></table></figure>
 <p>​     Android中一张图片（BitMap）占用的内存主要和以下几个因数有关：图片长度，图片宽度，单位像素占用的字节数。一张图片（BitMap）占用的内存 = 图片长度 <em>图片宽度 </em>单位像素占用的字节数。</p>
 <p>下面列举几个常用方法的详细介绍：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">     * 获取缩放后的本地图片</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> filePath 文件路径</div><div class="line">     * <span class="doctag">@param</span> width    宽</div><div class="line">     * <span class="doctag">@param</span> height   高</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bitmap <span class="title">readBitmapFromFileDescriptor</span><span class="params">(String filePath, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(filePath);</div><div class="line">            BitmapFactory.Options options = <span class="keyword">new</span> BitmapFactory.Options();</div><div class="line">            options.inJustDecodeBounds = <span class="keyword">true</span>;</div><div class="line">            BitmapFactory.decodeFileDescriptor(fis.getFD(), <span class="keyword">null</span>, options);</div><div class="line">            <span class="keyword">float</span> srcWidth = options.outWidth;</div><div class="line">            <span class="keyword">float</span> srcHeight = options.outHeight;</div><div class="line">            <span class="keyword">int</span> inSampleSize = <span class="number">1</span>;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (srcHeight &gt; height || srcWidth &gt; width) &#123;</div><div class="line">                <span class="keyword">if</span> (srcWidth &gt; srcHeight) &#123;</div><div class="line">                    inSampleSize = Math.round(srcHeight / height);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    inSampleSize = Math.round(srcWidth / width);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            options.inJustDecodeBounds = <span class="keyword">false</span>;</div><div class="line">            options.inSampleSize = inSampleSize;</div><div class="line"></div><div class="line">            <span class="keyword">return</span> BitmapFactory.decodeFileDescriptor(fis.getFD(), <span class="keyword">null</span>, options);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception ex) &#123;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
@@ -551,7 +498,7 @@
         <p><span>本文标题:</span><a href="/2017/03/18/interview-experience-one/">interview experience one</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
         <p><span>发布时间:</span>2017-03-18, 14:44:06</p>
-        <p><span>最后更新:</span>2017-03-22, 22:29:59</p>
+        <p><span>最后更新:</span>2017-03-24, 18:11:57</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/18/interview-experience-one/" title="interview experience one">http://yoursite.com/2017/03/18/interview-experience-one/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/18/interview-experience-one/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
