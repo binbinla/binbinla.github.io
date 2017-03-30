@@ -302,7 +302,7 @@
 <p>(2)用来把数据映射到Listview上的Adapter；</p>
 <p>(3)需要展示的数据集；</p>
 <p>(4)数据展示的View模板。</p>
-<p>  Listview控件只负责加载、管理视图(每项数据称为Item View)。至于有多少数据项、每一项数据是如何显示的它并不关心，这一切交由adapter类去实现，通过adapter模式，用户只需要重写几个函数就可以将listview的每项数据构建出来。需要重写的函数有：</p>
+<p>  Listview控件只负责加载、管理视图(每项数据称为Item View)。至于有多少数据项、每一项数据是如何显示的它并不关心，这一 切交由adapter类去实现，通过adapter模式，用户只需要重写几个函数就可以将listview的每项数据构建出来。需要重写的函数有：</p>
 <p>(1)getCount()函数：获取数据的个数；</p>
 <p>(2)getItem(int )函数：获取position位置的数据；</p>
 <p>(3)getItemId(int )函数：获取position位置的数据Id，一般直接返回position即可；</p>
