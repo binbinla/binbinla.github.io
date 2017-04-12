@@ -142,13 +142,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -262,7 +262,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
   
@@ -380,7 +380,7 @@
 <p>  在项目中导入jdbc驱动，然后在代码开始出import jdbc的包。</p>
 <p>  建立链接：每种DBMS的JDBC驱动是不一样的，同一个DBMS也会有几种JDBC驱动，如Microsoft   SQL   Server的JDBC驱动主要有两种，Microsoft  官方提供的JDBC驱动和民间开源的JDBC驱动（JTDS），推荐JTDS，bug少，而且是完全开放源代码的。目前JTDS只能支持Microsoft   SQL   Server和Sybase。</p>
 <p>  由于DBMS与JDBC驱动的不同，所以每种JDBC连接数据库的字符串书写方法也是不一样的。 下面给出几种常见的JDBC与DBMS建立连接的字符串书写格式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. MySQL(http://www.mysql.com)mm.mysql-2.0.2-bin.jar  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"org.gjt.mm.mysql.Driver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:mysql://DbComputerNameOrIPAddr:3306/DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//2. PostgreSQL(http://www.de.postgresql.org)pgjdbc2.jar  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"org.postgresql.Driver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:postgresql://DbComputerNameOrIPAddr/DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//3. Oracle(http://www.oracle.com/ip/deploy/database/oracle9i/)classes12.zip  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"oracle.jdbc.driver.OracleDriver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:oracle:thin:@DbComputerNameOrIPAddr:1521:DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//4. Sybase(http://jtds.sourceforge.net)jconn2.jar  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"com.sybase.jdbc2.jdbc.SybDriver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:sybase:Tds:DbComputerNameOrIPAddr:2638/DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//(Default-Username/Password: "dba"/"sql")  </span></div><div class="line"><span class="comment">//5. Microsoft SQLServer(http://jtds.sourceforge.net)  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"net.sourceforge.jtds.jdbc.Driver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:jtds:sqlserver://DbComputerNameOrIPAddr:1433/DatabaseName"</span>, UserName, Password );   </div><div class="line"><span class="comment">//6. Microsoft SQLServer(http://www.microsoft.com)  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"com.microsoft.jdbc.sqlserver.SQLServerDriver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:microsoft:sqlserver://DbComputerNameOrIPAddr:1433;databaseName=master"</span>, UserName, Password );</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. MySQL(http://www.mysql.com)mm.mysql-2.0.2-bin.jar  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"org.gjt.mm.mysql.Driver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:mysql://DbComputerNameOrIPAddr:3306/DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//2. PostgreSQL(http://www.de.postgresql.org)pgjdbc2.jar  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName(<span class="string">"org.postgresql.Driver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:postgresql://DbComputerNameOrIPAddr/DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//3. Oracle(http://www.oracle.com/ip/deploy/database/oracle9i/)classes12.zip  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"oracle.jdbc.driver.OracleDriver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:oracle:thin:@DbComputerNameOrIPAddr:1521:DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//4. Sybase(http://jtds.sourceforge.net)jconn2.jar  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"com.sybase.jdbc2.jdbc.SybDriver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:sybase:Tds:DbComputerNameOrIPAddr:2638/DatabaseName"</span>, UserName, Password );  </div><div class="line"><span class="comment">//(Default-Username/Password: "dba"/"sql")  </span></div><div class="line"><span class="comment">//5. Microsoft SQLServer(http://jtds.sourceforge.net)  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"net.sourceforge.jtds.jdbc.Driver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:jtds:sqlserver://DbComputerNameOrIPAddr:1433/DatabaseName"</span>, UserName, Password );   </div><div class="line"><span class="comment">//6. Microsoft SQLServer(http://www.microsoft.com)  </span></div><div class="line">Connection con = <span class="keyword">null</span>;  </div><div class="line">Class.forName( <span class="string">"com.microsoft.jdbc.sqlserver.SQLServerDriver"</span> );<span class="comment">// 加载驱动程序  </span></div><div class="line">con = DriverManager.getConnection( <span class="string">"jdbc:microsoft:sqlserver://DbComputerNameOrIPAddr:1433;databaseName=master"</span>, UserName, Password );</div></pre></td></tr></table></figure>
 <p>  发送SQL语句(以SQL server为例)，当成功连接数据库之后，就可以发送操作数据的语句并处理结果了。在发送SQL语句之前，首先要创建一个statement对象，statement对象主要工作是把SQL语句发送到DBMS。然后发送SQL语句。对于SELECT操作，使用的是Statement对象的executeQuery(sql )方法，对于一些创建table和修改table的操作，使用的是Statement对象的executeUpdate(sql )方法。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//查询表名为“table_test”的所有内容  </div><div class="line">String sql = &quot;SELECT * FROM table_test&quot;;</div><div class="line">//创建Statement </div><div class="line">Statement stmt = con.createStatement(); </div><div class="line">ResultSet rs = stmt.executeQuery(sql);</div></pre></td></tr></table></figure>
 <p><strong>接口回调</strong></p>
@@ -1887,14 +1887,14 @@ case 6:
                 2016-2017 陈锡滨
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -1903,7 +1903,7 @@ case 6:
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -1936,9 +1936,9 @@ case 6:
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
