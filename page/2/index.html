@@ -266,6 +266,495 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-learning-notes" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/25/learning-notes/" class="article-date">
+      <time datetime="2017-02-25T03:32:19.000Z" itemprop="datePublished">2017-02-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/25/learning-notes/">learning notes</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p> <strong>2017/02/24</strong>  </p>
+<p>1、 Server所在进程启动后，需要将其中的Servic注册到ServiceManager,这样Client就可以通过ServiceManager找到对应的Binder引用，而ServiceManager自身的Binder引用时通过BinterInternal.getContextObject()函数获得。</p>
+<p>2、  我们在写程序时，通过getSystemService获得XXXManager,在XXXManager中保存了一个IXXX变量，这个变量可能是Proxy类型，也可能是Stub类型，这个过程被asInterface函数屏蔽了。</p>
+<p>3、Context是一个抽象类，ContextWrapper是对Context的封装，它包含一个Context类型的变量,ContextWrapper的功能函数内部其实都是调用里面的Context类型变量完成的。Application,Service,Activity等都是直接或者间接继承自ContextWrapper,但是并没有真正的实现其中的功能，Application，Service，Activity中关于Context的功能都是通过其内部的Context类型变量完成的，而这个变量的真实对象必定是ContextImpl，所以每创建一个Application,Activity,Servcice便会创建一个ContextImpl,并且这些ContextImpl中的mPackages和mResources变量都是一样的，所以不管使用Acitivty还是Service调用getResources得到相同的结果。</p>
+<p>4、在一个apk中，Context的数量等于Activity个数+Service个数+1。</p>
+<p>5、wait()、notify()和notifyAll()是 Object类 中的方法</p>
+<p>​    await()、signal()、signalAll()是Condition类中的方法</p>
+<p>​    因此调用wait()、notify()方法必须在同步块或者同步方法中进行（synchronized块或者</p>
+<p>synchronized方法）。</p>
+<p>6、JVM垃圾回收方式：新生代基本采用复制算法，老年代采用标记整理算法，CMS采用标记清理。</p>
+<p>7、需要使用抽象类的情况：</p>
+<p>当一个类的一个或多个方法是抽象方法时；</p>
+<p>当类是一个抽象类的子类，并且不能为任何抽象方法提供任何实现细节或方法体时；</p>
+<p>当一个类实现一个接口，并且不能为任何抽象方法提供实现细节或方法体时。</p>
+<p> <strong>2017/02/23</strong></p>
+<p>C语言实现单链表的初始化、创建、遍历等操作：</p>
+<p>#include<stdio.h></stdio.h></p>
+<p>#include<stdlib.h></stdlib.h></p>
+<p>typedef struct LNode</p>
+<p>{</p>
+<pre><code>int data;
+
+struct LNode *next;
+</code></pre><p>}LNode,*LinkList;</p>
+<p>LinkList Init_LNode()        //链表初始化</p>
+<p>{</p>
+<pre><code>LNode *L;
+
+L = (LinkList)malloc(sizeof(LNode));
+
+if(L == NULL)
+
+{
+
+    printf(&quot;初始化失败!\n&quot;);
+
+    exit(-1);
+
+}
+
+L-&gt;next = NULL;
+
+    return L;
+</code></pre><p>}</p>
+<p>void Creat_List1(LNode *L)        //头插法</p>
+<p>{</p>
+<pre><code>int i,n,num;
+
+LNode *pnew;
+
+
+
+printf(&quot;请输入要输入的元素个数：n = &quot;);
+
+scanf(&quot;%d&quot;,&amp;n);
+
+for(i=0;i&lt;n;i++)
+
+{
+
+    printf(&quot;请输入第%d个数：&quot;,i+1);
+
+    scanf(&quot;%d&quot;,&amp;num);
+
+    pnew = (LinkList)malloc(sizeof(LNode));
+
+    pnew-&gt;data = num;
+
+    pnew-&gt;next = L-&gt;next;
+
+    L-&gt;next = pnew;
+
+}
+</code></pre><p>}</p>
+<p><img src="C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\aa8b650db1474ecbb927121134a67573\326b986a2981495c94d961c19b17557d.jpg" alt="img"></p>
+<p>void Creat_List(LNode *L)        //创建  尾插法</p>
+<p>{</p>
+<pre><code>int i,n,num;
+
+LNode *p,*pnew;
+
+p = L;
+
+printf(&quot;请输入要输入的元素个数：n = &quot;);
+
+scanf(&quot;%d&quot;,&amp;n);
+
+for(i=0;i&lt;n;i++)
+
+{
+
+    printf(&quot;请输入第%d个数：&quot;,i+1);
+
+    scanf(&quot;%d&quot;,&amp;num);
+
+    pnew = (LinkList)malloc(sizeof(LNode));
+
+    if(pnew == NULL)
+
+    {
+
+        printf(&quot;初始化失败!\n&quot;);
+
+        exit(-1);
+
+    }
+
+    pnew-&gt;data = num;
+
+    p-&gt;next = pnew;
+
+    p = pnew;
+
+}
+
+p-&gt;next =NULL;
+</code></pre><p>}</p>
+<p><img src="C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\9fb3a9cd72d5487f901f6c76fa02e3dc\1d7c9be4e7d04c54b378497cc34dfb24.jpg" alt="img"></p>
+<p>void Show_Linst(LNode *L)        //遍历</p>
+<p>{</p>
+<pre><code>LNode *p;
+
+p =L-&gt;next;
+
+while(p!=NULL)
+
+{
+
+    printf(&quot;%d &quot;,p-&gt;data);
+
+    p = p-&gt;next;
+
+
+
+}
+
+printf(&quot;\n&quot;);
+</code></pre><p>}</p>
+<p>void Insert_List(LNode *L)        //插入</p>
+<p>{</p>
+<pre><code>int i , n , val;
+
+LNode *p,*s;
+
+p = L;
+
+i=1;
+
+printf(&quot;请输入你要插入的位置：n=&quot;);
+
+scanf(&quot;%d&quot;,&amp;n);
+
+printf(&quot;请输入你要插入的元素：val=&quot;);
+
+scanf(&quot;%d&quot;,&amp;val);
+
+while(p&amp;&amp;i&lt;n)
+
+{
+
+    p = p-&gt;next;
+
+    ++i;
+
+}
+
+if(!p || i&gt;n)
+
+    printf(&quot;无法插入!\n&quot;);
+
+s = (LinkList)malloc(sizeof(LNode));
+
+s-&gt;data = val;
+
+s-&gt;next = p-&gt;next;
+
+p-&gt;next = s;
+</code></pre><p>}</p>
+<p>void Delete_List(LNode *L)        //删除</p>
+<p>{</p>
+<pre><code>int i , n ;
+
+LNode *p,*s;
+
+p = L;
+
+i=1;
+
+printf(&quot;请输入你要删除的位置：n=&quot;);
+
+scanf(&quot;%d&quot;,&amp;n);
+
+while(p&amp;&amp;i&lt;n)
+
+{
+
+    p = p-&gt;next;
+
+    ++i;
+
+}
+
+if(!(p-&gt;next) || i&gt;n)
+
+    printf(&quot;删除的位置不合法!\n&quot;);
+</code></pre><p>//    p-&gt;next =p-&gt;next-&gt;next;</p>
+<pre><code>s = p-&gt;next;
+
+p-&gt;next = s-&gt;next;
+
+free(s);
+</code></pre><p>}</p>
+<p>void Query_List(LNode *L)        //查询</p>
+<p>{</p>
+<pre><code>int i , n ,val;
+
+LNode *p;
+
+p = L-&gt;next;
+
+i=1;
+
+printf(&quot;请输入你要查询的位置：n=&quot;);
+
+scanf(&quot;%d&quot;,&amp;n);
+
+while(p&amp;&amp;i&lt;n)
+
+{
+
+    p = p-&gt;next;
+
+    ++i;
+
+}
+
+if(!(p-&gt;next) || i&gt;n)
+
+    printf(&quot;查询的元素不存在!\n&quot;);
+
+val = p-&gt;data;
+
+printf(&quot;你查询的元素值为：%d\n&quot;,val);
+</code></pre><p>}</p>
+<p>void Destroy_List(LNode *L)        //销毁</p>
+<p>{</p>
+<pre><code>LinkList p,q;
+
+p = L-&gt;next;    //p指向第一个结点
+
+while(p)
+
+{
+
+    q = p-&gt;next;
+
+    free(p);
+
+    p = q;
+
+}
+
+L-&gt;next = NULL;
+</code></pre><p>}</p>
+<p>int Show_Menu()        //主菜单</p>
+<p>{</p>
+<pre><code>int num;
+
+printf(&quot;********************************************\n&quot;);
+
+printf(&quot;\n  【1】创建            【2】插入\n&quot;);
+
+printf(&quot;\n  【3】删除            【4】查询\n&quot;);
+
+printf(&quot;\n  【5】遍历            【6】退出\n&quot;);
+
+printf(&quot;\n********************************************\n&quot;);
+
+printf(&quot;请输入你的操作序号：&quot;);
+
+if(scanf(&quot;%d&quot;,&amp;num)==0)
+
+{
+
+    printf(&quot;请重新输入!\n&quot;);
+
+}
+
+return num;
+</code></pre><p>}</p>
+<p>int main(int argc,char *argv[])</p>
+<p>{</p>
+<pre><code>LinkList S;
+
+int val;
+
+S = Init_LNode();
+
+if(S == NULL)
+
+{
+
+    printf(&quot;初始化失败!\n&quot;);
+
+}
+
+while(val!=6)
+
+{
+
+val = Show_Menu();
+
+switch(val)
+
+{
+
+case 1:
+
+        Creat_List(S);        //尾插法
+
+        //Creat_List1(S);    //头插法
+
+        break;
+
+case 2:
+
+        Insert_List(S);        //插入
+
+        break;
+
+case 3:
+
+        Delete_List(S);        //删除
+
+        break;
+
+case 4:
+
+        Query_List(S);        //查询
+
+        break;
+
+case 5:
+
+        Show_Linst(S);        //显示
+
+        break;
+
+case 6:
+
+        Destroy_List(S);    //销毁
+
+        exit(0);
+
+        break;
+
+}
+
+}
+</code></pre><p>}</p>
+<p> <strong>2017/02/22</strong></p>
+<p>1、非空二叉树，叶子数 + 1 = 结点数</p>
+<p>2、二叉树 先序遍历：中左右，中序遍历：左中右</p>
+<p>3、CPU中，寄存器访问速度最快</p>
+<p>4、画图能使抽象问题形象化，举例能使抽象问题具体化，分解能使复杂问题简单化</p>
+<p>5、想要优化代码效率，需要熟悉数据结构</p>
+<p>6、Java中：</p>
+<p>栈Stack（先进后出），入栈（push、add），出栈（pop）</p>
+<p>队列Queue（先进先出），入队（offer、add），出队（poll）</p>
+<p>获取 队头/栈顶 元素，使用peek</p>
+<p>7、使用LinkedList类实现栈和队列更为方便：</p>
+<p>对于栈：常用等效方法有 addFirst（e)、removeFirst()、peekFirst()、isEmpty()</p>
+<p>对于队列：常用的等效方法有 offerLast(e)、pollFirst()、peekFirst()、isEmpty()</p>
+<p> <strong>2016/11/26</strong> </p>
+<p>1、codeblocks（C99标准）不支持在for循环里面定义变量</p>
+<p>2、codeblocks（C99标准）不支持在循环中设置判断条件while（true），可改为while（1）</p>
+<p>3、PCB（process control block）进程控制块</p>
+<p>4、操作系统进程调度算法：</p>
+<p>完成时间=开始时间+需要运行时间</p>
+<p>周转时间=完成时间-到达时间</p>
+<p>等待时间=上一个进程完成时间-本进程到达时间</p>
+<p>①短作业（进程）优先：当上一进程运行结束之后，下面的进程根据所需服务时间进行排序，所需服务时间越短，越先执行。短作业优先算法，如果某一进程占用了处理机，则除非因某事件发生被阻塞而放弃处理机再重新调度，否则一直执行到完成；</p>
+<p>②时间片轮转调度：采用先来先执行的原则，但是不采用进程一旦占用处理机就执行至完成的算法，而是为进程设置时间片，用队列的方式对进程进行动态调用执行，直到每个进程都执行完成（状态为finish）；</p>
+<p>③响应比优先：优先权=（等待时间+需要运行时间）/需要运行时间。</p>
+<p> <strong>2016/11/24</strong> </p>
+<p>1、用例图 （用例、参与者、关系、系统边界）</p>
+<p>2、上下文图 （数据流图最高层，系统功能的最高抽象）</p>
+<p>3、数据流图 （数据源（人、物、其他系统）、数据流、数据加工处理、数据存储）</p>
+<p>4、实体-联系图（E-R图） （实体、属性、实体之间的联系）</p>
+<p> <strong><em>2016/11/22</em></strong> </p>
+<p>1、关于sql 删除指定课程名称的外键约束问题，采用级联删除解除约束</p>
+<p>alter table SC add constraint fk_test foreign key (Cno) references Course(Cno) on delete cascade;（解除非多重级联删除的）</p>
+<p>alter table Course drop constraint FK<strong>Course</strong>Cpno__09DE7BCC（解除多重级联删除的， 约束键值为报错信息中所给的值）</p>
+<p>2、</p>
+<p>这个语句没问题</p>
+<p>select Student.Sno,Sname,Cno,Grade</p>
+<p>from Student,SC</p>
+<p>where Student.Sno = ‘201215121’ and Student.Sno = SC.Sno;</p>
+<p>这个语句有问题</p>
+<p>select Student.Sno,Sname,Cno,Grade</p>
+<p>from Student,SC</p>
+<p>where Sno = ‘201215121’ and Student.Sno = SC.Sno;</p>
+<p> <strong>2016/11/12</strong> </p>
+<p>Java输入输出：</p>
+<p>1、绝对路径如：“C:/java/demo”        相对路径：“demo”</p>
+<p>2、/ 是转义字符，表示路径的方法可以是：  ①\   ②//</p>
+<p>3、Windows平台的换行符是：\r\n</p>
+<p>4、Java.io主要包括输入、输出两种IO流，每种又可分为字节流（8位）和字符流（16位）两大类</p>
+<p>5、File类不能访问文件内容本身，需要使用输入/输出流</p>
+<p>6、File类提供了很多方法来操作文件和目录，详情看书本</p>
+<p>7、文件过滤器：File类的list()方法可以接受一个filenamefilter参数（此接口包含一个accept（File dir ,String name）方法，用此方法加上lambda表达式，即可实现过滤器）</p>
+<p>8、</p>
+<p><img src="C:\Users\陈锡滨\AppData\Local\YNote\data\qq929675F2DC899FEDCA1A128BFCC449AA\d1356cfa5f52490fb41f33996e518c5f\ukuz2ghd1]]0.png" alt="img"></p>
+<p>9、处理流的用法：通常需要在创建处理流时传入一个节点流作为构造器参数即可</p>
+<p>​     例子：</p>
+<p>​     FileOutputStream fos = new FileOutputStream(“test.txt”);</p>
+<p>​     PrintStream ps = new PrintStream(fos);</p>
+<p>10、计算机的文件分为文本文件（能用记事本打开并查看内容）和二进制文件两大类 </p>
+<p>11、StringReader对象和StringWriter对象相较于FileReader和FileWriter不同的是，创建对象时传入的是字符串节点，而不是文件节点</p>
+<p> <strong>2016/11/11</strong></p>
+<p>1、一般的类声明有如下几个部分：</p>
+<p>【modifiers】class ClassName【extends SuperClassName】【implement InterfaceNames】</p>
+<p>2、abstract（抽象）类不能直接实例化为对象，子类会用不同的方式实现本类的方法</p>
+<p>​      final类具有唯一性，不能再有子类（即不能再被继承）</p>
+<p>3、类变量（static），系统在第一次遇上时即为它分配内存，类的所有实例对象共享这个类变量，通常用于定义常数，因为常数对所有对象来说都不变</p>
+<p>4、类变量可以用类名来访问，实例变量不能</p>
+<p>5、成员变量以及方法的访问限制，其声明的形式和定义完全一样，有四类：private、public、protected、friendly（虽友好但不给子类访问权限），访问权限请看书本</p>
+<p>6、语法细节：参数名可以与成员变量同名，但不能与局部变量同名</p>
+<p>​                       this在方法体中指当前对象的成员，包括成员变量和方法</p>
+<p>​                       super用于指定当前对象所隐藏或重写的超类的成员</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/">notes</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-分簇-触摸屏精确定位Algo" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

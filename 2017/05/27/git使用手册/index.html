@@ -15,34 +15,16 @@
 
 
 
-<meta name="description" content="1、Java初始化过程是这样的： 
-①首先，初始化父类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； 
-②然后，初始化子类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； 
-③其次，初始化父类的普通成员变量和代码块，在执行父类的构造方法；
-④最后，初始化子类的普通成员变量和代码块，在执行子类的构造方法。
-2、Java hashmap：
-①HashMap 的实例有两个参数影">
+<meta name="description" content="High on Algo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="notes6">
-<meta property="og:url" content="http://yoursite.com/2017/03/06/notes6/index.html">
+<meta property="og:title" content="git使用手册">
+<meta property="og:url" content="http://yoursite.com/2017/05/27/git使用手册/index.html">
 <meta property="og:site_name" content="Hello_bin">
-<meta property="og:description" content="1、Java初始化过程是这样的： 
-①首先，初始化父类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； 
-②然后，初始化子类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； 
-③其次，初始化父类的普通成员变量和代码块，在执行父类的构造方法；
-④最后，初始化子类的普通成员变量和代码块，在执行子类的构造方法。
-2、Java hashmap：
-①HashMap 的实例有两个参数影">
-<meta property="og:updated_time" content="2017-03-08T15:42:27.126Z">
+<meta property="og:description" content="High on Algo">
+<meta property="og:updated_time" content="2017-05-27T12:26:22.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="notes6">
-<meta name="twitter:description" content="1、Java初始化过程是这样的： 
-①首先，初始化父类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； 
-②然后，初始化子类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； 
-③其次，初始化父类的普通成员变量和代码块，在执行父类的构造方法；
-④最后，初始化子类的普通成员变量和代码块，在执行子类的构造方法。
-2、Java hashmap：
-①HashMap 的实例有两个参数影">
+<meta name="twitter:title" content="git使用手册">
+<meta name="twitter:description" content="High on Algo">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -74,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>notes6 | Hello_bin</title>
+<title>git使用手册 | Hello_bin</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -278,11 +260,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-notes6" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-git使用手册" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/06/notes6/" class="article-date">
-      <time datetime="2017-03-06T15:02:56.000Z" itemprop="datePublished">2017-03-06</time>
+      <a href="/2017/05/27/git使用手册/" class="article-date">
+      <time datetime="2017-05-27T12:26:22.000Z" itemprop="datePublished">2017-05-27</time>
 </a>
 
 
@@ -297,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      notes6
+      git使用手册
     </h1>
   
 
@@ -307,10 +289,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning-notes/">learning notes</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -318,43 +296,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>1、Java初始化过程是这样的： </p>
-<p>①首先，初始化父类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； </p>
-<p>②然后，初始化子类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； </p>
-<p>③其次，初始化父类的普通成员变量和代码块，在执行父类的构造方法；</p>
-<p>④最后，初始化子类的普通成员变量和代码块，在执行子类的构造方法。</p>
-<p>2、Java hashmap：</p>
-<p>①HashMap 的实例有两个参数影响其性能：“初始容量” 和 “加载因子”；</p>
-<p>②HashMap 的实现不是同步的，意味着它不是线程安全的；</p>
-<p>③HashMap中的key-value都是存储在Entry数组中的；</p>
-<p>④HashMap通过链地址法解决哈希冲突。</p>
-<p>3、java中可以有多个重载的main方法，但只有public static void main(String[] args){}是函数入口。</p>
-<p>4、JSP内置对象：</p>
-<p>request    response   session   out    page    application   exception   pagecontext    config。</p>
-<p>5、视图更新的限制：</p>
-<p>①初始View定义的Select语句里如果包含了GROUP BY,DISTINCT,LIMIT或HAVING等命令时；</p>
-<p>②如果视图里数据来自多张字表时。</p>
-<p>6、结构型模式：</p>
-<p>结构型模式是描述如何将类对象结合在一起，形成一个更大的结构，结构模式描述两种不同的东西：类与类的实例。故可以分为类结构模式和对象结构模式。</p>
-<p>在GoF设计模式中，结构型模式有：</p>
-<p>①.适配器模式 Adapter</p>
-<p>  适配器模式是将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。两个成熟的类需要通信，但是接口不同，由于开闭原则，我们不能去修改这两个类的接口，所以就需要一个适配器来完成衔接过程。</p>
-<p>②.桥接模式 Bridge</p>
-<p>  桥接模式将抽象部分与它的实现部分分离，是它们都可以独立地变化。它很好的支持了开闭原则和组合锯和复用原则。实现系统可能有多角度分类，每一种分类都有可能变化，那么就把这些多角度分离出来让他们独立变化，减少他们之间的耦合。</p>
-<p>③.组合模式 Composite</p>
-<p>  组合模式将对象组合成树形结构以表示部分-整体的层次结构，组合模式使得用户对单个对象和组合对象的使用具有一致性。</p>
-<p>④.装饰模式 Decorator</p>
-<p> 装饰模式动态地给一个对象添加一些额外的职责，就增加功能来说，它比生成子类更灵活。也可以这样说，装饰模式把复杂类中的核心职责和装饰功能区分开了，这样既简化了复杂类，有去除了相关类中重复的装饰逻辑。装饰模式没有通过继承原有类来扩展功能，但却达到了一样的目的，而且比继承更加灵活，所以可以说装饰模式是继承关系的一种替代方案。</p>
-<p>⑤.外观模式 Facade</p>
-<p> 外观模式为子系统中的一组接口提供了同意的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。外观模式中，客户对各个具体的子系统是不了解的，所以对这些子系统进行了封装，对外只提供了用户所明白的单一而简单的接口，用户直接使用这个接口就可以完成操作，而不用去理睬具体的过程，而且子系统的变化不会影响到用户，这样就做到了信息隐蔽。</p>
-<p>⑥.享元模式 Flyweight</p>
-<p> 享元模式为运用共享技术有效的支持大量细粒度的对象。因为它可以通过共享大幅度地减少单个实例的数目，避免了大量非常相似类的开销。享元模式是一个类别的多个对象共享这个类别的一个对象，而不是各自再实例化各自的对象。这样就达到了节省内存的目的。</p>
-<p>⑦.代理模式 Proxy  </p>
-<p> 为其他对象提供一种代理，并由代理对象控制对原对象的引用，以间接控制对原对象的访问。</p>
-<p>7、继承具有多态性，可以是本类的引用指向本类对象，也可以是本类的引用指向子类对象。(向上转型是无条件的。)</p>
-<p>8、1.静态代码块 2.构造代码块3.构造方法的执行顺序是1&gt;2&gt;3。</p>
-<p>9、构造方法每次都是构造出新的对象，不存在多个线程同时读写同一对象中的属性的问题，所以不需要同步 。一个子类可以覆盖掉父类的同步方法。</p>
-
+        
       
     </div>
     
@@ -362,13 +304,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/06/notes6/">notes6</a></p>
+        <p><span>本文标题:</span><a href="/2017/05/27/git使用手册/">git使用手册</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈锡滨</a></p>
-        <p><span>发布时间:</span>2017-03-06, 23:02:56</p>
-        <p><span>最后更新:</span>2017-03-08, 23:42:27</p>
+        <p><span>发布时间:</span>2017-05-27, 20:26:22</p>
+        <p><span>最后更新:</span>2017-05-27, 20:26:22</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/06/notes6/" title="notes6">http://yoursite.com/2017/03/06/notes6/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/06/notes6/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/27/git使用手册/" title="git使用手册">http://yoursite.com/2017/05/27/git使用手册/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/27/git使用手册/　　作者: 陈锡滨" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -380,16 +322,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/12/notes7/">
-                    notes7
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/03/notes5/">
-                    notes5
+                <a href="/2017/05/19/春招Android岗实习面试分享/">
+                    春招Android岗实习面试分享
                 </a>
             </div>
         
@@ -437,7 +373,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"notes6　| Hello_bin　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"git使用手册　| Hello_bin　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -457,15 +393,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/12/notes7/" title="上一篇: notes7">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/03/notes5/" title="下一篇: notes5">
+            <a href="/2017/05/19/春招Android岗实习面试分享/" title="下一篇: 春招Android岗实习面试分享">
                 <i class="fa fa-angle-right"></i>
             </a>
         
