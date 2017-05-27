@@ -385,25 +385,58 @@
 <blockquote>
 <ul>
 <li><p>查看分支</p>
-<p>查看远程分支  git branch -r </p>
-<p>查看各个分支最后提交的信息  git branch -v</p>
-<p>查看已经被合并到当前分支的分支  git branch –merged</p>
-<p>查看尚未被合并到当前分支的分支  git branch –no –merged</p>
+<p>查看远程分支  <code>git branch -r</code> </p>
+<p>查看各个分支最后提交的信息  <code>git branch -v</code></p>
+<p>查看已经被合并到当前分支的分支  <code>git branch --merged</code></p>
+<p>查看尚未被合并到当前分支的分支  <code>git branch --no --merged</code></p>
 </li>
 <li><p>切换分支</p>
-<p>git checkout <branch></branch></p>
+<p><code>git checkout &lt;branch&gt;</code></p>
 </li>
 <li><p>创建新分支  </p>
-<p>创建新的分支并且切换过去  git checkout  -b <new_branch></new_branch></p>
-<p>创建基于branch分支的新分支new_branch  git checkout-b <new_branch> <branch></branch></new_branch></p>
-<p>把某次历史记录checkout出来并创建新分支 git checkout $id -b <new_branch></new_branch></p>
+<p>创建新的分支并且切换过去  <code>git checkout  -b &lt;new_branch&gt;</code></p>
+<p>创建基于branch分支的新分支new_branch  <code>git checkout-b &lt;new_branch&gt; &lt;branch&gt;</code></p>
+<p>把某次历史记录checkout出来并创建新分支 <code>git checkout $id -b &lt;new_branch&gt;</code></p>
 </li>
-<li><p>​</p>
+<li><p>删除分支</p>
+<p>删除某个分支  <code>git branch -d &lt;branch&gt;</code></p>
+<p>强制删除某个分支(未被合并的分支在被删除时需要强制)   <code>git branch -D &lt;branch&gt;</code></p>
 </li>
 </ul>
 </blockquote>
 </li>
-<li><p>​</p>
+<li><p>git暂存管理</p>
+<blockquote>
+<p>暂存  <code>git stash</code></p>
+<p>列所有暂存区  <code>git stash list</code></p>
+<p>恢复暂存区的内容  <code>git stash apply</code></p>
+<p>删除暂存区  <code>git stash drop</code></p>
+</blockquote>
+</li>
+<li><p>git远程仓库管理</p>
+<blockquote>
+<p>查看远程服务器地址  <code>git remote -v</code></p>
+<p>查看远程服务器仓库状态  <code>git remote show origin</code></p>
+<p>添加远程仓库地址  <code>git remote add origin ...</code></p>
+<p>删除远程仓库  <code>git remote rm &lt;repository&gt;</code></p>
+</blockquote>
+</li>
+<li><p>git远程分支管理</p>
+<blockquote>
+<ul>
+<li><p>远程分支抓取</p>
+<p>抓取远程仓库所有分支更新并合并到本地  <code>git pull</code></p>
+<p>抓取远程仓库所有分支更新并合并到本地，不要快进合并  <code>git pull --no--ff</code> </p>
+</li>
+<li><p>push远程分支</p>
+<p>push所有分支  <code>git push</code></p>
+<p>将本地分支推到远程主分支  <code>git push origin master</code></p>
+<p>将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)   <code>git push -u origin master</code></p>
+<p> 创建远程分支  <code>git push origin &lt;local_branch&gt;</code><br> 创建远程分支  <code>git push origin &lt;local_branch&gt;:&lt;remote_branch&gt;</code><br>先删除本地分支，然后再push删除远程分支  <code>git push origin :&lt;remote_branch&gt;</code> </p>
+</li>
+</ul>
+</blockquote>
+<p>​</p>
 <p>​</p>
 <p>​</p>
 </li>
