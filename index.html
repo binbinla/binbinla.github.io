@@ -325,7 +325,7 @@
 </li>
 <li><p>在Mac上安装</p>
 <p>在Mac上安装git有两种方式。最容易的当属使用图形化的git安装工具，下载地址：</p>
-<p><a href="http://code.google.com/p/git-osx-installer" target="_blank" rel="external">http://code.google.com/p/git-osx-installer</a></p>
+<p><a href="http://code.google.com/p/git-osx-installer" target="_blank" rel="external">下载地址</a></p>
 <p>另一种是通过Macports(<a href="http://www.macports.org)安装。安装好Macports之后，使用下面的命令安装git：" target="_blank" rel="external">http://www.macports.org)安装。安装好Macports之后，使用下面的命令安装git：</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo port install git-core +svn +doc +bash_competition +gitweb</div></pre></td></tr></table></figure>
 </li>
@@ -333,7 +333,7 @@
 <ul>
 <li>有个叫做msysgit的项目提供了安装包，可以从Google code的页面上下载安装文件：</li>
 </ul>
-<p><a href="http://code.google.com/p/msysgit" target="_blank" rel="external">http://code.google.com/p/msysgit</a></p>
+<p><a href="http://code.google.com/p/msysgit" target="_blank" rel="external"> 下载地址</a></p>
 <p>安装完之后，就可以使用命令行的git工具了，另外还有一个图形界面的git项目管理工具。</p>
 </li>
 </ol>
@@ -437,10 +437,81 @@
 </ul>
 </blockquote>
 <p>​</p>
-<p>​</p>
+<h2 id="Git与GitHub"><a href="#Git与GitHub" class="headerlink" title="Git与GitHub"></a>Git与GitHub</h2><blockquote>
+<p>​ GitHub是目前为止最大的开源Git托管服务，并且是少数同时提供公共托管和私人托管服务的站点之一。</p>
+<p>接下来的内容主要描述讲解如何使用git来将本地仓库与GitHub账户的仓库建立连接。</p>
+</blockquote>
+<ol>
+<li><p>建立本地git仓库</p>
+<p>进入你要同步的本地项目的根目录下，执行git命令：</p>
+<p><code>git init</code></p>
+</li>
+<li><p>将项目中所有的文件添加到仓库中</p>
+<p><code>git add .</code></p>
+<p>如果只想添加某个特定的文件，只需把 . 换成特定文件名即可。</p>
+</li>
+<li><p>将add进来的文件提交到仓库</p>
+<p><code>git commit -m &quot;(添加注释语句 )&quot;</code></p>
+</li>
+<li><p>在自己GitHub上创建一个仓库（repository），界面如下：</p>
+<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\G}Z%OWK7@%4GG}20`P`L%2X.png" alt="img"> </p>
+<p>Repository name：填写仓库名称</p>
+<p>Description：描述，填写仓库的主题、内容</p>
+<p>Public、Private：仓库类型可选：公有、私有</p>
+<p>Initialize this repository with a README：初始化readme说明文件</p>
+<p>最后，点击Create repository就可以成功创建仓库了。</p>
+</li>
+<li><p>获取仓库地址</p>
+<p>要想本地仓库与远程建立连接，需要有远程仓库的地址，获取方法如下图： </p>
+<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\@CE8HWD_KO%EHWR113$92L2.png" alt="img"></p>
 <p>​</p>
 </li>
+<li><p>将本地仓库关联到GitHub上</p>
+<p>进入本地仓库目录，执行如下git命令：</p>
+<p><code>git remote add origin ...(远程仓库地址)</code></p>
+</li>
+<li><p>在上传本地目录之前，要先pull一下，执行如下git命令：</p>
+<p><code>git pull origin master</code></p>
+</li>
+<li><p>上传本地仓库到GitHub远程仓库</p>
+<p><code>git push -u origin master</code></p>
+</li>
+<li><p>执行完成，如果没有异常，等待上传完成就上传成功。期间会要求输入账户名和密码，只需要输入GitHub的账户和密码就行。</p>
+</li>
 </ol>
+</li>
+</ol>
+<h2 id="Git-GUI"><a href="#Git-GUI" class="headerlink" title="Git GUI"></a>Git GUI</h2><p>Git有提供图形界面，下面简要介绍如何使用。</p>
+<ul>
+<li><p>打开Git GUI，在右下角处选择”重新扫描”，如下：</p>
+<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\B28TFAYY9FFYGZROAUXB2@D.png" alt="img"></p>
+</li>
+<li><p>扫描完成后，在左上角处会显示”未缓存的改动”，如下：(点击左边的图标即可将文件添加到已缓存区)</p>
+<p><img src="C:\Users\陈锡滨\Pictures\Camera Roll\未缓存.png" alt="未缓存"></p>
+</li>
+<li><p>将”未缓存文件”添加到”已缓存文件”，如下：</p>
+<p><img src="C:\Users\陈锡滨\Pictures\Camera Roll\已缓存.png" alt="已缓存"></p>
+</li>
+<li><p>在”提交描述”框内填写此次修改的目的和原因，然后提交。</p>
+<p>第一行：一句话概况你做的修改。</p>
+<p>第二行：空行。</p>
+<p>第三行：请描述为什么你做的这些改动是好的。</p>
+<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\B28TFAYY9FFYGZROAUXB2@D.png" alt="img"> </p>
+<p>​</p>
+</li>
+<li><p>最后提交，会要求输入用户名和密码，同样是GitHub的账户名和密码即可。</p>
+<p> <img src="C:\Users\陈锡滨\Pictures\Camera Roll\账户.png" alt="账户"></p>
+<p><img src="C:\Users\陈锡滨\Pictures\Camera Roll\密码.png" alt="密码"></p>
+</li>
+<li><p>上传成功，提示如下：</p>
+<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\5@_ZXARBX5T70AEVZ4R6RE5.png" alt="img"></p>
+</li>
+</ul>
+<blockquote>
+<p>大概流程就差不多这样了，还有其他一些功能，比如分支管理，等深入学习了有机会再分享。</p>
+</blockquote>
+<h2 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h2><p>感谢阅读，欢迎指教。本人简书和GitHub —&gt;（<a href="http://www.jianshu.com/users/083ac3156200/latest_articles" target="_blank" rel="external">简书</a>/<a href="https://github.com/binbinla" target="_blank" rel="external">GitHub</a>）</p>
+<p>good luck！</p>
 
       
     </div>
