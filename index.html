@@ -299,20 +299,15 @@
 <p>版本控制是一种记录若干文件内容变化，以便将来查阅特定版本修订情况的系统。</p>
 </blockquote>
 <p>如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版 本。采用版本控制系统（VCS）是个明智的选择。有了它你就可以将某个文件回溯到之前的 状态，甚至将整个项目都回退到过去某个时间点的状态。你可以比较文件的变化细节，查 出是谁最后修改了什么地方从而造成某些怪异问题，又是谁在何时报告了某个功能缺陷， 等等。使用版本控制系统通常还意味着，就算你胡来搞砸了整个项目，把文件改的改，删的删，你也可以轻松恢复到原先的样子。而由此额外增加的工作量却微乎其微。</p>
-<ol>
-<li><p>本地版本控制系统</p>
-<p>大多本地版本控制系统都是采用某种简单的数据库来记录文件的历次更新差异。如下图：</p>
-<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\4F3MECD8FC9ZG0%2}JT{5DT.png" alt="img"></p>
-</li>
-<li><p>集中化的版本控制系统</p>
-<p>这类系统，诸如 CVS，Subversion 以及 Perforce 等，都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或 者提交更新。如下图：</p>
-<p><img src="C:\Users\陈锡滨\Pictures\Saved Pictures\集中化.png" alt="集中化"></p>
-</li>
-<li><p>分布式版本控制系统</p>
-<p>在这类系统中，诸如 Git，Mercurial，Bazaar 还有 Darcs 等，客户端并不只提取最新版本的文件快照，而是把原始的代码仓库完整地镜像下来。这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。因为每一次的提取操作，实际上都是一次对代码仓库的完整备份。如下图：</p>
-<p><img src="C:\Users\陈锡滨\Pictures\Saved Pictures\分布式.png" alt="分布式"></p>
-</li>
-</ol>
+<p>1  本地版本控制系统</p>
+<p>   大多本地版本控制系统都是采用某种简单的数据库来记录文件的历次更新差异。如下图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2967093-4679b3f123b846c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="本地版本控制"></p>
+<p>2  集中化的版本控制系统</p>
+<p>   这类系统，诸如 CVS，Subversion 以及 Perforce 等，都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或 者提交更新。如下图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2967093-eb36426fb71f7f50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="集中化版本控制"></p>
+<p>3  分布式版本控制系统</p>
+<p>   在这类系统中，诸如 Git，Mercurial，Bazaar 还有 Darcs 等，客户端并不只提取最新版本的文件快照，而是把原始的代码仓库完整地镜像下来。这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。因为每一次的提取操作，实际上都是一次对代码仓库的完整备份。如下图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2967093-8a0a4e64505a3961.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分布式版本控制"></p>
 <h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><blockquote>
 <p>有许多安装方式，概况起来主要有两个，一种是通过编译源代码来安装；另一种是使用为特定平台预编译好的安装包。</p>
 </blockquote>
@@ -441,74 +436,72 @@
 <p>​ GitHub是目前为止最大的开源Git托管服务，并且是少数同时提供公共托管和私人托管服务的站点之一。</p>
 <p>接下来的内容主要描述讲解如何使用git来将本地仓库与GitHub账户的仓库建立连接。</p>
 </blockquote>
-<ol>
+</li>
 <li><p>建立本地git仓库</p>
 <p>进入你要同步的本地项目的根目录下，执行git命令：</p>
 <p><code>git init</code></p>
 </li>
 <li><p>将项目中所有的文件添加到仓库中</p>
-<p><code>git add .</code></p>
-<p>如果只想添加某个特定的文件，只需把 . 换成特定文件名即可。</p>
+<p>   <code>git add .</code></p>
+<p>   如果只想添加某个特定的文件，只需把 . 换成特定文件名即可。</p>
 </li>
 <li><p>将add进来的文件提交到仓库</p>
-<p><code>git commit -m &quot;(添加注释语句 )&quot;</code></p>
+<p>   <code>git commit -m &quot;(添加注释语句 )&quot;</code></p>
 </li>
 <li><p>在自己GitHub上创建一个仓库（repository），界面如下：</p>
-<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\G}Z%OWK7@%4GG}20`P`L%2X.png" alt="img"> </p>
-<p>Repository name：填写仓库名称</p>
-<p>Description：描述，填写仓库的主题、内容</p>
-<p>Public、Private：仓库类型可选：公有、私有</p>
-<p>Initialize this repository with a README：初始化readme说明文件</p>
-<p>最后，点击Create repository就可以成功创建仓库了。</p>
+<p>   <img src="http://upload-images.jianshu.io/upload_images/2967093-5bddc7f1b69ca1c7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建仓库"> </p>
+<p>   Repository name：填写仓库名称</p>
+<p>   Description：描述，填写仓库的主题、内容</p>
+<p>   Public、Private：仓库类型可选：公有、私有</p>
+<p>   Initialize this repository with a README：初始化readme说明文件</p>
+<p>   最后，点击Create repository就可以成功创建仓库了。</p>
 </li>
 <li><p>获取仓库地址</p>
-<p>要想本地仓库与远程建立连接，需要有远程仓库的地址，获取方法如下图： </p>
-<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\@CE8HWD_KO%EHWR113$92L2.png" alt="img"></p>
-<p>​</p>
+<p>   要想本地仓库与远程建立连接，需要有远程仓库的地址，获取方法如下图： </p>
+<p>   <img src="http://upload-images.jianshu.io/upload_images/2967093-a7f3b34fe76819c3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="获取仓库地址"></p>
+<p>   ​</p>
 </li>
 <li><p>将本地仓库关联到GitHub上</p>
-<p>进入本地仓库目录，执行如下git命令：</p>
-<p><code>git remote add origin ...(远程仓库地址)</code></p>
+<p>   进入本地仓库目录，执行如下git命令：</p>
+<p>   <code>git remote add origin ...(远程仓库地址)</code></p>
 </li>
 <li><p>在上传本地目录之前，要先pull一下，执行如下git命令：</p>
-<p><code>git pull origin master</code></p>
+<p>   <code>git pull origin master</code></p>
 </li>
 <li><p>上传本地仓库到GitHub远程仓库</p>
-<p><code>git push -u origin master</code></p>
+<p>   <code>git push -u origin master</code></p>
 </li>
 <li><p>执行完成，如果没有异常，等待上传完成就上传成功。期间会要求输入账户名和密码，只需要输入GitHub的账户和密码就行。</p>
-</li>
-</ol>
 </li>
 </ol>
 <h2 id="Git-GUI"><a href="#Git-GUI" class="headerlink" title="Git GUI"></a>Git GUI</h2><p>Git有提供图形界面，下面简要介绍如何使用。</p>
 <ul>
 <li><p>打开Git GUI，在右下角处选择”重新扫描”，如下：</p>
-<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\B28TFAYY9FFYGZROAUXB2@D.png" alt="img"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2967093-64fabe4d8774748e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描新的改动"></p>
 </li>
 <li><p>扫描完成后，在左上角处会显示”未缓存的改动”，如下：(点击左边的图标即可将文件添加到已缓存区)</p>
-<p><img src="C:\Users\陈锡滨\Pictures\Camera Roll\未缓存.png" alt="未缓存"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2967093-59fb563d9e6747f8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="未缓存"></p>
 </li>
-<li><p>将”未缓存文件”添加到”已缓存文件”，如下：</p>
-<p><img src="C:\Users\陈锡滨\Pictures\Camera Roll\已缓存.png" alt="已缓存"></p>
+<li><p>点击左侧图标，将”未缓存文件”添加到”已缓存文件”，如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2967093-25247ab6350487e6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="已缓存"></p>
 </li>
 <li><p>在”提交描述”框内填写此次修改的目的和原因，然后提交。</p>
 <p>第一行：一句话概况你做的修改。</p>
 <p>第二行：空行。</p>
 <p>第三行：请描述为什么你做的这些改动是好的。</p>
-<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\B28TFAYY9FFYGZROAUXB2@D.png" alt="img"> </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2967093-64fabe4d8774748e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="提交描述"> </p>
 <p>​</p>
 </li>
 <li><p>最后提交，会要求输入用户名和密码，同样是GitHub的账户名和密码即可。</p>
-<p> <img src="C:\Users\陈锡滨\Pictures\Camera Roll\账户.png" alt="账户"></p>
-<p><img src="C:\Users\陈锡滨\Pictures\Camera Roll\密码.png" alt="密码"></p>
+<p> <img src="http://upload-images.jianshu.io/upload_images/2967093-1bfffd7dfcabe1e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="账户"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2967093-7e1e467251dcf536.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="密码"></p>
 </li>
 <li><p>上传成功，提示如下：</p>
-<p><img src="file:///C:\Users\陈锡滨\Documents\Tencent Files\534511498\Image\C2C\5@_ZXARBX5T70AEVZ4R6RE5.png" alt="img"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2967093-508fdbafe15aac8f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="上传成功"></p>
 </li>
 </ul>
 <blockquote>
-<p>大概流程就差不多这样了，还有其他一些功能，比如分支管理，等深入学习了有机会再分享。</p>
+<p>大概流程差不多这样了，还有其他一些功能，比如分支管理，等深入学习了有时间再分享。</p>
 </blockquote>
 <h2 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h2><p>感谢阅读，欢迎指教。本人简书和GitHub —&gt;（<a href="http://www.jianshu.com/users/083ac3156200/latest_articles" target="_blank" rel="external">简书</a>/<a href="https://github.com/binbinla" target="_blank" rel="external">GitHub</a>）</p>
 <p>good luck！</p>
